@@ -1,0 +1,57 @@
+.layers {
+    background-color: #333;
+    box-shadow: 0px 0px 10px rgba(30, 30, 30, 0.7);
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 5vh;
+    height: 100vh;
+    padding: 40px;
+    z-index: 1000;
+}
+
+.layers ul {
+    display: block;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    /* margin-top: 2vh; */
+    height: 100%;
+}
+
+.layers input[type="radio"] {
+    display: none;
+}
+
+.layers label {
+    background-color: transparent;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.layers input[type="radio"]:checked {
+    background-color: #222;
+}
+
+.layers ul li {
+    padding: 5px 0;
+}
+
+.layer li:last-of-type {
+    margin-top: auto;
+}
+
+.layers button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.rectangle {
+    height: 75px;
+    width: 100px;
+    background-color: white;
+}

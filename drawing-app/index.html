@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suite Editor</title>
+  <script src="../p5.min.js"></script>
+  <!-- <script src="../addons/p5.sound.js"></script> -->
+  <script src="editor.js"></script>
+  <script src="draggable.js"></script>
+  <script src="BrushStroke.js"></script>
+  <script src="DraggableImages.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" rel="stylesheet">
+  <link href="./globalStyles.css" rel="stylesheet">
+  <link href="./toolbar.css" rel="stylesheet">
+  <link href="./layersPanel.css" rel="stylesheet">
+  <link href="./toolPanel.css" rel="stylesheet">
+
+  
+</head>
+
+<body>
+  <div class="toolpanel">
+        <label for="weight">Stroke:</label>
+        <input type="number" id="weight" min="1" max="200" value="3" />
+        <button><i class="fas fa-undo-alt"></i></button>
+        <button><i class="fas fa-redo-alt"></i></button>
+        <button id="export">Export As</button>
+        <div class="dropdown">
+          <button class="dropbtn">Shape</button>
+          <div class="dropdown-content">
+            <a href="#">Rectangle</a>
+            <a href="#">Triangle</a>
+            <a href="#">Circle</a>
+          </div>
+        </div>
+       
+  </div>
+  <div id="toolbar" class="toolbar">
+    <ul>
+      <li>
+        <input type="radio" value="selectorTool" name="tool-type" id="selectorTool" checked>
+        <label for="selectorTool">
+          <i class="fas fa-mouse-pointer"></i>
+        </label>
+      </li>
+      <li>
+        <input type="radio" value="brushTool" name="tool-type" id="brushTool">
+        <label for="brushTool">
+          <i class="fas fa-paint-brush"></i>
+        </label>
+      </li>
+      <li>
+        <input type="radio" name="tool-type" id="pencilTool">
+        <label for="pencilTool">
+          <i class="fas fa-pencil-alt"></i>
+        </label>
+      </li>
+      <li>
+        <input type="radio" name="tool-type" id="penTool">
+        <label for="penTool">
+          <i class="fas fa-pen-nib"></i>
+        </label>
+      </li>
+      <li>
+        <input type="radio" name="tool-type" id="shapeTool">
+        <label for="shapeTool">
+          <i class="fas fa-shapes"></i>
+        </label>
+      </li>
+      <li>
+        <input type="radio" name="tool-type" id="lineTool">
+        <label for="lineTool">
+          <i class="fas fa-slash"></i>
+        </label>
+      </li>
+      <li>
+        <input type="radio" name="tool-type" id="textTool">
+        <label for="textTool">
+          <i class="fas fa-font"></i>
+        </label>
+      </li>
+      <li>
+        <input type="radio" name="tool-type" id="eraserTool">
+        <label for="eraserTool">
+          <i class="fas fa-eraser"></i>
+        </label>
+      </li>
+      <li>
+        <input type="radio" name="tool-type" id="bucketTool">
+        <label for="bucketTool">
+          <i class="fas fa-fill-drip"></i>
+        </label>
+      </li>
+      <li>
+        <input type="radio" name="tool-type" id="zoomTool">
+        <label for="zoomTool">
+          <i class="fas fa-search-plus"></i>
+            <!-- <i class="fas fa-search-mius"></i> -->
+        </label>
+      </li>
+      <br/>
+      <li>
+        <label for="colorTool">Stroke:</label>
+        <input type="color" id="color" />
+      </li>
+      <li>
+        <label for="fill">Fill:</label>
+        <input type="color" id="fill" />
+      </li>
+      <li>
+        <input type="radio" name="trash" id="clear">
+        <label for="trash">
+          <i class="fa fa-trash"></i>
+        </label>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="canvas">
+    <main>
+    </main>
+  </div>
+  <div class="layers">
+    <ul>
+      <li>
+        
+        <input type="radio" name="layer" id="layer04">
+        <h5>Layer 4</h5>
+        <i class="far fa-eye"></i>
+        <i class="far fa-eye-slash"></i>
+        <i class="fas fa-lock"></i>
+        <i class="fas fa-unlock"></i>
+        <i class="far fa-clone"></i>
+        <label for="layer04">
+        <div class="rectangle"></div>
+      </label>
+      </li>
+      <li>
+        <input type="radio" name="layer" id="layer03">
+        <h5>Layer 3</h5>
+        <label for="layer03">
+        <div class="rectangle"></div>
+      </label>
+      </li>
+      <li>
+        <input type="radio" name="layer" id="layer02">
+        <h5>Layer 2</h5>
+        <label for="layer02">
+        <div class="rectangle"></div>
+      </label>
+      </li>
+      <li>
+        <input type="radio" name="layer" id="layer01">
+        <h5>Layer 1</h5>
+        <label for="layer01">
+        <div class="rectangle"></div>
+        </label>
+      </li>
+      <li>
+        <input type="radio" name="layer" id="background">
+        <h5>Background</h5>
+        <label for="background">
+        <div class="rectangle"></div>
+      </label>
+      </li>
+      <li>
+        <button id="moveUp"><i class="fas fa-chevron-up"></i></button>
+        <button id="addLayer"><i class="fas fa-plus"></i></button>
+        <button id="moveDown"><i class="fas fa-chevron-down"></i></button>
+      </li>
+    </ul>
+  </div>
+  <footer>
+    <!-- <p> Created with <i class="fa fa-heart"> by Claire Spain</i></p> -->
+  </footer>
+</body>
+
+</html>
