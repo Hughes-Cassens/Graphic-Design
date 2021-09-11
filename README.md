@@ -8,11 +8,11 @@
 - M1: Overview of Digital Graphic Design
     - [ ] Realism to Representational to Abstract
     - [ ] Blur/shapes
-    - [ ] Blending Modes #1
-    - [ ] Color Modes
+    - [x] Blending Modes #1
+    - [x] Color Modes
 - M2: Photoshop Foundations
     - [ ] Layers
-    - [ ] Blending Modes #2
+    - [x] Blending Modes #2
 - M3: Photoshop Compositing
     - [ ] Blending Modes #3
     - [ ] Filters
