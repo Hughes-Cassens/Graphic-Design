@@ -15,7 +15,7 @@
     - [x] Blending Modes #2
 - M3: Photoshop Compositing
     - [ ] Blending Modes #3
-    - [ ] Filters
+    - [x] Filters
 - M4: Illustrator Foundations
     - [ ] Introduce shapes, line, and pen
 - M5: Illustrator Compositing
