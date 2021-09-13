@@ -63,11 +63,6 @@ function setFilter() {
     filter(ERODE);
   }
 
-  if(document.querySelector('#filters').value == 'Pointallize'){
-    image(img, 0, 0, 1080, 720);
-    filter(THRESHOLD, 0.6);
-  }
-
   if(document.querySelector('#filters').value == 'Fresco'){
     image(img, 0, 0, 1080, 720);
     filter(POSTERIZE, 5);
