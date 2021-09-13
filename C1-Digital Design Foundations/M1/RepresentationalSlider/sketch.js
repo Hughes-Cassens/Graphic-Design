@@ -14,7 +14,6 @@ function preload() {
 function setup() {
   createCanvas(w, h);
   setupSlider();
-  // textFont("Glory");
   setupText();
   
 }
@@ -26,11 +25,6 @@ function draw() {
 }
 
 const setupSlider = _ => {
-  // textSize(22);
-  // text("Realism", 25, height+1);
-  // fill(0);
-  // text("Abstract", 25, 90);
-  // fill(0);
   let r = createP('REALISM');
   r.style('font-size', '24');
   r.style('font-family', 'Glory');
@@ -43,7 +37,3 @@ const setupSlider = _ => {
   a.position(width*0.5 + 70, height + 3)
   
 };
-
-function setupText(){
-
-}
