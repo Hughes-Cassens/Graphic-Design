@@ -6,7 +6,7 @@
 ## Digital Design Foundations
 
 - M1: Overview of Digital Graphic Design
-    - [ ] Realism to Representational to Abstract
+    - [x] Realism to Representational to Abstract
     - [ ] Blur/shapes
     - [x] Blending Modes #1
     - [x] Color Modes
