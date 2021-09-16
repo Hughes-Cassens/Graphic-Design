@@ -21,7 +21,7 @@
 - M5: Illustrator Compositing
     - [ ] Shapes, line, pen tool
 - M6: Project Output
-    - [ ] Save as png
+    - [x] Save as png
 
 ## The Art of Still Image
 

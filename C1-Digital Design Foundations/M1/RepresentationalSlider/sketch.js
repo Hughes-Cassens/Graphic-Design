@@ -14,7 +14,6 @@ function preload() {
 function setup() {
   createCanvas(w, h);
   setupSlider();
-  setupText();
   
 }
 
