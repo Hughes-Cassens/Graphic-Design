@@ -30,12 +30,12 @@
 - M2: Composition
     - [ ] Sandbox in program
 - M3: Color
-    - [ ] Color Modes
-    - [ ] Palette Generator?
+    - [x] Color Modes
+    - [x] Palette Generator
 - M4: Text
     - [ ] Text Editor? A few different typefaces. Size, color, position.
 - M5: Graphic Elements (Digital Art, Shapes, 3D)
-    - [ ] 3D Canvas
+    - [x] 3D Canvas
     - [ ] Brush/pencil/color
     - [ ] Shape, line, pen tool
 - M6: Manipulation (Retouching, Abstraction, Collage)

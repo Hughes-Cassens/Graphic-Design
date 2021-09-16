@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palette Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" rel="stylesheet">
+  <!-- <script src="../p5.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="../addons/p5.sound.js"></script> -->
+  <script src="sketch.js"></script>
+</head>
+
+<body>
+  <h1>Palette Generator</h1>
+  <input id="hex-code" />
+  <input id="picker" type="color" value="#53d596"/>
+  <button id="randomColor" type="submit">
+    <i class="fas fa-redo"></i>
+  </button>
+  <div id="color"></div>
+  <hr/>
+  <div id="analogous">
+    Analogous<br />
+    <div id="analogous1"></div><div id="analogous2"></div><div id="analogous3"></div>
+  </div>
+  <div id="complementary">
+    Complementary<br />
+    <div id="complementary1"></div><div id="complementary2"></div>
+  </div>
+  <div id="split-complementary">
+    Split Complementary<br />
+    <div id="split-complementary1"></div><div id="split-complementary2"></div><div id="split-complementary3"></div>
+  </div>
+  <div id="triadic">
+    Triadic<br />
+    <div id="triadic1"></div><div id="triadic2"></div><div id="triadic3"></div>
+  </div>
+  <div id="tetradic">
+    Tetradic<br />
+    <div id="tetradic1"></div><div id="tetradic2"></div><div id="tetradic3"></div><div id="tetradic4"></div>
+  </div>
+  <div id="square">
+    Square<br />
+    <div id="square1"></div><div id="square2"></div><div id="square3"></div><div id="square4"></div>
+  </div>
+  <hr />
+  <div id="shades">
+    Shades<br />
+    <div id="shade1"></div><div id="shade2"></div><div id="shade3"></div><div id="shade4"></div><div id="shade5"></div><div id="shade6"></div><div id="shade7"></div><div id="shade8"></div><div id="shade9"></div><div id="shade10"></div><div id="shade11"></div><div id="shade12"></div><div id="shade13"></div><div id="shade14"></div><div id="shade15"></div>
+  </div>
+  <div id="tints">
+    Tints<br />
+    <div id="tint1"></div><div id="tint2"></div><div id="tint3"></div><div id="tint4"></div><div id="tint5"></div><div id="tint6"></div><div id="tint7"></div><div id="tint8"></div><div id="tint9"></div><div id="tint10"></div><div id="tint11"></div><div id="tint12"></div><div id="tint13"></div><div id="tint14"></div><div id="tint15"></div>
+  </div>
+  <div id="tones">
+    Tones<br />
+    <div id="tone1"></div><div id="tone2"></div><div id="tone3"></div><div id="tone4"></div><div id="tone5"></div><div id="tone6"></div><div id="tone7"></div><div id="tone8"></div><div id="tone9"></div><div id="tone10"></div><div id="tone11"></div><div id="tone12"></div><div id="tone13"></div><div id="tone14"></div><div id="tone15"></div>
+  </div>
+  <main>
+  </main>
+</body>
+
+</html>

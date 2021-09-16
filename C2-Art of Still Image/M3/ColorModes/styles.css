@@ -1,0 +1,32 @@
+html,body{
+    margin: 0; height: 100%; overflow: hidden;
+}
+canvas{
+    background: #000000;
+    padding: 0;
+    margin: 0 auto;
+    border: 1px solid black;
+    /* background-blend-mode: screen; */
+}
+#canvas{
+    /* mix-blend-mode: screen; */
+    z-index: 2;
+}
+#container{
+    z-index: 0;
+    width: auto;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    display: none;
+    
+}
+#start-button{
+    z-index: 0;
+    color: black;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}

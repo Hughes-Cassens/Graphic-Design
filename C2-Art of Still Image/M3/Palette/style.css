@@ -1,0 +1,163 @@
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+input[type=color] {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+input,
+i {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    font-size: 25px;
+}
+
+input {
+    width: 350px;
+    height: 48px;
+}
+
+#color {
+    margin: auto;
+    margin-top: 5px;
+    width: 419px;
+    height: 200px;
+    border-radius: 15px;
+}
+
+#analogous,
+#complementary,
+#split-complementary,
+#triadic,
+#tetradic,
+#square,
+#shades,
+#tints,
+#tones {
+    text-align: left;
+    display: inline-block;
+    margin: 3px 0;
+    width: 225px;
+    /* height: 50px; */
+    padding: 10px;
+    border: 1px solid #808080;
+    border-radius: 10px;
+}
+
+#shades,
+#tints,
+#tones {
+    width: 675px;
+}
+
+#analogous1,
+#analogous2,
+#analogous3,
+#split-complementary1,
+#split-complementary2,
+#split-complementary3,
+#triadic1,
+#triadic2,
+#triadic3 {
+    display: inline-block;
+    width: 75px;
+    height: 50px;
+}
+
+#complementary1,
+#complementary2 {
+    display: inline-block;
+    width: 112px;
+    height: 50px;
+}
+
+#tetradic1,
+#tetradic2,
+#tetradic3,
+#tetradic4,
+#square1,
+#square2,
+#square3,
+#square4 {
+    display: inline-block;
+    width: 56px;
+    height: 50px;
+}
+
+#shade1,
+#shade2,
+#shade3,
+#shade4,
+#shade5,
+#shade6,
+#shade7,
+#shade8,
+#shade9,
+#shade10,
+#shade11,
+#shade12,
+#shade13,
+#shade14,
+#shade15,
+#tint1,
+#tint2,
+#tint3,
+#tint4,
+#tint5,
+#tint6,
+#tint7,
+#tint8,
+#tint9,
+#tint10,
+#tint11,
+#tint12,
+#tint13,
+#tint14,
+#tint15,
+#tone1,
+#tone2,
+#tone3,
+#tone4,
+#tone5,
+#tone6,
+#tone7,
+#tone8,
+#tone9,
+#tone10,
+#tone11,
+#tone12,
+#tone13,
+#tone14,
+#tone15 {
+    display: inline-block;
+    width: 45px;
+    height: 50px;
+}
+
+#analogous1,
+#complementary1,
+#split-complementary1,
+#triadic1,
+#tetradic1,
+#square1 {
+    border-radius: 5px 0 0 5px;
+}
+
+#analogous3,
+#complementary2,
+#split-complementary3,
+#triadic3,
+#tetradic4,
+#square4 {
+    border-radius: 0 5px 5px 0;
+}
+
+canvas {
+    display: block;
+}
