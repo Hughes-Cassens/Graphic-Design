@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color</title>
+  <style>
+    html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+    input[type=color] {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+input,
+i {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    font-size: 25px;
+}
+
+input {
+    width: 350px;
+    height: 48px;
+}
+
+#color {
+    margin: auto;
+    margin-top: 5px;
+    width: 419px;
+    height: 200px;
+    border-radius: 15px;
+}
+canvas {
+    display: block;
+}
+  </style>
+  <!-- <script src="../p5.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="../addons/p5.sound.js"></script> -->
+  <script src="sketch.js"></script>
+</head>
+
+<body>
+  <h1>Color Input</h1>
+    <input id="hex-code" />
+    <!-- <input id="rgb-code" /> -->
+    <input type="color" id="picker" value="#4AB8BF">
+    <div id="color"></div>
+  <main>
+  </main>
+</body>
+
+</html>

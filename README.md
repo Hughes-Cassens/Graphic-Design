@@ -10,27 +10,41 @@
     - [x] Blur/shapes
     - [x] Blending Modes #1
     - [x] Color Modes
+    - [ ] Eyedropper
+    - [x] Color Input/html
 - M2: Photoshop Foundations
     - [ ] Layers
+    - [x] Masking
     - [x] Blending Modes #2
+    - [ ] Brush/pencil/color
 - M3: Photoshop Compositing
     - [x] Blending Modes #3
     - [x] Filters
+    - [ ] Adjustments? Hue, Saturation, and Brightness
 - M4: Illustrator Foundations
     - [ ] Introduce shapes, line, and pen
 - M5: Illustrator Compositing
     - [ ] Shapes, line, pen tool
+    - [ ] Layout?
+    - [ ] Gradients
+    - [ ] Clipping Masks
 - M6: Project Output
     - [x] Save as png
 
 ## The Art of Still Image
 
 - M1: Principles & Elements of Design
-    - [ ] Sandbox in program (different images)
+    - [ ] Sandbox #1
+    - [ ] Sandbox #2
+    - [ ] Sandbox #3
+    - [ ] Color/shapes/lines
 - M2: Composition
-    - [ ] Sandbox in program
+    - [ ] Sandbox #1
+    - [ ] Sandbox #2
+    - [ ] Sandbox #3
 - M3: Color
     - [x] Color Modes
+    - [x] Color Input
     - [x] Palette Generator
 - M4: Text
     - [ ] Text Editor? A few different typefaces. Size, color, position.

@@ -1,7 +1,9 @@
 //Color Palette Generator by simontiger
 
-let picker, value, colorDiv;
+let picker, value1, colorDiv;
 let valueFocused= false;
+let click=false;
+let randomColor;
 
 function setup() {
   noCanvas();
@@ -18,6 +20,7 @@ function setup() {
 }
 
 function update() {
+
   colorDiv.style("background", picker.value());
   colorMode(HSB);
   const baseColor           = color(picker.value());
@@ -71,9 +74,8 @@ function update() {
   for (let i = 0; i < 15; i++) {
     select(`#tone${i+1}`).style("background", tones[i]);
   }
-
-  generateRandomColor();
 }
+
 
 function generateRandomColor() {
   var letters = '0123456789ABCDEF';
@@ -84,6 +86,13 @@ function generateRandomColor() {
   return color;
 }
 
+function mouseClicked(e){
+  console.log("I clicked")
+  randomColor=generateRandomColor();
+  value.value(randomColor);
+  picker.value(randomColor);
+  update();
+}
 
 function draw() {
   if (!valueFocused) {
