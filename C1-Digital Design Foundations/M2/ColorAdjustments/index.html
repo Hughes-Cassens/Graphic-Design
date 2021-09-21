@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Adjustments</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Color Adjustments</h1>
+ <!-- css soup in order to get all the filters to work together -->
+ <div class="container">
+   <div class="col-1">
+  <div class="hue">
+    <div class="saturation">
+      <div class="brightness">
+        <div class="alpha">
+          <img src="./preload/graffiti.png" alt="Stairs" width="720" height="480">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="col-2 parent">
+      <h2 class="div1 center">Hue</h2>
+      <input class="div2 hue-range" id="hue" type="range" value="180" max="360">
+    <h2 class="div3 center">Saturation</h2>
+    <input class="div4 saturation-range" id="saturation" type="range" value="50" max="100">
+    <h2 class="div5 center">Brightness</h2>
+    <input class="div6 brightness-range" id="brightness" type="range" value="50" max="100">
+    <h2 class="div7 center">Alpha</h2>
+    <div class="div8">
+      <div class="div8 imgSlide-container">
+        <input class="top alpha-range" id="alpha" type="range" value="100" max="100">
+        <img class="bottom" src="./preload/transparencyGrid.PNG" alt="Transparency Background" height="14px" width="100%">
+      </div>
+    </div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+</html>

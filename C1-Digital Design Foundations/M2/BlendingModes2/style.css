@@ -1,0 +1,162 @@
+body {
+  background-color: aliceblue;
+
+}
+
+.container {
+  /* padding: 30px; */
+  /* top: 50; */
+  display: grid;
+  grid-template-columns: repeat(1fr 1fr);
+  grid-auto-rows: 200px;
+  text-align: center;
+
+}
+
+
+.imageContainer {
+
+  grid-area: 1/1/6/2;
+  /* position: relative; */
+  min-width: 480px;
+  /* min-height: 270px; */
+  max-width: 950px;
+  /* max-height: 540px; */
+  top: 10%;
+  /* left: 10%; */
+  /* object-fit: contain; */
+}
+
+img {
+  min-width: 50%;
+  max-width: 50%;
+  position: absolute;
+  left: 0;
+  object-fit: contain;
+}
+
+.image1 {
+  z-index: 1;
+  opacity: 0.5;
+  mix-blend-mode: normal;
+}
+
+.image2 {
+  z-index: 2;
+  opacity: 0.5;
+  mix-blend-mode: normal;
+}
+
+.image3 {
+  z-index: 3;
+  opacity: 0.5;
+  mix-blend-mode: normal;
+}
+
+
+.slider {
+  margin: 40px;
+}
+
+.modeControls {
+  grid-area: 1/2/6/3;
+  /* display: grid;
+  grid-template-columns: 1fr; */
+}
+
+.sliderSection .opacitySection {
+  margin: 20px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 2;
+
+}
+
+.div2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.div3 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.div4 {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+.div5 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.div6 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.div7 {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.div8 {
+  grid-area: 4 / 2 / 5 / 3;
+}
+
+.div9 {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.div10 {
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.div11 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+.div12 {
+  grid-area: 4 / 3 / 5 / 4;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.inline {
+  display: flex;
+  align-items: baseline;
+}

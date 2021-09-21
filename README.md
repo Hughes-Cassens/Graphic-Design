@@ -7,10 +7,10 @@
 
 - M1: Overview of Digital Graphic Design
     - [x] Realism to Representational to Abstract
-    - [x] Blur/shapes
+    - [o] Blur/shapes  //Change p5 blur to css blur
     - [x] Blending Modes #1
     - [x] Color Modes
-    - [ ] Eyedropper
+    - [x] Eyedropper
     - [x] Color Input/html
 - M2: Photoshop Foundations
     - [ ] Layers
@@ -20,7 +20,7 @@
 - M3: Photoshop Compositing
     - [x] Blending Modes #3
     - [x] Filters
-    - [ ] Adjustments? Hue, Saturation, and Brightness
+    - [x] Adjustments | HSBA
 - M4: Illustrator Foundations
     - [ ] Introduce shapes, line, and pen
 - M5: Illustrator Compositing

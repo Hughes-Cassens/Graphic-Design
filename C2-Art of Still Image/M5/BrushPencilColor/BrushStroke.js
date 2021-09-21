@@ -27,7 +27,7 @@ class BrushStroke {
 
         image(this.img, this.x, this.y, this.w, this.h);
         tint(color);
-    //     } else {S
+    //     } else {
     //         return null;
     //     }
 

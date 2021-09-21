@@ -1,64 +1,122 @@
-const form = document.querySelector('.input-field');
-const background = document.querySelector('.main');
-const updateBlendMode = () => {
-const selection = document.querySelector('.blends').value;
-  $("#image3").css("mix-blend-mode",selection);
-  $("#image1").css("mix-blend-mode",selection);
-  $("#image2").css("mix-blend-mode",selection);
+// const form = document.querySelector('.input-field');
+
+//const background = document.querySelector('.main');
+
+var sliderImage1 = document.getElementById('opacityFirst');
+var sliderImage2 = document.getElementById('opacitySecond');
+var sliderImage3 = document.getElementById('opacityThird');
+var blendingModes1 = document.getElementById('blendFirst');
+var blendingModes2 = document.getElementById('blendSecond');
+var blendingModes3 = document.getElementById('blendThird');
+var imgOne = document.getElementsByClassName('image1')[0];
+var imgTwo = document.getElementsByClassName('image2')[0];
+var imgThree = document.getElementsByClassName('image3')[0];
+
+
+blendingModes1.addEventListener("change", function() {
+  const selection1 = blendingModes1.value;
+  imgOne.style.mixBlendMode = selection1;
+  //console.log(selection1)
+})
+
+blendingModes2.addEventListener("change", function() {
+  const selection2 = blendingModes2.value;
+  imgTwo.style.mixBlendMode = selection2;
+  //console.log(selection2)
+})
+
+blendingModes3.addEventListener("change", function() {
+  const selection3 = blendingModes3.value;
+  imgThree.style.mixBlendMode = selection3;
+  //console.log(selection3)
+})
+
+const updateSecondBlendMode = () => {
+  const selection = document.querySelector('.blendSecond').value;
+    $("#image2").css("mix-blend-mode",selection);
 };
-var sliderImage1 = document.getElementById('image1');
-var sliderImage2 = document.getElementById('image2');
-var sliderCircle = document.getElementById('image3');
+
+const updateThirdBlendMode = () => {
+  const selection = document.querySelector('.blendThird').value;
+    $("#image3").css("mix-blend-mode",selection);
+};
 
 
-$("#topImage").slider({
-  value: 50,
-  min: 0,
-  max: 95,
-  slide: handleSlideChangeImage3
+//Opacity Sliders
+sliderImage1.addEventListener("change", function() {
+  imgOne.style.opacity = this.value / this.max;
 })
 
-$("#middleImage").slider({
-  value: 50,
-  min: 0,
-  max: 95,
-  slide: handleSlideChangeImage2
+sliderImage2.addEventListener("change", function() {
+  imgTwo.style.opacity = this.value / this.max;
 })
 
-$("#bottomImage").slider({
-  value: 50,
-  min: 0,
-  max: 95,
-  slide: handleSlideChangeImage1
-});
+sliderImage3.addEventListener("change", function() {
+  imgThree.style.opacity = this.value / this.max;
+})
+
+
+//Spencer I am so sorry
+
+// var sliderTriangle = document.getElementById('opacityThird');
+// var sliderSquare = document.getElementById('opacityFirst');
+// var sliderCircle = document.getElementById('opacitySecond');
+// var imageOP = document.getElementById("#image2");
+
+
+// function setOpacity(){
+//   $("#image3").css("opacity",sliderSquare.value + "%")
+//   console.log(sliderTriangle.value);
+// }
+
+
+// $("#opacityFirst").slider({
+//   value: 50,
+//   min: 0,
+//   max: 95,
+//   slide: handleSlideChangeSquare,
+// })
+
+// $("#opacitySecond").slider({
+//   value: 50,
+//   min: 0,
+//   max: 95,
+//   slide: handleSlideChangeCircle
+// });
+
+// $("#opacityThird").slider({
+//   value: 50,
+//   min: 0,
+//   max: 95,
+//   slide: handleSlideChangeTriangle
+// });
+
+
+// function handleSlideChangeTriangle(event,sliderTriangle) {
+//   $("#image1").css("opacity",sliderTriangle.value + "%")
+//   console.log(sliderTriangle.value);
+// }
+// function handleSlideChangeSquare(event,sliderSquare) {
+//   $("#image3").css("opacity",sliderSquare.value + "%")
+//   console.log(sliderTriangle.value);
+// }
+// function handleSlideChangeCircle(event,sliderCircle){
+//   $("#image2").css("opacity",sliderCircle.value + "%")
+// }
 
 
 
-
-
-function handleSlideChangeImage1(event,sliderImage1) {
-  $("#image1").css("opacity",sliderImage1.value + "%")
+// form.addEventListener('submit',(e) => {
+//   e.preventDefault();
+// });
  
-}
-function handleSlideChangeImage2(event,sliderImage2) {
-  $("#image2").css("opacity",sliderImage2.value + "%")
-  
-}
-function handleSlideChangeImage3(event, sliderImage3){
-  $("#image3").css("opacity",sliderImage3.value + "%");
-}
-
-
-
-form.addEventListener('submit',(e) => {
-  e.preventDefault();
-});
+// form.addEventListener('change',() => {
+//   updateBlendMode();
+// });
  
-form.addEventListener('change',() => {
-  updateBlendMode();
-});
- 
-updateBlendMode();
+// updateFirstBlendMode();
+// updateSecondBlendMode();
+// updateThirdBlendMode();
   
     
     
