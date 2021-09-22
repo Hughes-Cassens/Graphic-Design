@@ -1,0 +1,33 @@
+body {
+    font-family: sans-serif;
+}
+
+.parent {
+    display: flex;
+}
+
+.col-1 {
+    display: flex;
+    float: left;
+    width: 85%;
+}
+
+.col-2 {
+    display: flex;
+    float: right;
+    width: 15%;
+
+}
+
+.layersPanel {
+    background-color: darkslategray;
+    width: 100%;
+}
+
+
+.layer {
+    width: 10em;
+    height: 5em;
+    background-color: white;
+    margin: 2em;
+}

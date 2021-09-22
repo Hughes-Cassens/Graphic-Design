@@ -1,0 +1,71 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: whitesmoke;
+    font-family: sans-serif;
+    padding: 2em;
+
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+
+.blur {
+    filter: none;
+}
+
+.blur-range {
+    position: relative;
+    z-index: none;
+    appearance: none;
+    border-radius: 3px;
+    height: 1em;
+    width: 45%;
+    display: block;
+    outline: none;
+    margin: auto;
+    transition: color 0.05s linear;
+    background: green;
+    /* background: linear-gradient(to right,
+            #ff0000 0%,
+            #ffff00 17%,
+            #00ff00 33%,
+            #00ffff 50%,
+            #0000ff 67%,
+            #ff00ff 83%,
+            #ff0000 100%); */
+}
+
+.blur-range::-webkit-slider-thumb {
+    height: 3em;
+    width: 3em;
+    border-radius: 2em;
+    appearance: none;
+    background: white;
+    cursor: pointer;
+    cursor: move;
+    cursor: grab;
+    cursor: -webkit-grab;
+    border: 0.4em solid currentColor;
+    transition: border 0.1s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
+    box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.15);
+}
+
+.blur-range::-moz-range-thumb {
+    height: 2em;
+    width: 2em;
+    border-radius: 2em;
+    appearance: none;
+    background: white;
+    border: 0.4em solid currentColor;
+    cursor: pointer;
+    cursor: move;
+    cursor: grab;
+    cursor: -webkit-grab;
+    transition: box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 0);
+}

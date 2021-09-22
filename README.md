@@ -7,7 +7,7 @@
 
 - M1: Overview of Digital Graphic Design
     - [x] Realism to Representational to Abstract
-    - [o] Blur/shapes  //Change p5 blur to css blur
+    - [x] Blur/shapes
     - [x] Blending Modes #1
     - [x] Color Modes
     - [x] Eyedropper
