@@ -134,8 +134,8 @@ body {
     outline: none;
     transition: color 0.05s linear;
     background: linear-gradient(to right,
-            white 0%,
-            black 100%);
+            black 0%,
+            white 100%);
 }
 
 .alpha-range {

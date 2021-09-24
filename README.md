@@ -16,7 +16,7 @@
     - [ ] Layers
     - [x] Masking
     - [x] Blending Modes #2
-    - [ ] Brush/pencil/color
+    - [x] Brush/pencil/color
 - M3: Photoshop Compositing
     - [x] Blending Modes #3
     - [x] Filters
@@ -26,8 +26,8 @@
 - M5: Illustrator Compositing
     - [ ] Shapes, line, pen tool
     - [ ] Layout?
-    - [ ] Gradients
-    - [ ] Clipping Masks
+    - [x] Gradients
+    - [x] Clipping Masks
 - M6: Project Output
     - [x] Save as png
 
@@ -50,10 +50,10 @@
     - [ ] Text Editor? A few different typefaces. Size, color, position.
 - M5: Graphic Elements (Digital Art, Shapes, 3D)
     - [x] 3D Canvas
-    - [ ] Brush/pencil/color
+    - [x] Brush/pencil/color
     - [ ] Shape, line, pen tool
 - M6: Manipulation (Retouching, Abstraction, Collage)
     - [ ] Collage editor?
-    - [ ] Abstraction: Overlay, blending modes, opacity
+    - [ ] Abstraction: Overlay/filters, blending modes, opacity
 
 

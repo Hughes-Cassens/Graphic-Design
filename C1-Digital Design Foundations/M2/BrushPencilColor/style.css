@@ -1,0 +1,42 @@
+body {
+    background-color: gray;
+    margin: 3em;
+    font-family: sans-serif;
+    font-size: large;
+    font-weight: 400;
+}
+
+
+canvas {
+    border-radius: 10px;
+}
+
+.center {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+
+.toolbar input[type="radio"] {
+    text-align: center;
+    width: 45px;
+    display: none;
+}
+
+.toolbar label i {
+    background-color: transparent;
+    padding-right: 1em;
+    border: none;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.toolbar input[type="radio"]:checked+label i {
+    color: #222;
+}
+
+.toolbar label {
+    color: white;
+}

@@ -27,6 +27,6 @@ brightnessSlider.addEventListener("change", function() {
 
 //alpha
 alphaSlider.addEventListener("change", function() {
-  alpha.style.filter = "opacity("+this.value+"px)";
+  alpha.style.filter = "opacity("+this.value+"%)";
   // console.log(img.style.filter);
 })
