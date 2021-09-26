@@ -38,9 +38,9 @@
     - [x] Sandbox #3
     - [x] Sandbox #4 
 - M2: Composition
-    - [x] Sandbox #1
-    - [x] Sandbox #2
-    - [x] Sandbox #3
+    - [x] Sandbox #5
+    - [x] Sandbox #6
+    - [x] Sandbox #7
 - M3: Color
     - [x] Color Modes
     - [x] Color Input
