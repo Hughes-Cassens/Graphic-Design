@@ -20,7 +20,8 @@
     - [x] Adjustments | HSBA
 - M4: Illustrator Foundations
     - [x] Shapes
-    - [ ] Vector/Bezier Curves
+    - [x] Curves
+    - [x] Vector Shapes
 - M5: Illustrator Compositing
     - [ ] Shapes, line, pen tool
     - [ ] Layout?
