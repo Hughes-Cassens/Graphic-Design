@@ -1,8 +1,5 @@
 # Applications for Yeshiva Certificates
-
-
 ## Graphic Design Objectives
-
 ## Digital Design Foundations
 
 - M1: Overview of Digital Graphic Design
@@ -22,7 +19,8 @@
     - [x] Filters
     - [x] Adjustments | HSBA
 - M4: Illustrator Foundations
-    - [ ] Introduce shapes, line, and pen
+    - [x] Shapes
+    - [ ] Vector/Bezier Curves
 - M5: Illustrator Compositing
     - [ ] Shapes, line, pen tool
     - [ ] Layout?
@@ -34,14 +32,14 @@
 ## The Art of Still Image
 
 - M1: Principles & Elements of Design
-    - [ ] Sandbox #1
-    - [ ] Sandbox #2
-    - [ ] Sandbox #3
-    - [ ] Color/shapes/lines
+    - [x] Sandbox #1
+    - [x] Sandbox #2
+    - [x] Sandbox #3
+    - [x] Sandbox #4 
 - M2: Composition
-    - [ ] Sandbox #1
-    - [ ] Sandbox #2
-    - [ ] Sandbox #3
+    - [x] Sandbox #1
+    - [x] Sandbox #2
+    - [x] Sandbox #3
 - M3: Color
     - [x] Color Modes
     - [x] Color Input
