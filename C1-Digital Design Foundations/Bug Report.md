@@ -1,0 +1,64 @@
+# Bug Report(9/27/2021)
+
+- ## M1
+    - ### Realism to Representational to Abstract
+        - Looks good
+    - ### Blur/Shapes
+        - The slider needs to dynamically change the blur value
+            - As of now the slider only changes once the mouse is released
+    - ### Blending Modes #1
+        - This seems to happen randomly but  the top slider will get stuck when trying to change the value
+        - Sliders need to dynamically change the opacity values when moved
+            - As of now the slider only changes once the mouse is released
+    - ### Color Modes
+        - Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
+        - The top circle and left circle move apart when they overlap but the right one won’t until all three are overlapping
+    - ### Eyedropper
+        - Looks good
+    - ### Color Input/HTML
+        - Looks good
+- ## M2
+    - ### Layers
+        - Not completed
+    - ### Masking
+        - Not sure if this is intentional but when the cursor moves far enough to the edges of the screen the image that is being masked out is revealed 
+    - ### Blending Modes #2
+        - This seems to happen randomly but  the top slider will get stuck when trying to change the value
+        - Sliders need to dynamically change the opacity values when moved
+            - As of now the slider only changes once the mouse is released
+    - ### Brush/Pencil/Color
+        - Looks good
+- ## M3
+    - ### Blending Modes #3
+        - This seems to happen randomly but the top slider will get stuck when trying to change the value
+        - Sliders need to dynamically change the opacity values when moved
+            - As of now the slider only changes once the mouse is released
+    - ### Filters
+        - Needs to be optimized
+            - After you choose several filters the module starts to get bogged down
+                - This is related to the “setFilter” function
+                    - I think a solution might be to only call “setFilter” once when needed versus constantly
+    - ### Adjustments | HSBA
+        - Sliders need to dynamically change the opacity values when moved
+            - As of now the slider only changes once the mouse is released
+- ## M4
+    - ### Shapes
+        - Shapes need to be restricted to the canvas and not overlap the controls
+    - ### Curves
+        - Looks good
+    - ### Vector Shapes
+        - Looks good
+- ## M5
+    - ### Shapes, line, pen tool
+        - Not Finished
+    - ### Layout?
+        - Not Finished
+    - ### Gradients
+        - Looks good
+    - ### Clipping Masks
+        - Not a bug but, there should be an option to remove the mask and reapply
+- ## M6
+    - ### Save as png
+        - Looks good
+# All modules need to be double-checked to be sure they are optimized for mobile.
+

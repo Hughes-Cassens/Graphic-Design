@@ -14,13 +14,10 @@ function preload() {
 function setup() {
   createCanvas(w, h);
   setupSlider();
-  
 }
 
 function draw() {
   image(imgs[slider.value()], 0, 0, w, h);
-  
-  
 }
 
 const setupSlider = _ => {
@@ -34,5 +31,4 @@ const setupSlider = _ => {
   a.style('font-size', '24');
   a.style('font-family', 'Glory');
   a.position(width*0.5 + 70, height + 3)
-  
 };
