@@ -1,0 +1,266 @@
+body {
+    margin-top: 1em;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: sans-serif;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    margin: auto;
+
+}
+
+.col-1 {
+    width: 20%;
+    background-color: whitesmoke;
+    padding: 1%;
+}
+
+
+.col-2 {
+    width: 60%;
+    background-image: url("preload/reedBasket.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: gray;
+    height: 30em;
+    z-index: 0;
+}
+
+.col-3 {
+    width: 20%;
+    background-color: whitesmoke;
+    padding: 1%;
+}
+
+
+.loadedDiv {
+    position: absolute;
+    z-index: 0;
+    /* width: 150px;
+    height: auto; */
+
+}
+
+
+#btnContrl {
+    display: none;
+}
+
+
+.loadedDiv img:hover {
+    border-color: white;
+    border-style: dashed;
+}
+
+.loadedDiv img:active {
+    outline: white auto 5px;
+}
+
+/* .box {
+    width: 150px;
+    height: 100px;
+    position: relative;
+    background-color: #4be091;
+    border-radius: 6px;
+} */
+
+/* .rotation-handle {
+    padding: 3px 4px;
+    display: table;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: -35px;
+    background-color: #ff1661;
+    border-radius: 10rem;
+    line-height: 1;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    cursor: grab;
+} */
+
+
+
+/* #btnControl img:checked+label {
+    outline: white auto 5px;
+} */
+
+
+
+/* #mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 11;
+    background-color: #2196F3;
+    color: #fff;
+} */
+
+
+/* .loadedDiv .resizable {
+    background: cyan;
+    position: relative;
+}
+
+.loadedDiv .resizer {
+    width: 10px;
+    height: 10px;
+    background: blue;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: se-resize;
+} */
+
+
+.hue-range {
+    position: relative;
+    z-index: none;
+    appearance: none;
+    border-radius: 3px;
+    height: 1em;
+    width: 100%;
+    display: block;
+    outline: none;
+    margin: auto;
+    transition: color 0.05s linear;
+    background: linear-gradient(to right,
+            #ff0000 0%,
+            #ffff00 17%,
+            #00ff00 33%,
+            #00ffff 50%,
+            #0000ff 67%,
+            #ff00ff 83%,
+            #ff0000 100%);
+}
+
+.saturation-range {
+    position: relative;
+    z-index: none;
+    appearance: none;
+    border-radius: 3px;
+    height: 1em;
+    width: 100%;
+    display: block;
+    margin: auto;
+    outline: none;
+    transition: color 0.05s linear;
+    background: linear-gradient(to right,
+            gray 0%,
+            #ff0000 100%);
+}
+
+.brightness-range {
+    position: relative;
+    z-index: none;
+    appearance: none;
+    border-radius: 3px;
+    height: 1em;
+    width: 100%;
+    display: block;
+    margin: auto;
+    outline: none;
+    transition: color 0.05s linear;
+    background: linear-gradient(to right,
+            black 0%,
+            white 100%);
+}
+
+.alpha-range {
+    position: relative;
+    appearance: none;
+    z-index: none;
+    border-radius: 3px;
+    height: 14px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    outline: none;
+    transition: color 0.05s linear;
+    background: linear-gradient(to right,
+            rgba(0, 0, 255, 0) 0%,
+            blue 100%);
+}
+
+.hue-range::-webkit-slider-thumb,
+.saturation-range::-webkit-slider-thumb,
+.brightness-range::-webkit-slider-thumb,
+.alpha-range::-webkit-slider-thumb {
+
+    height: 3em;
+    width: 3em;
+    border-radius: 2em;
+    appearance: none;
+    background: white;
+    cursor: pointer;
+    cursor: move;
+    cursor: grab;
+    cursor: -webkit-grab;
+    border: 0.4em solid currentColor;
+    transition: border 0.1s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
+    box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.15);
+}
+
+.hue-range::-moz-range-thumb,
+.saturation-range::-moz-range-thumb,
+.brightness-range::-moz-range-thumb,
+.alpha-range::-moz-range-thumb {
+    height: 2em;
+    width: 2em;
+    border-radius: 2em;
+    appearance: none;
+    background: white;
+    border: 0.4em solid currentColor;
+    cursor: pointer;
+    cursor: move;
+    cursor: grab;
+    cursor: -webkit-grab;
+    transition: box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 0);
+}
+
+.sliderContainer {
+    width: 80%;
+}
+
+.hue {
+    filter: none;
+}
+
+.saturation {
+    filter: none;
+}
+
+.brightness {
+    filter: none;
+}
+
+.alpha {
+    filter: none;
+}
+
+.resize-drag {
+    touch-action: none;
+    box-sizing: border-box;
+}
+
+.draggable {
+    touch-action: none;
+    user-select: none;
+}
+
+.drag-rotate {
+    transform: rotate(0);
+    transform-origin: center center;
+    user-select: none;
+    touch-action: none;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collage</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="sketch.js"></script> -->
+</head>
+
+<body>
+  <h1>Collage</h1>
+  <div class="container">
+    <div class="col-1">
+      <h3> Blending Modes</h3>
+      <hr/>
+        <div>
+          <select name="blend" id="blend">
+            <option value="normal">Normal</option>
+            <option value="darken">Darken</option>
+            <option value="multiply">Multiply</option>
+            <option value="screen">Screen</option>
+            <option value="color">Color</option>
+            <option value="color-burn">Color Burn</option>
+            <option value="color-dodge">Color Dodge</option>
+            <option value="overlay">Overlay</option>
+            <option value="soft-light">Soft Light</option>
+            <option value="hard-light">Hard Light</option>
+            <option value="difference">Difference</option>
+            <option value="exclusion">Exclusion</option>
+            <option value="hue">Hue</option>
+            <option value="saturation">Saturation</option>
+            <option value="lighten">Lighten</option>
+            <option value="luminosity">Luminosity</option>
+          </select>
+        </div>
+      <h3> Filters</h3>
+      <hr/>
+      <div>
+        <select name="filters" id="filters">
+          <option value="No Filter">No Filter</option>
+          <option value="Threshold">Threshold</option>
+          <option value="Grayscale">Grayscale</option>
+          <option value="Invert">Invert</option>
+          <option value="Posterize">Posterize</option>
+          <option value="Crystalize">Crystalize</option>
+          <option value="Paint">Paint</option>
+          <option value="Fresco">Fresco</option>
+          <option value="Sponge">Sponge</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="col-2">
+      <!-- <div id="duplicater"> -->
+      
+          <div id="mydiv" class="draggable hue saturation brightness alpha loadedDiv" onclick="setIdFunction(this.id)">
+              <input type="checkbox" id="btnContrl"/><lable for="btnContrl">
+              <!-- <div class="drag-rotate"> -->
+                <img class=" resize-drag loadedDiv" src="./preload/apple.png">
+              <!-- <div class="rotation-handle">&circlearrowright;</div> -->
+              <!-- </div> -->
+            </lable>
+      </div>
+
+   
+      <!-- <div class="box">
+        
+      </div> -->
+
+      <!-- <div id="mydiv1" class="draggable hue saturation brightness alpha loadedDiv" onclick="setIdFunction(this.id)">
+        <input type="checkbox" id="btnContrl"/><lable for="btnContrl">
+          <img class="resize-drag loadedDiv" src="./preload/apple.png">
+        </lable> -->
+      <!-- </div> -->
+      <!-- <div style="z-index: 2; background-color: aqua;">
+        Hello
+      </div> -->
+
+    
+      <!-- <p>Click to make me resizable</p> -->
+        <!-- <div id="duplicater"> 
+            duplicate EVERYTHING INSIDE THIS DIV
+        </div> -->
+    </div>
+    <div class="col-3">
+      <h3>Formatting</h3>
+      <hr/>
+        <button id="remove" onclick="removeThis()">Remove</button>
+        <br/> 
+        <br/> 
+        <button id="button" onclick="duplicate()">Duplicate</button>
+        <br/>
+        <br/>
+        <span>
+        <select id="arrange">
+          <option value="Back">Send to Back</option>
+          <option value="Backwards">Send Backwards</option>
+          <option value="Forward">Bring Forward</option>
+          <option value="Front">Bring to Front</option>
+        </select><button onclick="arrange()">Arrange</button></span>
+        <br/>
+        <br/>
+        <div>
+          <h4>Color</h4>
+          <span>Hue:
+          <div class="sliderContainer center">
+            <input class="div2 hue-range center" id="hue" type="range" value="180" max="360">
+          </div></span>
+          <br/>
+          <span>Saturation:
+            <div class="sliderContainer center">
+              <input class="div2 saturation-range center" id="saturation" type="range" value="100" max="300">
+            </div></span>
+            <br/>
+          <span>Brightness:
+            <div class="sliderContainer center">
+              <input class="div2 brightness-range center" id="brightness" type="range" value="100" max="500">
+            </div></span>
+            <br/>
+          <span>Opacity:
+            <div class="sliderContainer center">
+              <input class="div2 alpha-range center" id="alpha" type="range" value="100" max="100">
+            </div></span>
+        </div>
+
+    </div>   
+  </div>
+  <!-- <button>Save Canvas</button> -->
+</body>
+<script src="script.js"></script>
+</html>
