@@ -4,59 +4,59 @@
     - ### Realism to Representational to Abstract
         - [x] Looks good
     - ### Blur/Shapes
-        - [] The slider needs to dynamically change the blur value
+        - [ ] The slider needs to dynamically change the blur value
             - As of now the slider only changes once the mouse is released
     - ### Blending Modes #1
-        - [] This seems to happen randomly but  the top slider will get stuck when trying to change the value
-        - [] Sliders need to dynamically change the opacity values when moved
+        - [ ] This seems to happen randomly but  the top slider will get stuck when trying to change the value
+        - [ ] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
     - ### Color Modes
-        - [] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
-        - [] The top circle and left circle move apart when they overlap but the right one won’t until all three are overlapping
+        - [ ] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
+        - [ ] The top circle and left circle move apart when they overlap but the right one won’t until all three are overlapping
     - ### Eyedropper
         - [x] Looks good
     - ### Color Input/HTML
         - [x] Looks good
 - ## M2
     - ### Layers
-        - [] Not completed
+        - [ ] Not completed
     - ### Masking
-        - [] Not sure if this is intentional but when the cursor moves far enough to the edges of the screen the image that is being masked out is revealed 
+        - [ ] Not sure if this is intentional but when the cursor moves far enough to the edges of the screen the image that is being masked out is revealed 
     - ### Blending Modes #2
-        - [] This seems to happen randomly but  the top slider will get stuck when trying to change the value
-        - [] Sliders need to dynamically change the opacity values when moved
+        - [ ] This seems to happen randomly but  the top slider will get stuck when trying to change the value
+        - [ ] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
     - ### Brush/Pencil/Color
         - [x] Looks good
 - ## M3
     - ### Blending Modes #3
-        - [] This seems to happen randomly but the top slider will get stuck when trying to change the value
-        - [] Sliders need to dynamically change the opacity values when moved
+        - [ ] This seems to happen randomly but the top slider will get stuck when trying to change the value
+        - [ ] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
     - ### Filters
-        - [] Needs to be optimized
+        - [ ] Needs to be optimized
             - After you choose several filters the module starts to get bogged down
                 - This is related to the “setFilter” function
                     - I think a solution might be to only call “setFilter” once when needed versus constantly
     - ### Adjustments | HSBA
-        - [] Sliders need to dynamically change the opacity values when moved
+        - [ ] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
 - ## M4
     - ### Shapes
-        - [] Shapes need to be restricted to the canvas and not overlap the controls
+        - [ ] Shapes need to be restricted to the canvas and not overlap the controls
     - ### Curves
         - [x] Looks good
     - ### Vector Shapes
         - [x] Looks good
 - ## M5
     - ### Shapes, line, pen tool
-        - [] Not Finished
+        - [ ] Not Finished
     - ### Layout?
-        - [] Not Finished
+        - [ ] Not Finished
     - ### Gradients
         - [x] Looks good
     - ### Clipping Masks
-        - [] Not a bug but, there should be an option to remove the mask and reapply
+        - [ ] Not a bug but, there should be an option to remove the mask and reapply
 - ## M6
     - ### Save as png
         - [x] Looks good
