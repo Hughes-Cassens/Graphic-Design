@@ -7,12 +7,8 @@
   <title>Layers</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" rel="stylesheet">
-  <!-- <script src="../p5.js"></script> -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js" integrity="sha512-ovjLI1ZcZe6bw+ImQ21r+sv8q/Vwob2kq7tFidK6E1LWfi0T4uobbmpfEU1//a9h9o5Kkt+MnMWf6rWlg0EiMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- <script src="sketch.js"></script> -->
-  <script type="text/paperscript" src="script.js" canvas="myCanvas"></script>
-
+  <!-- <script type="text/paperscript" src="script.js" canvas="myCanvas"></script> -->
+  <script src="script.js" defer></script>
 </head>
 <body>
   <!-- <main>
@@ -20,18 +16,56 @@
   <div class="parent">
   <!-- <h1>Layers</h1> -->
   <div class="col-1">
-  <canvas id="myCanvas" resize></canvas>
+  <!-- <canvas id="myCanvas" resize></canvas> -->
+  <div class="line">
+    <img src="./preload/line.png">
+  </div>
+  <div class="rectangle">
+    <img src="./preload/rectangle.png">
+  </div>
+  <div class="text">
+    <img src="./preload/text.png">
+  </div>
+  <div class="mountain">
+    <img src="./preload/mountain.png">
+  </div>
+  <div class="pentagon">
+    <img src="./preload/pentagon.png">
+  </div>
 </div>
 <div class="col-2">
   <div class="layersPanel">
-  
     <h2>Layers</h2>
-    <input type="radio" name="layer" id="layer04">
-    
-    <div class="layer">layer1</div>
-    <div class="layer">layer2</div>
-    <div class="layer">layer3</div>
-    <div class="layer">layer4</div>
+    <!-- <input type="radio" name="layer" id="layer04"> -->
+    <div class="container">
+      <p class="draggable" draggable="true">1</p>
+      <p class="draggable" draggable="true">2</p>
+      <p class="draggable" draggable="true">3</p>
+      <p class="draggable" draggable="true">4</p>
+      <p class="draggable" draggable="true">5</p>
+    </div>
+    <form>
+      <div class="layer line">
+        <input id="line" type="radio" name="layer" value="line"/>
+        <label for="line"></label>
+      </div>
+    <div class="layer rectangle">
+      <input id="rectangle" type="radio" name="layer" value="rectangle"/>
+      <label for="rectangle"></label>
+    </div>
+    <div class="layer">
+      <input id="text" type="radio" name="layer" value="text"/>
+      <label for="text"><img src="./preload/text.png"></label>
+    </div>
+    <div class="layer">
+      <input id="mountain" type="radio" name="layer" value="mountain"/>
+      <label for="mountain"><img src="./preload/mountain.png"></label>
+    </div>
+    <div class="layer">
+      <input id="pentagon" type="radio" name="layer" value="pentagon" />
+      <label for="pentagon"><img src="./preload/pentagon.png"></label>
+    </div>
+  </form>
     <br/>
   </div>
 </div>

@@ -1,33 +1,134 @@
 body {
     font-family: sans-serif;
+    color: black;
+
 }
 
 .parent {
     display: flex;
+    margin-left: 20em;
+    margin-right: 20em;
+    height: 30em;
 }
 
 .col-1 {
     display: flex;
-    float: left;
-    width: 85%;
+    width: 80%;
+    background-color: antiquewhite;
 }
+
+.col-1 img {
+    position: absolute;
+    object-fit: contain;
+    /* width: 100%; */
+    overflow: hidden;
+
+}
+
+.mountain {
+    z-index: 1;
+
+}
+
+.pentagon {
+    z-index: 2;
+}
+
+.rectangle {
+    z-index: 3;
+}
+
+.text {
+    z-index: 4;
+}
+
+.line {
+    z-index: 5;
+}
+
 
 .col-2 {
     display: flex;
-    float: right;
-    width: 15%;
+    width: 20%;
+    z-index: 6;
 
 }
 
 .layersPanel {
-    background-color: darkslategray;
+    background-color: royalblue;
     width: 100%;
+    padding: 1em;
 }
 
 
 .layer {
-    width: 10em;
-    height: 5em;
+    width: 6em;
+    height: 4em;
+    background-color: antiquewhite;
+    margin-top: 1em;
+}
+
+.layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.layer input[type="radio"] {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+
+[name="layer"]:checked+img {
+    border-style: solid;
+    border-width: 10px;
+    border-color: red;
+}
+
+.layer .mountain {
+    background-image: url('./preload/mountain.png');
+    background-position: center;
+    object-fit: contain;
+}
+
+.pentagonImg {
+    background-image: url('./preload/pentagon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline;
+    object-fit: cover;
+}
+
+.layer .rectangle {
+    background-image: url('./preload/rectangle.png');
+}
+
+.layer .text {
+    background-image: url('./preload/text.png');
+}
+
+.layer .line {
+    background-image: url('./preload/line.png');
+}
+
+.container {
+    background-color: #333;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.draggable {
+    padding: 1rem;
     background-color: white;
-    margin: 2em;
+    border: 1px solid black;
+    touch-action: none;
+    cursor: move;
+
+}
+
+.draggable.dragging {
+    touch-action: none;
+    opacity: .5;
 }
