@@ -15,6 +15,7 @@
         - [ ] The top circle and left circle move apart when they overlap but the right one won’t until all three are overlapping
     - ### Eyedropper
         - [x] Looks good
+        - [ ] Change HSL to RGB (refer to helper.js)
     - ### Color Input/HTML
         - [x] Looks good
 - ## M2
@@ -22,6 +23,7 @@
         - [ ] Not completed
     - ### Masking
         - [ ] Not sure if this is intentional but when the cursor moves far enough to the edges of the screen the image that is being masked out is revealed 
+        - [ ] Make masking shape resizable.
     - ### Blending Modes #2
         - [ ] This seems to happen randomly but  the top slider will get stuck when trying to change the value
         - [ ] Sliders need to dynamically change the opacity values when moved
@@ -60,5 +62,6 @@
 - ## M6
     - ### Save as png
         - [x] Looks good
+        - [ ] window.alert before saving to let people know. "Are you sure you want to save this to your computer"
 # All modules need to be double-checked to be sure they are optimized for mobile.
 

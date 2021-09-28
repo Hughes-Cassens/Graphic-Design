@@ -4,25 +4,39 @@
 ###     - Sandbox 1
 - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
 - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
+- [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [ ] Change Checkboxes to bullets.
 ###     - Sandbox 2
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
  - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
+ - [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [ ] Change Checkboxes to bullets.
 ###     - Sandbox 3
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
  - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
+ - [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [ ] Change Checkboxes to bullets.
 ###     - Sandbox 4
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
  - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
+ - [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [ ] Change Checkboxes to bullets.
 ## - M2
 ###     - Sandbox 5
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
- - [ ] Sliders need to dynamically change when value is changed, not on mouse up. 
+ - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
+- [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [ ] Change Checkboxes to bullets. 
 ###     - Sandbox 6
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
- - [ ] Sliders need to dynamically change when value is changed, not on mouse up.  
+ - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
+- [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [ ] Change Checkboxes to bullets.  
 ###     - Sandbox 7
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
- - [ ] Sliders need to dynamically change when value is changed, not on mouse up.   
+ - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
+- [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [ ] Change Checkboxes to bullets.   
 ## - M3
 ###     - Color Modes
  - [ ] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
@@ -34,11 +48,13 @@
 ## - M4
 ###     - Text Editor
  - [ ] Not done
+ - [ ] Rich text changes to code editor
 ###     - Text Scaler
  - [ ] Not done
 ## - M5
 ###     - 3D Canvas
  - [ ] Ideally Controls could use refinement
+ - [ ] Apply Texture
 ###     - Brush/Pencil/ColorModes
  - [x] Looks good
 ###     - Shape/Line/Pen
