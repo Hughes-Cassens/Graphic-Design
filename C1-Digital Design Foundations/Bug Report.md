@@ -4,7 +4,7 @@
     - ### Realism to Representational to Abstract
         - [x] Looks good
     - ### Blur/Shapes
-        - [ ] The slider needs to dynamically change the blur value
+        - [x] The slider needs to dynamically change the blur value
             - As of now the slider only changes once the mouse is released
     - ### Blending Modes #1
         - [ ] This seems to happen randomly but  the top slider will get stuck when trying to change the value
