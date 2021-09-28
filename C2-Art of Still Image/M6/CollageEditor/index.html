@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Collage</title>
-  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="sketch.js"></script> -->
@@ -36,20 +36,32 @@
             <option value="luminosity">Luminosity</option>
           </select>
         </div>
+        <br/>
+        <br/>
       <h3> Filters</h3>
       <hr/>
       <div>
         <select name="filters" id="filters">
-          <option value="No Filter">No Filter</option>
-          <option value="Threshold">Threshold</option>
-          <option value="Grayscale">Grayscale</option>
-          <option value="Invert">Invert</option>
+          <option value=" ">No Filter</option>
+          <option value="brightness(0.8) hue-rotate(350deg) saturate(3) blur(8px) contrast(0.6)">Fade-out</option>
+          <option value="sepia(1)">Sepia</option>
+          <option value="invert(1)">Invert</option>
           <option value="Posterize">Posterize</option>
           <option value="Crystalize">Crystalize</option>
           <option value="Paint">Paint</option>
           <option value="Fresco">Fresco</option>
           <option value="Sponge">Sponge</option>
         </select>
+      </div>
+      <br/>
+        <br/>
+      <h3> Import & Export</h3>
+      <hr/>
+      <div>
+        <input type="file" id="photo-file"  accept="image" onclick="selectImage()"/>
+        <br/>
+        <br/>
+        <button class="" onclick="download()">Export Image</button>
       </div>
     </div>
   
@@ -103,6 +115,8 @@
         </select><button onclick="arrange()">Arrange</button></span>
         <br/>
         <br/>
+        <button>Flip Vertical</button>
+        <button>Flip Horizontal</button>
         <div>
           <h4>Color</h4>
           <span>Hue:
@@ -124,6 +138,8 @@
             <div class="sliderContainer center">
               <input class="div2 alpha-range center" id="alpha" type="range" value="100" max="100">
             </div></span>
+            <br/>
+            <button onclick="resetColors()">Reset</button>
         </div>
 
     </div>   
