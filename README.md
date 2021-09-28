@@ -24,7 +24,6 @@
     - [x] Vector Shapes
 - M5: Illustrator Compositing
     - [ ] Shapes, line, pen tool
-    - [ ] Layout?
     - [x] Gradients
     - [x] Clipping Masks
 - M6: Project Output
@@ -47,6 +46,7 @@
     - [x] Palette Generator
 - M4: Text
     - [ ] Text Editor? A few different typefaces. Size, color, position.
+    - [ ] Text Scaler?
 - M5: Graphic Elements (Digital Art, Shapes, 3D)
     - [x] 3D Canvas
     - [x] Brush/pencil/color

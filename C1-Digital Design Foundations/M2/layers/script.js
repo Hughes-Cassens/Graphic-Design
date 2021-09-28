@@ -1,6 +1,10 @@
 const draggables = document.querySelectorAll('.draggable')
 const containers = document.querySelectorAll('.container')
 
+//Create "Layers" in layer panel to be draggable
+//And change the z-index of the divs in col-1 depending 
+//on where they are positioned in the stack.
+
 draggables.forEach(draggable => {
     draggable.addEventListener('dragstart', () => {
         draggable.classList.add('dragging')
