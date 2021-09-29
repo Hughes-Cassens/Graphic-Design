@@ -19,11 +19,12 @@ body {
 }
 
 .blur-range {
+    
     position: relative;
     z-index: none;
     appearance: none;
     border-radius: 3px;
-    height: 1em;
+    height: .3em;
     width: 45%;
     display: block;
     outline: none;
@@ -39,7 +40,14 @@ body {
             #ff00ff 83%,
             #ff0000 100%); */
 }
-
+.ui-slider .ui-slider-handle {
+    
+    
+    top: -.6em;
+    background: white;
+    border-radius: 50%;
+    
+}
 .blur-range::-webkit-slider-thumb {
     height: 3em;
     width: 3em;
