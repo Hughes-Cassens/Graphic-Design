@@ -45,28 +45,28 @@ function setIdFunction(id) {
   if(original != ""){
      var hueSlider = document.getElementById('hue');
   
-        hueSlider.addEventListener("change", function() {
+        hueSlider.addEventListener("input", function() {
         hueValue= "hue-rotate("+this.value+"deg)";
         original.style.filter =  hueValue+saturationValue+brightnessValue+alphaValue;
       })
 
       var saturationSlider = document.getElementById('saturation');
     
-        saturationSlider.addEventListener("change", function() {
+        saturationSlider.addEventListener("input", function() {
         saturationValue = "saturate("+this.value+"%)";
         original.style.filter =  hueValue+saturationValue+brightnessValue+alphaValue;
       })
 
       var brightnessSlider = document.getElementById('brightness');
       
-        brightnessSlider.addEventListener("change", function() {
+        brightnessSlider.addEventListener("input", function() {
         brightnessValue = "brightness("+this.value+"%)";
         original.style.filter =  hueValue+saturationValue+brightnessValue+alphaValue;
       })
 
       var alphaSlider = document.getElementById('alpha');
         
-        alphaSlider.addEventListener("change", function() {
+        alphaSlider.addEventListener("input", function() {
         alphaValue = "opacity("+this.value+"%)";
         original.style.filter =  hueValue+saturationValue+brightnessValue+alphaValue;
       })

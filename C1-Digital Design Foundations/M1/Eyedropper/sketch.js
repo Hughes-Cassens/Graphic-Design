@@ -40,5 +40,5 @@ function draw() {
 	text(rgbToHex(getColor[0], getColor[1], getColor[2]), window.innerWidth*0.6, height * 0.5);
 	//text(rgbToHsl(getColor), window.innerWidth*0.8, height * 0.6);
 	pop();
-
+	
 }

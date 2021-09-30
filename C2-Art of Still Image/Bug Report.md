@@ -3,40 +3,41 @@
 ## - M1
 ###     - Sandbox 1
 - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
-- [ ] Sliders need to dynamically change when value is changed, not on mouse up.
-- [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
-- [ ] Change Checkboxes to bullets.
+- [x] Sliders need to dynamically change when value is changed, not on mouse up.
+- [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [x] Change Checkboxes to bullets.
 ###     - Sandbox 2
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
- - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
- - [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
-- [ ] Change Checkboxes to bullets.
+ - [x] Sliders need to dynamically change when value is changed, not on mouse up.
+ - [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [x] Change Checkboxes to bullets.
 ###     - Sandbox 3
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
- - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
- - [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
-- [ ] Change Checkboxes to bullets.
+ - [x] Sliders need to dynamically change when value is changed, not on mouse up.
+ - [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [x] Change Checkboxes to bullets.
 ###     - Sandbox 4
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
- - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
- - [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
-- [ ] Change Checkboxes to bullets.
+ - [ ] Hexagon shape dosnt respond to sliders
+ - [x] Sliders need to dynamically change when value is changed, not on mouse up.
+ - [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [x] Change Checkboxes to bullets.
 ## - M2
 ###     - Sandbox 5
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
- - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
-- [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
-- [ ] Change Checkboxes to bullets. 
+ - [x] Sliders need to dynamically change when value is changed, not on mouse up.
+- [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [x] Change Checkboxes to bullets. 
 ###     - Sandbox 6
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
- - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
-- [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
-- [ ] Change Checkboxes to bullets.  
+ - [x] Sliders need to dynamically change when value is changed, not on mouse up.
+- [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [x] Change Checkboxes to bullets.  
 ###     - Sandbox 7
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
- - [ ] Sliders need to dynamically change when value is changed, not on mouse up.
-- [ ] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
-- [ ] Change Checkboxes to bullets.   
+ - [x] Sliders need to dynamically change when value is changed, not on mouse up.
+- [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
+- [x] Change Checkboxes to bullets.   
 ## - M3
 ###     - Color Modes
  - [ ] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)

@@ -11,7 +11,7 @@
         - [x] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
     - ### Color Modes
-        - [ ] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
+        - [x] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
         - [ ] The top circle and left circle move apart when they overlap but the right one won’t until all three are overlapping
     - ### Eyedropper
         - [x] Looks good
@@ -25,15 +25,15 @@
         - [ ] Not sure if this is intentional but when the cursor moves far enough to the edges of the screen the image that is being masked out is revealed 
         - [ ] Make masking shape resizable.
     - ### Blending Modes #2
-        - [ ] This seems to happen randomly but  the top slider will get stuck when trying to change the value
-        - [ ] Sliders need to dynamically change the opacity values when moved
+        - [x] This seems to happen randomly but  the top slider will get stuck when trying to change the value
+        - [x] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
     - ### Brush/Pencil/Color
         - [x] Looks good
 - ## M3
     - ### Blending Modes #3
-        - [ ] This seems to happen randomly but the top slider will get stuck when trying to change the value
-        - [ ] Sliders need to dynamically change the opacity values when moved
+        - [x] This seems to happen randomly but the top slider will get stuck when trying to change the value
+        - [x] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
     - ### Filters
         - [ ] Needs to be optimized
@@ -41,7 +41,7 @@
                 - This is related to the “setFilter” function
                     - I think a solution might be to only call “setFilter” once when needed versus constantly
     - ### Adjustments | HSBA
-        - [ ] Sliders need to dynamically change the opacity values when moved
+        - [x] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
 - ## M4
     - ### Shapes
@@ -60,6 +60,6 @@
 - ## M6
     - ### Save as png
         - [x] Looks good
-        - [ ] window.alert before saving to let people know. "Are you sure you want to save this to your computer"
+        - [x] window.alert before saving to let people know. "Are you sure you want to save this to your computer"
 # All modules need to be double-checked to be sure they are optimized for mobile.
 

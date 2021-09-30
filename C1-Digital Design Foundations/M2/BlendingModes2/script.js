@@ -43,11 +43,11 @@ const updateThirdBlendMode = () => {
 
 
 //Opacity Sliders
-sliderImage1.addEventListener("change", function() {
+sliderImage1.addEventListener("input", function() {
   imgOne.style.opacity = this.value / this.max;
 })
 
-sliderImage2.addEventListener("change", function() {
+sliderImage2.addEventListener("input", function() {
   imgTwo.style.opacity = this.value / this.max;
 })
 
