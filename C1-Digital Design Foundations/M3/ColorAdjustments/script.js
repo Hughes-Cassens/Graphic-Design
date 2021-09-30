@@ -8,25 +8,25 @@ var brightness = document.getElementsByClassName('brightness')[0];
 var alpha = document.getElementsByClassName('alpha')[0];
 
 //hue
-hueSlider.addEventListener("change", function() {
+hueSlider.addEventListener("input", function() {
   hue.style.filter = "hue-rotate("+this.value+"deg)";
   // console.log(this.value+"deg");
 })
 
 //saturation
-saturationSlider.addEventListener("change", function() {
+saturationSlider.addEventListener("input", function() {
   saturation.style.filter = "saturate("+this.value+"%)";
   // console.log(img.style.filter);
 })
 
 //brightness
-brightnessSlider.addEventListener("change", function() {
+brightnessSlider.addEventListener("input", function() {
   brightness.style.filter = "brightness("+this.value+"%)";
   // console.log(img.style.filter);
 })
 
 //alpha
-alphaSlider.addEventListener("change", function() {
+alphaSlider.addEventListener("input", function() {
   alpha.style.filter = "opacity("+this.value+"%)";
   // console.log(img.style.filter);
 })
