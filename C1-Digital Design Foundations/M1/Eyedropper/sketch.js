@@ -21,7 +21,7 @@ function draw() {
 	push();
 	stroke(getColor[0], getColor[1], getColor[2]);
 	fill(getColor[0], getColor[1], getColor[2]);
-	ellipse(window.innerWidth*0.8, height * 0.3, 133, 133);
+	ellipse(window.innerWidth*0.6, height * 0.3, 133, 133);
 	pop();
 
 
@@ -36,8 +36,9 @@ function draw() {
 	textFont('Source Code Pro');
 	textAlign(CENTER, CENTER);
 	textStyle(BOLD);
-	text(rgbToHex(getColor[0], getColor[1], getColor[2]), window.innerWidth*0.8, height * 0.5);
-	text(rgbToHsl(getColor), window.innerWidth*0.8, height * 0.6);
+	text(getColor, width * 0.6, height * 0.6);
+	text(rgbToHex(getColor[0], getColor[1], getColor[2]), window.innerWidth*0.6, height * 0.5);
+	//text(rgbToHsl(getColor), window.innerWidth*0.8, height * 0.6);
 	pop();
 
 }

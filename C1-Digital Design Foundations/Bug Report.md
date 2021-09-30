@@ -15,7 +15,7 @@
         - [ ] The top circle and left circle move apart when they overlap but the right one won’t until all three are overlapping
     - ### Eyedropper
         - [x] Looks good
-        - [ ] Change HSL to RGB (refer to helper.js)
+        - [x] Change HSL to RGB (refer to helper.js)
     - ### Color Input/HTML
         - [x] Looks good
 - ## M2
@@ -52,8 +52,6 @@
         - [x] Looks good
 - ## M5
     - ### Shapes, line, pen tool
-        - [ ] Not Finished
-    - ### Layout?
         - [ ] Not Finished
     - ### Gradients
         - [x] Looks good

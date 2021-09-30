@@ -204,7 +204,55 @@ function arrange(e) {
 
 //TODO: Users should be able to upload their own files as divs?
   //Creates new div
+  
   //Replaces the innerHTML img source?
+
+  // function selectImage() {
+  //   document.getElementById('photo-file').click();
+  // }
+
+  var i = 0;
+  var original = document.getElementById('mydiv');
+  function createNew() {
+    var clone = original.cloneNode(true); // "deep" clone
+    i++;
+    clone.id = "mydiv" + i;
+    original.parentNode.appendChild(clone);
+      console.log("i was here first")
+      document.querySelector('input[type="file"]').addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                  console.log(clone.id)
+                  var imgChange = document.getElementById(clone.id);
+                  console.log(imgChange);
+                  
+                  //Never gets in here
+                  // img = () => {
+                  //   //Never gets in here
+                   
+                  //     URL.revokeObjectURL(img.src);  // no longer needed, free memory
+                  // }
+                  
+                  imgChange.getElementsByClassName('loadedImage')[0].src = URL.createObjectURL(this.files[0]);  // set src to blob url
+                  //console.log(URL.createObjectURL(this.files[0]));
+                  //document.getElementById(clone.id).getElementsByClassName('loadedImage')[0].src = URL.createObjectURL(this.files[0]);
+                  
+                }
+          });   
+}
+
+  //createNew Div 
+  // window.addEventListener('load', function() {
+  //   document.querySelector('input[type="file"]').addEventListener('change', function() {
+  //     if (this.files && this.files[0]) {
+  //           var img = document.querySelector('img');
+  //           img.onload = () => {
+  //               URL.revokeObjectURL(img.src);  // no longer needed, free memory
+  //           }
+  
+  //           img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+  //       }
+  //   });
+  // });
 
 //TODO: Flip Vertical
   //Grab Id of whichever one is selected

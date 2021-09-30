@@ -37,6 +37,9 @@
         </div>
         <br/>
         <br/>
+        <!-- If anyone can get this to work without overriding the existing filters from 
+        the color module, you're amazing. -->
+
       <!-- <h3> Filters</h3>
       <hr/>
       <div>
@@ -56,9 +59,14 @@
         <br/> -->
       <h3>Upload</h3>
       <hr/>
-      <div>
-        <input type="file" id="photo-file"  accept="image" onclick="selectImage()"/>
-      </div>
+      <!-- <button onclick="selectImage()">
+        <input type="file" id="photo-file"  accept="image"/>Import Image
+      </button> -->
+      <button class="inputWrapper" onclick="createNew()">Add New
+        <input class="fileInput" type='file'/>
+      </button>
+      <!-- <br><img id="myImg" src="#"> -->
+
     </div>
  
     <div id="myCanvas" class="col-2">
@@ -66,7 +74,6 @@
           <div id="mydiv" class="draggable hue saturation brightness alpha loadedDiv" onclick="setIdFunction(this.id)">
                 <img id="mydivImage" class="loadedImage resize-drag loadedDiv" src="./preload/apple.png">
           </div>
-
     </div>
   
     <div class="col-3">
@@ -111,7 +118,7 @@
               <input class="div2 alpha-range center" id="alpha" type="range" value="100" max="100">
             </div></span>
             <br/>
-            <button onclick="resetColors()">Reset</button>
+            <button onclick="resetColors()">Reset Color</button>
         </div>
 
     </div>   
