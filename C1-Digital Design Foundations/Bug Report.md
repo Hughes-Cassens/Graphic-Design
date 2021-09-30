@@ -25,15 +25,15 @@
         - [ ] Not sure if this is intentional but when the cursor moves far enough to the edges of the screen the image that is being masked out is revealed 
         - [ ] Make masking shape resizable.
     - ### Blending Modes #2
-        - [ ] This seems to happen randomly but  the top slider will get stuck when trying to change the value
-        - [ ] Sliders need to dynamically change the opacity values when moved
+        - [x] This seems to happen randomly but  the top slider will get stuck when trying to change the value
+        - [x] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
     - ### Brush/Pencil/Color
         - [x] Looks good
 - ## M3
     - ### Blending Modes #3
-        - [ ] This seems to happen randomly but the top slider will get stuck when trying to change the value
-        - [ ] Sliders need to dynamically change the opacity values when moved
+        - [x] This seems to happen randomly but the top slider will get stuck when trying to change the value
+        - [x] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
     - ### Filters
         - [ ] Needs to be optimized
@@ -41,7 +41,7 @@
                 - This is related to the “setFilter” function
                     - I think a solution might be to only call “setFilter” once when needed versus constantly
     - ### Adjustments | HSBA
-        - [ ] Sliders need to dynamically change the opacity values when moved
+        - [x] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
 - ## M4
     - ### Shapes
