@@ -5,6 +5,7 @@
 var original = "";
 var original;
 var selectPosition;
+var transform;
 
 var hueValue = "hue-rotate(360deg)";
 var saturationValue = "saturate(100%)";
@@ -45,28 +46,28 @@ function setIdFunction(id) {
   if(original != ""){
      var hueSlider = document.getElementById('hue');
   
-        hueSlider.addEventListener("change", function() {
+        hueSlider.addEventListener("input", function() {
         hueValue= "hue-rotate("+this.value+"deg)";
         original.style.filter =  hueValue+saturationValue+brightnessValue+alphaValue;
       })
 
       var saturationSlider = document.getElementById('saturation');
     
-        saturationSlider.addEventListener("change", function() {
+        saturationSlider.addEventListener("input", function() {
         saturationValue = "saturate("+this.value+"%)";
         original.style.filter =  hueValue+saturationValue+brightnessValue+alphaValue;
       })
 
       var brightnessSlider = document.getElementById('brightness');
       
-        brightnessSlider.addEventListener("change", function() {
+        brightnessSlider.addEventListener("input", function() {
         brightnessValue = "brightness("+this.value+"%)";
         original.style.filter =  hueValue+saturationValue+brightnessValue+alphaValue;
       })
 
       var alphaSlider = document.getElementById('alpha');
         
-        alphaSlider.addEventListener("change", function() {
+        alphaSlider.addEventListener("input", function() {
         alphaValue = "opacity("+this.value+"%)";
         original.style.filter =  hueValue+saturationValue+brightnessValue+alphaValue;
       })
@@ -188,7 +189,7 @@ function arrange(e) {
 }
 
 
-//TODO: Apply Blending Modes to individual divs
+  //Apply Blending Modes to individual divs
   //Grab Id of whichever one is selected
   //Grad value from blending modes
   //Add css classlist to selected div
@@ -201,25 +202,44 @@ function arrange(e) {
 
  
 
-//TODO: Apply Filters to individual divs?
- //Grab Id of whichever one is selected
-  //Grab value from filter
-  var filterType = document.getElementById('filters');
-  filterType.addEventListener("change", function(){
-    const filterSelection = filterType.value;
-    console.log(filterSelection);
-    original.style.filter = filterSelection;
-  })
-  //Add css classlist to selected div
-
 //TODO: Users should be able to upload their own files as divs?
   //Creates new div
   //Replaces the innerHTML img source?
-//TODO: Export Canvas
-  //download()
+
 //TODO: Flip Vertical
   //Grab Id of whichever one is selected
-  //Add css transform: scaleY(-1)
+  //var thisImg = document.getElementsByClassName("loadedImage");
+  flipV.addEventListener("click", function(){
+    var flipThis = original.getElementsByClassName("loadedImage")[0];
+    if(flipThis.classList.contains("horizontallyInverted")) {
+      flipThis.classList.remove("horizontallyInverted");
+      flipThis.classList.add("allInverted");
+   }else if(flipThis.classList.contains("verticallyInverted")) {
+      flipThis.classList.remove("verticallyInverted");
+   }else if(flipThis.classList.contains("allInverted")) {
+      flipThis.classList.remove("allInverted");
+      flipThis.classList.add("horizontallyInverted");
+   }else{
+      flipThis.classList.add("verticallyInverted");
+   }
+  })
+ 
 //TODO: Flip Horizontal
 //Grab Id of whichever one is selected
   //Add css transform: scaleX(-1)
+
+  flipH.addEventListener("click", function(){
+     var flipThis = original.getElementsByClassName("loadedImage")[0];
+  if(flipThis.classList.contains("verticallyInverted")) {
+    flipThis.classList.remove("verticallyInverted");
+    flipThis.classList.add("allInverted");
+ }else if(flipThis.classList.contains("horizontallyInverted")){
+    flipThis.classList.remove("horizontallyInverted");
+ }else if(flipThis.classList.contains("allInverted")){
+    flipThis.classList.remove("allInverted");
+    flipThis.classList.add("verticallyInverted");
+ }else{
+   flipThis.classList.add("horizontallyInverted");
+ }
+})
+

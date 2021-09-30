@@ -264,3 +264,15 @@ body {
     user-select: none;
     touch-action: none;
 }
+
+.verticallyInverted {
+    transform: rotateX(-180deg);
+}
+
+.horizontallyInverted {
+    transform: rotateY(-180deg);
+}
+
+.allInverted {
+    transform: rotate(-180deg);
+}
