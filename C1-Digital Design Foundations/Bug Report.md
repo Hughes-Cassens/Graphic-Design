@@ -7,8 +7,8 @@
         - [x] The slider needs to dynamically change the blur value
             - As of now the slider only changes once the mouse is released
     - ### Blending Modes #1
-        - [ ] This seems to happen randomly but  the top slider will get stuck when trying to change the value
-        - [ ] Sliders need to dynamically change the opacity values when moved
+        - [x] This seems to happen randomly but  the top slider will get stuck when trying to change the value
+        - [x] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
     - ### Color Modes
         - [ ] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)

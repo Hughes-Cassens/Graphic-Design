@@ -12,6 +12,10 @@ var imgOne = document.getElementsByClassName('image1')[0];
 var imgTwo = document.getElementsByClassName('image2')[0];
 var imgThree = document.getElementsByClassName('image3')[0];
 
+var opacity1
+var opacity2
+var opacity3
+
 
 blendingModes1.addEventListener("change", function() {
   const selection1 = blendingModes1.value;
@@ -43,17 +47,52 @@ blendingModes3.addEventListener("change", function() {
 
 
 //Opacity Sliders
-sliderImage1.addEventListener("change", function() {
-  imgOne.style.opacity = this.value / this.max;
+// sliderImage1.addEventListener("change", function() {
+//   imgOne.style.opacity = this.value / this.max;
+// })
+
+// sliderImage2.addEventListener("change", function() {
+//   imgTwo.style.opacity = this.value / this.max;
+// })
+
+// sliderImage3.addEventListener("change", function() {
+//   imgThree.style.opacity = this.value / this.max;
+// })
+// Updated slider
+$("#slider1").slider({
+  value: 50,
+  min: 1,
+  max: 100,
+  slide: handleSlideChange1
+
+})
+$("#slider2").slider({
+  value: 50,
+  min: 1,
+  max: 100,
+  slide: handleSlideChange2
+
+})
+$("#slider3").slider({
+  value: 50,
+  min: 1,
+  max: 100,
+  slide: handleSlideChange3
+
 })
 
-sliderImage2.addEventListener("change", function() {
-  imgTwo.style.opacity = this.value / this.max;
-})
-
-sliderImage3.addEventListener("change", function() {
-  imgThree.style.opacity = this.value / this.max;
-})
+function handleSlideChange1(event, slider){
+  opacity1 = slider.value;
+  $("#image1").css("opacity", " "+opacity1+"%");
+}
+function handleSlideChange2(event, slider){
+  opacity2 = slider.value
+  $("#image2").css("opacity", " "+opacity2+"%")
+}
+function handleSlideChange3(event, slider){
+  opacity3 = slider.value
+  $("#image3").css("opacity", " "+opacity3+"%")
+}
 
 
 //Spencer I am so sorry
