@@ -24,4 +24,5 @@ function rgbToHsl(rgb) {
 	l = Math.round(lum * 100);
 	//a = parseFloat(rgb[3]) || 1;
 	return [h, s, l, /*a*/ ];
+	
 }

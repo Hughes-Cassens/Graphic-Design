@@ -11,7 +11,7 @@
         - [x] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
     - ### Color Modes
-        - [ ] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
+        - [x] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
         - [ ] The top circle and left circle move apart when they overlap but the right one won’t until all three are overlapping
     - ### Eyedropper
         - [x] Looks good
@@ -62,6 +62,6 @@
 - ## M6
     - ### Save as png
         - [x] Looks good
-        - [ ] window.alert before saving to let people know. "Are you sure you want to save this to your computer"
+        - [x] window.alert before saving to let people know. "Are you sure you want to save this to your computer"
 # All modules need to be double-checked to be sure they are optimized for mobile.
 
