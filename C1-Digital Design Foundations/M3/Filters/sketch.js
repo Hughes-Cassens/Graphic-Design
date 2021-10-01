@@ -1,3 +1,6 @@
+  var filterInput;
+
+
 function _(selector){
   return document.querySelector(selector);
 }
@@ -12,16 +15,28 @@ function setup() {
   createCanvas(1080, 720);
   
   image(img, 0, 0, 1080, 720);
+  filterInput = document.getElementById("filters").value;
 }
 
 document.getElementById('filters').addEventListener('change', function(){
   print(_('#filters').value);
   setFilter();
+<<<<<<< Updated upstream
 });
 
 function draw() {
   
+=======
+  
+
+>>>>>>> Stashed changes
 }
+
+
+
+
+
+
 
 function setFilter() {
 
