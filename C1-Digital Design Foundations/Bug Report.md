@@ -36,7 +36,7 @@
         - [x] Sliders need to dynamically change the opacity values when moved
             - As of now the slider only changes once the mouse is released
     - ### Filters
-        - [ ] Needs to be optimized
+        - [x] Needs to be optimized
             - After you choose several filters the module starts to get bogged down
                 - This is related to the “setFilter” function
                     - I think a solution might be to only call “setFilter” once when needed versus constantly

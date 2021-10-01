@@ -14,9 +14,13 @@ function setup() {
   image(img, 0, 0, 1080, 720);
 }
 
-function draw() {
+document.getElementById('filters').addEventListener('change', function(){
   print(_('#filters').value);
   setFilter();
+});
+
+function draw() {
+  
 }
 
 function setFilter() {
