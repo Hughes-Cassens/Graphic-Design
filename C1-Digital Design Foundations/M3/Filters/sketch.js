@@ -21,16 +21,7 @@ function setup() {
 document.getElementById('filters').addEventListener('change', function(){
   print(_('#filters').value);
   setFilter();
-<<<<<<< Updated upstream
-});
-
-function draw() {
-  
-=======
-  
-
->>>>>>> Stashed changes
-}
+})
 
 
 
