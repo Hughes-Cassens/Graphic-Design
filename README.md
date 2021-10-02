@@ -52,7 +52,7 @@
     - [x] Brush/pencil/color
     - [ ] Shape, line, pen tool
 - M6: Manipulation (Retouching, Abstraction, Collage)
-    - [ ] Collage editor?
-    - [ ] Abstraction: Overlay/filters, blending modes, opacity
+    - [x] Collage editor?
+    - [x] Abstraction: Overlay/filters, blending modes, opacity
 
 
