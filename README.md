@@ -23,7 +23,7 @@
     - [x] Curves
     - [x] Vector Shapes
 - M5: Illustrator Compositing
-    - [ ] Shapes, line, pen tool
+    - [x] Shapes, line, pen tool
     - [x] Gradients
     - [x] Clipping Masks
 - M6: Project Output
@@ -50,7 +50,7 @@
 - M5: Graphic Elements (Digital Art, Shapes, 3D)
     - [x] 3D Canvas
     - [x] Brush/pencil/color
-    - [ ] Shape, line, pen tool
+    - [x] Shape, line, pen tool
 - M6: Manipulation (Retouching, Abstraction, Collage)
     - [x] Collage editor?
     - [x] Abstraction: Overlay/filters, blending modes, opacity
