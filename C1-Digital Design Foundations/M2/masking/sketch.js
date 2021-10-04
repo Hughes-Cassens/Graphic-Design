@@ -34,9 +34,13 @@ function draw() {
   console.log(revealSize);
 }
 
+
 function mouseClickedIncrease(){
     revealSize = revealSize + 100;
 }
 function mouseClickedDecrease(){
   revealSize = revealSize - 100;
+  if (revealSize <= 0) {
+    revealSize = 0;
+  }
 }
