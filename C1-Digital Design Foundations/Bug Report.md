@@ -52,7 +52,7 @@
         - [x] Looks good
 - ## M5
     - ### Shapes, line, pen tool
-        - [ ] Not Finished
+        - [x] Not Finished
     - ### Gradients
         - [x] Looks good
     - ### Clipping Masks
