@@ -22,8 +22,8 @@
     - ### Layers
         - [ ] Not completed
     - ### Masking
-        - [ ] Not sure if this is intentional but when the cursor moves far enough to the edges of the screen the image that is being masked out is revealed 
-        - [ ] Make masking shape resizable.
+        - [x] Not sure if this is intentional but when the cursor moves far enough to the edges of the screen the image that is being masked out is revealed 
+        - [x] Make masking shape resizable.
     - ### Blending Modes #2
         - [x] This seems to happen randomly but  the top slider will get stuck when trying to change the value
         - [x] Sliders need to dynamically change the opacity values when moved

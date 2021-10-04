@@ -1,5 +1,8 @@
 let revealSize = 100;
 let townImage;
+var increase = document.getElementById('increase');
+
+
 
 function preload(){
   townImage = loadImage('preload/town.jpg');
@@ -16,10 +19,10 @@ function draw() {
   translate(mouseX, mouseY);
   beginShape();
   // Exterior part of shape, clockwise winding
-  vertex(-width, -height);
-  vertex(width, -height);
-  vertex(width, height);
-  vertex(-width, height);
+  vertex(-windowWidth, -windowHeight);
+  vertex(windowWidth, -windowHeight);
+  vertex(windowWidth, windowHeight);
+  vertex(-windowWidth, windowHeight);
   // Interior part of shape, counter-clockwise winding
   beginContour();
   vertex(-revealSize, -revealSize);
@@ -28,4 +31,12 @@ function draw() {
   vertex(revealSize, -revealSize);
   endContour();
   endShape(CLOSE);
+  console.log(revealSize);
+}
+
+function mouseClickedIncrease(){
+    revealSize = revealSize + 100;
+}
+function mouseClickedDecrease(){
+  revealSize = revealSize - 100;
 }

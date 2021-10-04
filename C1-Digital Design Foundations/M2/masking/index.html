@@ -12,6 +12,9 @@
     }
   </style>
   <!-- <script src="../p5.js"></script> -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- <script src="../addons/p5.sound.js"></script> -->
   <script src="sketch.js"></script>
@@ -19,6 +22,8 @@
 
 <body>
   <h1>Masking</h1>
+  <button onclick="mouseClickedIncrease()" id="increase">Increase Mask Size</button>
+  <button onclick="mouseClickedDecrease()" id="decrease">Decrease Mask Size</button>
   <main>
   </main>
 </body>

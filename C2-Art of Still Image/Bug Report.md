@@ -40,7 +40,7 @@
 - [x] Change Checkboxes to bullets.   
 ## - M3
 ###     - Color Modes
- - [ ] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
+ - [x] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
  - [ ] The top circle and left circle move apart when they overlap but the right one won’t until all three are overlapping
 ###     - Color Input
  - [x] Looks good.
