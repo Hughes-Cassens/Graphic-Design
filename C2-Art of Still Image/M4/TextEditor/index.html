@@ -5,216 +5,106 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Text Editor</title>
-  <link rel="stylesheet" 
-  href=
-"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
-  integrity=
-"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" 
-  crossorigin="anonymous">
-<!-- fontawesome cdn For Icons -->
-<link rel="stylesheet"
-  href=
-"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" 
-  integrity=
-"sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" 
-  crossorigin="anonymous" />
-<link rel="stylesheet"
-  href=
-"https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
-  integrity=
-"sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-  crossorigin="anonymous" />
-<link rel ="stylsheet" src="style.css" />
 
-  <!-- <script src="../p5.js"></script> -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-  <!-- <script src="../addons/p5.sound.js"></script> -->
-  <!-- <script src="sketch.js"></script> -->
+
+<script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+<!-- Not really changing it to code, more like a codeblock -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<!-- Theme included stylesheets -->
+<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+
+<!-- I don't know why but external stylesheet isn't working -->
+<style>
+  html {
+  height: 100%;
+  }
+  body {
+    margin: 0;
+    height: 100%;
+    }
+  /* Tell Quill not to scroll */
+    #editor-container {
+      height: auto;
+      min-height: 100%;
+      padding: 50px;
+    }
+    #editor-container .ql-editor {
+      font-size: 18px;
+      overflow-y: visible; 
+    }
+
+    /* Specify our own scrolling container */
+    #scrolling-container {
+      height: 100%;
+      min-height: 100%;
+      overflow-y: auto;
+    }
+
+</style>
+
 </head>
 
 <body>
-  <section class="">
-    <h1>TEXT EDITOR</h1>
-
-    <div>
-      <select aria-label="Select Text Type" name="text-node" id="text-node">
-      <option value="h1">Header 1</option>
-      <option value="h2">Header 2</option>
-      <option value="h3">Header 3</option>
-      <option value="h4">Header 4</option>
-      <option value="h5">Header 5</option>
-      <option value="h6">Header 6</option>
-      <option value="p">Paragraph</option>
-    </select>
-
-    <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="format('bold')"><span class="fa fa-bold fa-fw"></span></a>
-      </button>
-    
-      <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="format('italic')"><span class="fa fa-italic fa-fw"></span></a>
-      </button>
-      
-    <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="format('underline')"><space class="fas fa-underline"></span></a>
-        </button>
-        
-    <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="format('strike')"><span class="fa fa-strikethrough"></span></a>
-    </button>
-    
-    <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="format('sub')"><span class="fas fa-subscript"></span></a>
-      </button>
-      
-    <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="format('sup')"><span class="fas fa-superscript"></span></a>
-    </button>
-     
-    
-    <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="format('insertorderedlist')"><span class="fas fa-list-ol"></span></a>
-    </button>
-    
-    <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="format('insertunorderedlist')"><span class="fa fa-list fa-fw"></span></a>
-    </button>
-
-          <button type="button" 
-          onclick="f3()" 
-          class=" shadow-sm btn btn-outline-primary" 
-          data-toggle="tooltip" 
-          data-placement="top"
-          title="Left Align">
-    <i class="fas fa-align-left"></i></button>
-    <button type="button" 
-          onclick="f4()" 
-          class="btn shadow-sm btn-outline-secondary" 
-          data-toggle="tooltip" 
-          data-placement="top" 
-          title="Center Align">
-    <i class="fas fa-align-center"></i></button>
-    <button type="button" 
-          onclick="f5()" 
-          class="btn shadow-sm btn-outline-primary" 
-          data-toggle="tooltip" 
-          data-placement="top" 
-          title="Right Align">
-    <i class="fas fa-align-right"></i></button>
-    <button type="button" 
-          onclick="f6()" 
-          class="btn shadow-sm btn-outline-secondary" 
-          data-toggle="tooltip" 
-          data-placement="top" 
-          title="Uppercase Text">
-      <i class="fas fa-align-justify"></i></button>
-
-      
-          <button type="button" 
-                  onclick="f9()" 
-                  class="btn shadow-sm btn-outline-primary side" 
-                  data-toggle="tooltip" 
-                  data-placement="top" 
-                  title="Tooltip on top">
-  Clear All Text</button>
-     
-  </div>
-  <div>
-    <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="setUrl()"><span class="fa fa-link fa-fw"></span></a>
-    </button>
-    
-    <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="setUrl()"><span class="fas fa-outdent"></span></a>
-    </button>
-    
-    <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="setUrl()"><span class="fas fa-indent"></span></a>
-    </button>
-    
-    <select name="font-node" id="font-node">
-      <option value="helvetica">Helvetica</option>
-      <option value="georgia">Georgia</option>
-      <option value="times">Times New Roman</option>
-      <option value="courier">Courier New</option>
-      <option value="h5">Header 5</option>
-      <option value="h6">Header 6</option>
-    </select>
-
-    
-    <input type="color" /><i class="fas fa-font"></i>
-    <input type="color" /><i class="fas fa-highlighter"></i>
-
-      <select id="font-size">
-        <option value="4">4</option>
-        <option value="8">8</option>
-        <option value="12">12</option>
-        <option value="16">16</option>
-        <option value="20">20</option>
-        <option value="24">24</option>
-        <option value="28">28</option>
-        <option value="32">32</option>
-        <option value="36">36</option>
-        <option value="40">40</option>
-        <option value="44">44</option>
-        <option value="48">48</option>
-        <option value="52">52</option>
-        <option value="56">56</option>
-        <option value="60">60</option>
-        <option value="64">64</option>
-        <option value="68">68</option>
-        <option value="72">72</option>
-        </select>
-
-    <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="setUrl()"><span class="fas fa-text-width"></span></a>
-    </button>
-    <button type="button" class="btn shadow-sm btn-outline-secondary">
-      <a href="javascript:void(0)" onclick="setUrl()"><span class="fas fa-text-height"></span></a>
-    </button>
-
-    <button type="button" 
-          onclick="f6()" 
-          class="btn shadow-sm btn-outline-secondary" 
-          data-toggle="tooltip" 
-          data-placement="top" 
-          title="Uppercase Text">
-          
-    Upper Case</button>
-        <button type="button" 
-                onclick="f7()" 
-                class="btn shadow-sm btn-outline-primary" 
-                data-toggle="tooltip" 
-                data-placement="top" 
-                title="Lowercase Text">
-Lower Case</button>
-        <button type="button" 
-                onclick="f8()" 
-                class="btn shadow-sm btn-outline-primary" 
-                data-toggle="tooltip" 
-                data-placement="top" 
-                title="Capitalize Text">
-Capitalize</button>
-
-<span><input id="txtFormatUrl" placeholder="url" class="form-control"></span>
-  
+  <div id="scrolling-container">
+    <div id="editor-container">
+      <p>Hello World!</p>
+      <p>Some initial <strong>bold</strong> text</p>
+      <p><br></p>
+    </div>
 </div>
 
-  <div class="editor" id="sampleeditor">
-        <textarea id="textarea1" 
-        class="input shadow" 
-        name="name" 
-        rows="15" 
-        cols="100" 
-        placeholder="Your text here ">
-    </textarea>
-    </div>
-    
-</section>
-<script src="home.js"></script>
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
-  <main>
-  </main>
+<!-- Initialize Quill editor -->
+<script>
+  hljs.configure({   // optionally configure hljs
+  languages: ['javascript', 'ruby', 'python']
+  });
+
+var toolbarOptions = [
+  [{ 'font': [] }],
+  ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+  ['blockquote'],
+
+  [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+  [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+  [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+  [{ 'direction': 'rtl' }],                         // text direction
+
+  [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+  [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+  [{ 'align': [] }],
+  ['image', 'video'],
+
+  ['clean'],                                         // remove formatting button
+
+];
+
+
+  var quill = new Quill('#editor-container', {
+    modules: {
+      syntax: true,
+      toolbar: toolbarOptions, 
+      history: {
+      delay: 2000,
+      maxStack: 500,
+      userOnly: true,
+    },
+    },
+    
+    scrollingContainer: '#scrolling-container', 
+    theme: 'snow'
+  });
+</script>
 </body>
+
 
 </html>
