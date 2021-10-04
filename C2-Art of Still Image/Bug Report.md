@@ -18,7 +18,7 @@
 - [x] Change Checkboxes to bullets.
 ###     - Sandbox 4
  - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
- - [ ] Hexagon shape dosnt respond to sliders
+ - [x] Hexagon shape dosnt respond to sliders
  - [x] Sliders need to dynamically change when value is changed, not on mouse up.
  - [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
 - [x] Change Checkboxes to bullets.
