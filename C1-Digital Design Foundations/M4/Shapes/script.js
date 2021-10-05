@@ -45,28 +45,28 @@ function setIdFunction(id) {
   if(original != ""){
      var hueSlider = document.getElementById('hue');
   
-        hueSlider.addEventListener("change", function() {
+        hueSlider.addEventListener("input", function() {
         hueValue= "hue-rotate("+this.value+"deg)";
         original.style.filter =  hueValue+saturationValue+brightnessValue+alphaValue;
       })
 
       var saturationSlider = document.getElementById('saturation');
     
-        saturationSlider.addEventListener("change", function() {
+        saturationSlider.addEventListener("input", function() {
         saturationValue = "saturate("+this.value+"%)";
         original.style.filter =  hueValue+saturationValue+brightnessValue+alphaValue;
       })
 
       var brightnessSlider = document.getElementById('brightness');
       
-        brightnessSlider.addEventListener("change", function() {
+        brightnessSlider.addEventListener("input", function() {
         brightnessValue = "brightness("+this.value+"%)";
         original.style.filter =  hueValue+saturationValue+brightnessValue+alphaValue;
       })
 
       var alphaSlider = document.getElementById('alpha');
         
-        alphaSlider.addEventListener("change", function() {
+        alphaSlider.addEventListener("input", function() {
         alphaValue = "opacity("+this.value+"%)";
         original.style.filter =  hueValue+saturationValue+brightnessValue+alphaValue;
       })
@@ -76,40 +76,40 @@ function setIdFunction(id) {
   // if(document.getElementById(original).classList.contains("resizable")==false){
   //   dragElement(document.getElementById(original));
   // }
-//   interact('.draggable').draggable({
-//     listeners: {
-//       start (event) {
-//        // console.log(event.type, event.target)
-//        console.log("start",selectPosition.x,selectPosition.y)
-//       },
-//       move (event) {
-//         //console.log(typeof(original.data))
-//         if(original.getAttribute('data-xy') != "0 0"){
-//           console.log(original.getAttribute('data-xy'));
-//           xy = original.getAttribute('data-xy').split(" ");
-//           xy[0] += event.dx;
-//           xy[1] += event.dy;
-//           event.target.style.transform =
-//           `translate(${xy[0]}px, ${xy[1]}px)`;
-//         }
-//         else{
-//           selectPosition.x += event.dx;
-//           selectPosition.y += event.dy;
-//           event.target.style.transform =
-//           `translate(${selectPosition.x}px, ${selectPosition.y}px)`;
-//         }
-//         //string = xy[0] +" "+xy[1];
-//         //console.log("move",position.x,position.y)
+  // interact('.draggable').draggable({
+  //   listeners: {
+  //     start (event) {
+  //      // console.log(event.type, event.target)
+  //      console.log("start",selectPosition.x,selectPosition.y)
+  //     },
+  //     move (event) {
+  //       //console.log(typeof(original.data))
+  //       if(original.getAttribute('data-xy') != "0 0"){
+  //         console.log(original.getAttribute('data-xy'));
+  //         xy = original.getAttribute('data-xy').split(" ");
+  //         xy[0] += event.dx;
+  //         xy[1] += event.dy;
+  //         event.target.style.transform =
+  //         `translate(${xy[0]}px, ${xy[1]}px)`;
+  //       }
+  //       else{
+  //         selectPosition.x += event.dx;
+  //         selectPosition.y += event.dy;
+  //         event.target.style.transform =
+  //         `translate(${selectPosition.x}px, ${selectPosition.y}px)`;
+  //       }
+  //       //string = xy[0] +" "+xy[1];
+  //       //console.log("move",position.x,position.y)
   
         
-//       },end(){
-//         console.log("end", selectPosition.x,selectPosition.y)
-//         string = xy[0] +" "+xy[1];
-//         original.setAttribute('data-xy', string);
-//       },
+  //     },end(){
+  //       console.log("end", selectPosition.x,selectPosition.y)
+  //       string = xy[0] +" "+xy[1];
+  //       original.setAttribute('data-xy', string);
+  //     },
       
-//     }
-//   })
+  //   }
+  // })
 }
 
 const position = { x: 0, y: 0 }
