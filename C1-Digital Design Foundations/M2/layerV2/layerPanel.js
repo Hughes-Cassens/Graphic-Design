@@ -1,5 +1,6 @@
 var layerPanelWidth = 1000;
 var layerPanelHeight = 2500;
+var layerGroup = [];
 
 var panelLayer = new Konva.Layer();
 var layerStage = new Konva.Stage({
@@ -7,7 +8,29 @@ var layerStage = new Konva.Stage({
     width:layerPanelWidth,
     height:layerPanelHeight,
 })
-// Create Visiualization rects of layers
+
+// Group Text and rectangles together/////////////////////////////////////////////////////////////
+// Rectangle
+var rectangleLayerGroup = new Konva.Group({
+    draggable: true,
+});
+// Line
+var lineLayerGroup = new Konva.Group({
+    draggable: true,
+})
+// Circle
+var circleLayerGroup = new Konva.Group({
+    draggable: true,
+})
+// Triangle
+var triangleLayerGroup = new Konva.Group({
+    draggable: true,
+})
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Create visualization containers of layers//////////////////////////////////////////////////////
+// Rectangle
 var recLayerVis = new Konva.Rect({
     x:100,
     y:100,
@@ -16,22 +39,9 @@ var recLayerVis = new Konva.Rect({
     fill: '#f4f4f4',
     stroke: 'black',
     strokeWidth: 4,
-    draggable: true,
 })
-//Layer Text
-var recLayerText = new Konva.Text({
-    x:100,
-    y:100,
-    text: 'Rectangle',
-    fontSize: 30,
-    fontFamily: 'Calibri',
-    fill: 'black',
-    draggable: true,
-})
-
-
-
-var lineLAyerVis = new Konva.Rect({
+// Line
+var lineLayerVis = new Konva.Rect({
     x:100,
     y:500,
     width: layerPanelWidth - 200,
@@ -39,33 +49,121 @@ var lineLAyerVis = new Konva.Rect({
     fill: '#f4f4f4',
     stroke: 'black',
     strokeWidth: 4,
-    draggable: true, 
-})
-// Group Text and rectangles together
-const rectangleLayerGroup = new Konva.Group();
 
+})
+// Circle
+var circleLayerVis = new Konva.Rect({
+    x:100,
+    y:900,
+    width: layerPanelWidth - 200,
+    height: 300,
+    fill: '#f4f4f4',
+    stroke: 'black',
+    strokeWidth: 4,
+})
+// Triangle
+var triangleLayerVis = new Konva.Rect({
+    x:100,
+    y:1300,
+    width: layerPanelWidth - 200,
+    height: 300,
+    fill: '#f4f4f4',
+    stroke: 'black',
+    strokeWidth: 4,
+})
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Create layer text for layers////////////////////////////////////////////////////////////////////
+// Rectangle Text
+var recLayerText = new Konva.Text({
+    x:300,
+    y:200,
+    text: 'Rectangle',
+    fontSize: 100,
+    fontFamily: 'Calibri',
+    fill: 'black',
+
+})
+// Line Text
+var lineLayerText = new Konva.Text({
+    x:400,
+    y:600,
+    text: 'Line',
+    fontSize: 100,
+    fontFamily: 'Calibri',
+    fill: 'black',
+})
+// Circle
+var circleLayerText = new Konva.Text({
+    x:400,
+    y:1000,
+    text: 'Circle',
+    fontSize: 100,
+    fontFamily: 'Calibri',
+    fill: 'black',
+})
+// Triangle
+var triangleLayerText = new Konva.Text({
+    x:350,
+    y:1400,
+    text: 'Triangle',
+    fontSize: 100,
+    fontFamily: 'Calibri',
+    fill: 'black',
+})
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+// Add text and box to groups//////////////////////////////////////////////////////////////////////
+// Group for Rectangle layer
 rectangleLayerGroup.add(recLayerVis);
 rectangleLayerGroup.add(recLayerText);
+//Group for the line layer
+lineLayerGroup.add(lineLayerVis);
+lineLayerGroup.add(lineLayerText);
+// Group for the circle layer
+circleLayerGroup.add(circleLayerVis);
+circleLayerGroup.add(circleLayerText);
+// Group for the triangle layer
+triangleLayerGroup.add(triangleLayerVis);
+triangleLayerGroup.add(triangleLayerText);
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
-// layer z-index
-const recLayerPosition = recLayerText.zIndex();
-recLayerText.zIndex(1)
 
 
+// Add Groups to the panel layer
 
-
-
-panelLayer.add(recLayerVis);
-panelLayer.add(recLayerText);
 panelLayer.add(rectangleLayerGroup);
+panelLayer.add(lineLayerGroup);
+panelLayer.add(circleLayerGroup);
+panelLayer.add(triangleLayerGroup);
 
-panelLayer.add(lineLAyerVis);
-
+// add everything to the stage(Canvas)//////////////////////////////////////////////////////////////
 layerStage.add(panelLayer);
 
-
+// Restrict layers movement to the y-axis only//////////////////////////////////////////////////////
+rectangleLayerGroup.on('dragmove',()=>{
+    rectangleLayerGroup.x(0);
+})
+lineLayerGroup.on('dragmove',()=>{
+    lineLayerGroup.x(0);
+})
+circleLayerGroup.on('dragmove',()=>{
+    circleLayerGroup.x(0);
+})
+triangleLayerGroup.on('dragmove',()=>{
+    triangleLayerGroup.x(0);
+})
 
 
 
@@ -83,8 +181,7 @@ function fitStageIntoLayerPanel() {
     layerStage.height(layerPanelHeight * scale);
     layerStage.scale({ x: scale, y: scale });
   }
-  
-  console.log(rectangleLayerGroup);
+
   fitStageIntoLayerPanel();
   // adapt the stage on any window resize
   window.addEventListener('resize', fitStageIntoLayerPanel);
