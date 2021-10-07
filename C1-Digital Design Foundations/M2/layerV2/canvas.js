@@ -44,7 +44,7 @@ var stage = new Konva.Stage({
   });
   var layer = new Konva.Layer();
 
-      var wedge = new Konva.Wedge({
+      var triangle = new Konva.Wedge({
         x: stage.width() / 2,
         y: stage.height() / 2,
         radius: 300,
@@ -59,7 +59,7 @@ var stage = new Konva.Stage({
   layer.add(rect1);
   layer.add(redLine);
   layer.add(circle);
-  layer.add(wedge);
+  layer.add(triangle);
   
   // add the layer to the stage
   stage.add(layer);
