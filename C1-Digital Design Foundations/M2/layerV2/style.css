@@ -1,0 +1,20 @@
+
+#stageParent{
+    width: 100%;
+}
+.container{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.container div{
+    background: #eee;
+    
+}
+/* .container div:nth-child(odd){
+    background: white;
+} */
+
+#layerPanel div{
+    background: white;
+}
+

@@ -86,7 +86,15 @@ function generateRandomColor() {
   return color;
 }
 
-function mouseClicked(e){
+// function mouseClicked(e){
+//   console.log("I clicked")
+//   randomColor=generateRandomColor();
+//   value.value(randomColor);
+//   picker.value(randomColor);
+//   update();
+// }
+
+function buttonClicked(e){
   console.log("I clicked")
   randomColor=generateRandomColor();
   value.value(randomColor);

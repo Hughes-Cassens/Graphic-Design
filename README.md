@@ -46,7 +46,7 @@
     - [x] Palette Generator
 - M4: Text
     - [x] Text Editor? A few different typefaces. Size, color, position.
-    - [ ] Text Scaler?
+    - [x] Text Scaler?
 - M5: Graphic Elements (Digital Art, Shapes, 3D)
     - [x] 3D Canvas
     - [x] Brush/pencil/color

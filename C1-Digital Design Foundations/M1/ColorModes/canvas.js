@@ -1,6 +1,7 @@
 // mod 1 will be landing page
 // mod 2 will be interactive part
 var mod = 1;
+var posSet = false;
 var canvas = document.querySelector("canvas");
 var c = canvas.getContext("2d");
 
@@ -80,14 +81,17 @@ class Circle {
             
             
             moveApart = false;
+            
+            
             for (let i = 0; i < circleArray.length; i++) {
                 if (this === circleArray[i]) continue;
                 // if (startButtonPressed == true) {
                 //     this.recalcCirclePos();
                 // }
+                
                 if (collisionOn == true && getDistance(this.x,this.y,circleArray[i].x,circleArray[i].y) - this.r * 2 < 0)
                 {
-                   
+                
                     circleArray[i].intersect = true;
                     var area = intersectionArea(this,circleArray[i]);
                     var areaWhole = Math.floor(area);
@@ -95,12 +99,14 @@ class Circle {
                    
                     if (mouseDown == false && touchDown == false) {
                         moveApart = true;
+
                     }
                     if (this.x == circleArray[i].x && this.y == circleArray[i].y) {
                         posSet = false;
+                        moveApart = true;
                     }
                     // when collision occurs
-                   
+                    
                     if (this.r >= maxRadius) {
                         this.r = -5;
                     }
@@ -124,6 +130,7 @@ class Circle {
                     mouseIntEnable = true;
                 break;
             }
+            
             if (mouseIntEnable == true) {
                 if (mouse.x - this.x < 20 && mouse.x - this.x > -20 && mouse.y - this.y < 20 && mouse.y - this.y > -20) {
                     // this.r +=2
@@ -174,6 +181,7 @@ class Circle {
                
             }    
     }
+    
 }
 
 var areaWhole = Math.floor(Circle.area);
@@ -181,7 +189,7 @@ var areaWhole = Math.floor(Circle.area);
 function rgb(){
     let pixelColor = c.getImageData(mouse.x,mouse.y,1,1);
     if (touchDown == true) {
-        pixelColor = c.getImageData(touch.x,touch.y,1,1);
+        pixelColor = c.getImageData(touch.x,touch.y,50,50);
     }
     let pixels = pixelColor.data;
     let r = pixels[0];
@@ -189,7 +197,7 @@ function rgb(){
     let b = pixels[2];
     
    
-    $("#container").text("red: " + r + " green: " + g + " blue: " + b).val();
+    $("#container").text("Red: " + r + " Green: " + g + " Blue: " + b).val();
     
 }
 function getDistance(x1,y1,x2,y2)
@@ -208,13 +216,13 @@ function init() {
     for (let i = 0; i < 3; i++) {    
     x = Math.floor(Math.random() * canvas.width);
     y = Math.floor(Math.random() * canvas.height);
-    if (mouseDown == true || touchDown == true) {
-        circle.x = mouse.x;
-        circle.y = mouse.y;
-        circle.x = touch.x;
-        circle.y = touch.y;
-        circleArray.push(new Circle(x,y,r))
-    }
+    // if (mouseDown == true || touchDown == true) {
+    //     circle.x = mouse.x;
+    //     circle.y = mouse.y;
+    //     circle.x = touch.x;
+    //     circle.y = touch.y;
+    //     circleArray.push(new Circle(x,y,r))
+    // }
     // Prevents circles from spawning on each other
     if (i !== 0) {
         for (let j = 0; j < circleArray.length; j++) {
@@ -252,6 +260,7 @@ function d(){
     moveApart = true;
 };
 function m(event){
+  
     moveApart = false;
     touch.x = event.touches[0].clientX;
     touch.y = event.touches[0].clientY;
@@ -282,7 +291,7 @@ var mouse = {
     x: 0,
     y: 0
 }
-var maxRadius = 120;
+var maxRadius = 200;
 var minRadius = 100;
 var mouseDown = false;
 window.addEventListener("mousemove",function(event) {
@@ -303,6 +312,7 @@ window.addEventListener("mousedown",function(event) {
         y:0
     }
     mouseDown = true;
+    moveApart = false;
     
 
   
@@ -315,15 +325,13 @@ window.addEventListener("mouseup",function (event) {
     this.x = this.x;
     this.y = this.y;
     
-
     mouseDown = false;
-    posSet = true;
-    moveApart = false;
+    posSet = false;
+    moveApart = true;
     shrink = true;
 
 
 })
-var posSet;
 
 switch(mod){
     case 1:
@@ -336,33 +344,45 @@ switch(mod){
 
 
 
+
 function initialCirclePositioning()
 {
+  
     if (moveApart == true) {
-        
+        posSet = false
+        console.log("firing");
         if (circleArray[0].intersect == true) {
             circleArray[0].intersect = false;
             circleArray[0].velocity = {
-
+                
                 x:-1,
                 y:0
             }
+            
+            
         }
+        
         if (circleArray[1].intersect == true) {
             circleArray[1].intersect = false;
-        circleArray[1].velocity = {
+            circleArray[1].velocity = {
             x:+1,
             y:0
         }
+        
+        
         }
         if (circleArray[2].intersect == true) {
             circleArray[2].intersect = false;
-        circleArray[2].velocity = {
+            circleArray[2].velocity = {
             x: 0,
             y: -1
+            
         }
+        
         }
+        
     }
+   
     if(moveApart == false){
         circleArray[0].velocity= {
             x:0,
