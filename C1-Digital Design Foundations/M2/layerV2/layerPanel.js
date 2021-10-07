@@ -10,6 +10,10 @@ var layerStage = new Konva.Stage({
 })
 
 // Group Text and rectangles together/////////////////////////////////////////////////////////////
+// Group all layers into one "parent group"
+var parentLayersGroup = new Konva.Group();
+
+
 // Rectangle
 var rectangleLayerGroup = new Konva.Group({
     draggable: true,
@@ -120,6 +124,18 @@ var triangleLayerText = new Konva.Text({
 
 
 
+// Layer positioning functionality////////////////////////////////////////////////////////////////
+rectangleLayerGroup.on('mousedown', function(){
+    this.zIndex(3);
+    this.on('dragstart', function(){
+       if (recLayerVis.y >= lineLayerVis.y || recLayerText.y >= lineLayerText.y) {
+           console.log('Move the layer');
+       }
+    })
+    this.on('dragend',function(){
+        this.zIndex(0);
+    })
+})
 
 
 // Add text and box to groups//////////////////////////////////////////////////////////////////////
@@ -137,16 +153,27 @@ triangleLayerGroup.add(triangleLayerVis);
 triangleLayerGroup.add(triangleLayerText);
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Add all groups to the parent group/////////////////////////////////////////////////////////////
+parentLayersGroup.add(rectangleLayerGroup);
+parentLayersGroup.add(lineLayerGroup);
+parentLayersGroup.add(circleLayerGroup);
+parentLayersGroup.add(triangleLayerGroup);
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
-// Add Groups to the panel layer
+rectangleLayerGroup.zIndex(0);
 
-panelLayer.add(rectangleLayerGroup);
-panelLayer.add(lineLayerGroup);
-panelLayer.add(circleLayerGroup);
-panelLayer.add(triangleLayerGroup);
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Add parent group to the panel layer
+panelLayer.add(parentLayersGroup);
+// panelLayer.add(lineLayerGroup);
+// panelLayer.add(circleLayerGroup);
+// panelLayer.add(triangleLayerGroup);
 
 // add everything to the stage(Canvas)//////////////////////////////////////////////////////////////
 layerStage.add(panelLayer);
@@ -164,9 +191,6 @@ circleLayerGroup.on('dragmove',()=>{
 triangleLayerGroup.on('dragmove',()=>{
     triangleLayerGroup.x(0);
 })
-
-
-
 function fitStageIntoLayerPanel() {
     var container = document.querySelector('#layerPanel');
 
