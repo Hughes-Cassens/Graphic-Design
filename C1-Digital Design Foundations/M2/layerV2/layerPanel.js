@@ -4,14 +4,7 @@ var layerGroup = [];
 
 
 
-// highest layer
-var zIndex3Pos = 100;
-// second highest
-var zIndex2Pos = 500;
-// third highest
-var zIndex1Pos = 900;
-// fourth highest
-var zIndex0Pos = 1300;
+
 
 
 
@@ -35,29 +28,29 @@ var zoneLayer = new Konva.Layer();
 
 // Rectangle
 var rectangleLayerGroup = new Konva.Group({
-    x: 0,
-    y: 50,
+    // x: 0,
+    // y: 50,
     draggable: true,
     name: 'shape'
 });
 // Line
 var lineLayerGroup = new Konva.Group({
-    x: 0,
-    y: 10,
+    // x: 0,
+    // y: 10,
     draggable: true,
     name: 'shape'
 })
 // Circle
 var circleLayerGroup = new Konva.Group({
-    x: 0,
-    y: 5,
+    // x: 0,
+    // y: 5,
     draggable: true,
     name: 'shape'
 })
 // Triangle
 var triangleLayerGroup = new Konva.Group({
-    x: 0,
-    y:0,
+    // x: 0,
+    // y:0,
     draggable: true,
     name: 'shape'
 })
@@ -65,25 +58,25 @@ var triangleLayerGroup = new Konva.Group({
 // Create Z-index Zones
 var zone3 = new Konva.Line({
     points: [0,480,1000,480],
-    stroke: 'red',
+    // stroke: 'red',
     strokeWidth: 10,
 
 });
 var zone2 = new Konva.Line({
     points: [0,880,1000,880],
-    stroke: 'red',
+    // stroke: 'red',
     strokeWidth: 10,
 
 });
 var zone1 = new Konva.Line({
     points: [0,1250,1000,1250],
-    stroke: 'red',
+    // stroke: 'red',
     strokeWidth: 10,
 
 });
 var zone0 = new Konva.Line({
     points: [],
-    stroke: 'red',
+    // stroke: 'red',
     strokeWidth: 10,
 
 });
@@ -222,55 +215,109 @@ triangleLayerGroup.add(boxTriangle);
 
 
 // Layer positioning functionality////////////////////////////////////////////////////////////////
+// highest layer
+var zIndex3Pos = 480;
+// second highest
+var zIndex2Pos = 780;
+// third highest
+var zIndex1Pos = 1150;
+// fourth highest
+var zIndex0Pos = 1300;
+// Rectangle
 parentLayersGroup.on('dragmove', function(e){
-    
+    console.log(rect1.zIndex());
     var target = e.target;
     var targetRect = e.target.getClientRect();
     parentLayersGroup.children.forEach(function(parentLayersGroup){
         if (parentLayersGroup == target) {
             return;
         }
-        if (rectangleLayerGroup.getY() < zone3.points[1]) {
-            console.log("you are in the top zone");
-        }
-        else if(rectangleLayerGroup.getY() >= zone3.getY() && rectangleLayerGroup.getY() <= zone2.getY()){
-            console.log("you are in the second highest layer");
-        }
-        else if(rectangleLayerGroup.getY() <= zone2.getY() && rectangleLayerGroup.getY() >= zone1.getY()){
-            console.log("you are in the third highest level");
-        }
-        parentLayersGroup.on('dragstart',function(){
-            
-           
-        })
-        parentLayersGroup.on('dragend', function(){
-            parentLayersGroup.zIndex(0);
-        })
-
-
         if (haveIntersection(parentLayersGroup.getClientRect(), targetRect)) {
-         
             
+            rectangleLayerGroup.on('dragmove',function(){
+                rectangleLayerGroup.zIndex(3);
+                if (rectangleLayerGroup.getY() <= zIndex3Pos) {
+                    rect1.zIndex(3);
+                }
+                else if(rectangleLayerGroup.getY() > zIndex3Pos && rectangleLayerGroup.getY() < zIndex2Pos){
+                    rect1.zIndex(2);
+                }
+                else if(rectangleLayerGroup.getY() > zIndex2Pos && rectangleLayerGroup.getY() < zIndex1Pos){
+                    rect1.zIndex(1);
+                }
+                else if(rectangleLayerGroup.getY() > zIndex1Pos && rectangleLayerGroup.getY() < zIndex0Pos){
+                    rect1.zIndex(0);
+                }
+            });
+            rectangleLayerGroup.on('dragend', function (){
+                rectangleLayerGroup.zIndex(0);
+            })
+            // Line
+
+
+            lineLayerGroup.on('dragmove',function(){
+                lineLayerGroup.zIndex(3);
+                if (lineLayerGroup.getY() <= zIndex3Pos) {
+                    redLine.zIndex(3);
+                }
+                else if(lineLayerGroup.getY() >= zIndex3Pos && lineLayerGroup.getY() <= zIndex2Pos){
+                    redLine.zIndex(2);
+                }
+                else if(lineLayerGroup.getY() >= zIndex2Pos && lineLayerGroup.getY() <= zIndex1Pos){
+                    redLine.zIndex(1);
+                }
+                else if(lineLayerGroup.getY() >= zIndex1Pos && lineLayerGroup.getY() <= zIndex0Pos){
+                    redLine.zIndex(0);
+                }
+            });
             
-            
-            // if (rectangleLayerGroup.y >= lineLayerGroup.y) {
-            //     lineLayerGroup.y(+400)
-            // }
-           
-        }
-        else{
-            
-        }
+            lineLayerGroup.on('dragend', function (){
+            lineLayerGroup.zIndex(0);
+            })
+           // Circle
+            circleLayerGroup.on('dragmove',function(){
+            circleLayerGroup.zIndex(3);
+            if (circleLayerGroup.getY() <= zIndex3Pos) {
+            circle.zIndex(3);
+            }
+            else if(circleLayerGroup.getY() >= zIndex3Pos && circleLayerGroup.getY() <= zIndex2Pos){
+            circle.zIndex(2);
+            }
+            else if(circleLayerGroup.getY() >= zIndex2Pos && circleLayerGroup.getY() <= zIndex1Pos){
+            circle.zIndex(1);
+            }
+            else if(circleLayerGroup.getY() >= zIndex1Pos && circleLayerGroup.getY() <= zIndex0Pos){
+            circle.zIndex(0);
+            }
+            });
+            circleLayerGroup.on('dragend', function (){
+            circleLayerGroup.zIndex(0);
+            })
+            // Triangle
+            triangleLayerGroup.on('dragmove',function(){
+            triangleLayerGroup.zIndex(3);
+            if (triangleLayerGroup.getY() <= zIndex3Pos) {
+            triangle.zIndex(3);
+            }
+            else if(triangleLayerGroup.getY() >= zIndex3Pos && triangleLayerGroup.getY() <= zIndex2Pos){
+                triangle.zIndex(2);
+            }
+            else if(triangleLayerGroup.getY() >= zIndex2Pos && triangleLayerGroup.getY() <= zIndex1Pos){
+                triangle.zIndex(1);
+            }
+            else if(triangleLayerGroup.getY() >= zIndex1Pos && triangleLayerGroup.getY() <= zIndex0Pos){
+                triangle.zIndex(0);
+            }
+            triangleLayerGroup.on('dragend', function (){
+                triangleLayerGroup.zIndex(0);
+            });
+
+            })
+            }
+      
     })
 
 })
-rectangleLayerGroup.on('mousedown',function(){
-        
-    console.log('moving rectangle layer');
-})
-
-
-
 
 function haveIntersection(r1, r2) {
     return !(
@@ -354,8 +401,6 @@ function fitStageIntoLayerPanel() {
     layerStage.scale({ x: scale, y: scale });
   }
 
-
-// console.log(mousePos);
   fitStageIntoLayerPanel();
   // adapt the stage on any window resize
   window.addEventListener('resize', fitStageIntoLayerPanel);
