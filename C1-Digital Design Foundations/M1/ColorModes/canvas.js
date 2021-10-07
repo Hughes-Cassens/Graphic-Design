@@ -1,6 +1,7 @@
 // mod 1 will be landing page
 // mod 2 will be interactive part
 var mod = 1;
+var posSet = false;
 var canvas = document.querySelector("canvas");
 var c = canvas.getContext("2d");
 
@@ -87,9 +88,10 @@ class Circle {
                 // if (startButtonPressed == true) {
                 //     this.recalcCirclePos();
                 // }
+                
                 if (collisionOn == true && getDistance(this.x,this.y,circleArray[i].x,circleArray[i].y) - this.r * 2 < 0)
                 {
-                   
+                
                     circleArray[i].intersect = true;
                     var area = intersectionArea(this,circleArray[i]);
                     var areaWhole = Math.floor(area);
@@ -97,6 +99,7 @@ class Circle {
                    
                     if (mouseDown == false && touchDown == false) {
                         moveApart = true;
+
                     }
                     if (this.x == circleArray[i].x && this.y == circleArray[i].y) {
                         posSet = false;
@@ -213,13 +216,13 @@ function init() {
     for (let i = 0; i < 3; i++) {    
     x = Math.floor(Math.random() * canvas.width);
     y = Math.floor(Math.random() * canvas.height);
-    if (mouseDown == true || touchDown == true) {
-        circle.x = mouse.x;
-        circle.y = mouse.y;
-        circle.x = touch.x;
-        circle.y = touch.y;
-        circleArray.push(new Circle(x,y,r))
-    }
+    // if (mouseDown == true || touchDown == true) {
+    //     circle.x = mouse.x;
+    //     circle.y = mouse.y;
+    //     circle.x = touch.x;
+    //     circle.y = touch.y;
+    //     circleArray.push(new Circle(x,y,r))
+    // }
     // Prevents circles from spawning on each other
     if (i !== 0) {
         for (let j = 0; j < circleArray.length; j++) {
@@ -257,6 +260,7 @@ function d(){
     moveApart = true;
 };
 function m(event){
+  
     moveApart = false;
     touch.x = event.touches[0].clientX;
     touch.y = event.touches[0].clientY;
@@ -308,6 +312,7 @@ window.addEventListener("mousedown",function(event) {
         y:0
     }
     mouseDown = true;
+    moveApart = false;
     
 
   
@@ -320,15 +325,13 @@ window.addEventListener("mouseup",function (event) {
     this.x = this.x;
     this.y = this.y;
     
-
     mouseDown = false;
-    posSet = true;
-    moveApart = false;
+    posSet = false;
+    moveApart = true;
     shrink = true;
 
 
 })
-var posSet;
 
 switch(mod){
     case 1:
@@ -341,10 +344,13 @@ switch(mod){
 
 
 
+
 function initialCirclePositioning()
 {
+  
     if (moveApart == true) {
-        
+        posSet = false
+        console.log("firing");
         if (circleArray[0].intersect == true) {
             circleArray[0].intersect = false;
             circleArray[0].velocity = {
@@ -397,7 +403,7 @@ function initialCirclePositioning()
 }
 function animate() 
 {
-    console.log(moveApart);
+    
     if (posSet == false) {
         initialCirclePositioning(); 
     }
