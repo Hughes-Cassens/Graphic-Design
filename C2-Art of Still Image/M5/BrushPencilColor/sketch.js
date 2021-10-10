@@ -9,7 +9,7 @@ function preload() {
 
 
 function setup() {
-  canvas = createCanvas(w, h);
+  canvas = createCanvas(windowWidth-100, windowHeight-200);
   brush = select("#brushTool");
   pencil = select("#pencilTool");
   eraser = select("#eraserTool");
@@ -24,6 +24,7 @@ function draw() {
   //mouseDragged();
  // mousePressed();
 }
+
 
 function mouseDragged(){
   let scale = (size * softbrush.width/200);
