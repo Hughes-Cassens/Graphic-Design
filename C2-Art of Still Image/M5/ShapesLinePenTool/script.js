@@ -11,7 +11,7 @@ function buildAnchor(x, y) {
   var anchor = new Konva.Circle({
     x: x,
     y: y,
-    radius: 20,
+    radius: 5,
     stroke: '#666',
     fill: '#ddd',
     strokeWidth: 2,
