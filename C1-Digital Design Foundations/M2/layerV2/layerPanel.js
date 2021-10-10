@@ -1,15 +1,6 @@
 var layerPanelWidth = 1000;
 var layerPanelHeight = 2500;
 var layerGroup = [];
-
-
-
-
-
-
-
-
-
 // var mousePos = stage.getPointerPosition();
 
 
@@ -26,35 +17,7 @@ var parentLayersGroup = new Konva.Group();
 
 var zoneLayer = new Konva.Layer();
 
-// Rectangle
-var rectangleLayerGroup = new Konva.Group({
-    // x: 0,
-    // y: 50,
-    draggable: true,
-    name: 'shape'
-});
-// Line
-var lineLayerGroup = new Konva.Group({
-    // x: 0,
-    // y: 10,
-    draggable: true,
-    name: 'shape'
-})
-// Circle
-var circleLayerGroup = new Konva.Group({
-    // x: 0,
-    // y: 5,
-    draggable: true,
-    name: 'shape'
-})
-// Triangle
-var triangleLayerGroup = new Konva.Group({
-    // x: 0,
-    // y:0,
-    draggable: true,
-    name: 'shape'
-})
-///////////////////////////////////////////////////////////////////////////////////////////////////
+
 // Create Z-index Zones
 var zone3 = new Konva.Line({
     points: [0,480,1000,480],
@@ -83,6 +46,9 @@ var zone0 = new Konva.Line({
 
 zoneLayer.add(zone3,zone2,zone1,zone0);
 
+
+
+
 // Create visualization containers of layers//////////////////////////////////////////////////////
 // Rectangle
 var recLayerVis = new Konva.Rect({
@@ -97,7 +63,7 @@ var recLayerVis = new Konva.Rect({
 // Line
 var lineLayerVis = new Konva.Rect({
     x:100,
-    y:500,
+    y:300,
     width: layerPanelWidth - 200,
     height: 300,
     fill: '#f4f4f4',
@@ -108,7 +74,7 @@ var lineLayerVis = new Konva.Rect({
 // Circle
 var circleLayerVis = new Konva.Rect({
     x:100,
-    y:900,
+    y:500,
     width: layerPanelWidth - 200,
     height: 300,
     fill: '#f4f4f4',
@@ -118,7 +84,7 @@ var circleLayerVis = new Konva.Rect({
 // Triangle
 var triangleLayerVis = new Konva.Rect({
     x:100,
-    y:1300,
+    y:700,
     width: layerPanelWidth - 200,
     height: 300,
     fill: '#f4f4f4',
@@ -126,8 +92,37 @@ var triangleLayerVis = new Konva.Rect({
     strokeWidth: 4,
 })
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+// Rectangle
+var rectangleLayerGroup = new Konva.Group({
+    // x: 0,
+    y: 100,
+    draggable: true,
+    name: 'shape'
+});
+// Line
+var lineLayerGroup = new Konva.Group({
+    // x: 0,
+    y: 500,
+    draggable: true,
+    
+    name: 'shape'
+})
+// Circle
+var circleLayerGroup = new Konva.Group({
+    // x: 0,
+    y: 900,
+    draggable: true,
+    name: 'shape'
+})
+// Triangle
+var triangleLayerGroup = new Konva.Group({
+    // x: 0,
+    y:1300,
+    draggable: true,
+    name: 'shape'
+})
+///////////////////////////////////////////////////////////////////////////////////////////////////
+var rectGroupAbsPos = rectangleLayerGroup.absolutePosition();
 
 // Create layer text for layers////////////////////////////////////////////////////////////////////
 // Rectangle Text
@@ -143,7 +138,7 @@ var recLayerText = new Konva.Text({
 // Line Text
 var lineLayerText = new Konva.Text({
     x:400,
-    y:600,
+    y:400,
     text: 'Line',
     fontSize: 100,
     fontFamily: 'Calibri',
@@ -152,7 +147,7 @@ var lineLayerText = new Konva.Text({
 // Circle
 var circleLayerText = new Konva.Text({
     x:400,
-    y:1000,
+    y:600,
     text: 'Circle',
     fontSize: 100,
     fontFamily: 'Calibri',
@@ -161,7 +156,7 @@ var circleLayerText = new Konva.Text({
 // Triangle
 var triangleLayerText = new Konva.Text({
     x:350,
-    y:1400,
+    y:800,
     text: 'Triangle',
     fontSize: 100,
     fontFamily: 'Calibri',
@@ -170,46 +165,46 @@ var triangleLayerText = new Konva.Text({
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Collision Boxes
-var boundingBoxRec = recLayerVis.getClientRect({relativeTo: rectangleLayerGroup});
-var boundingBoxLine = lineLayerVis.getClientRect({relativeTo: lineLayerGroup});
-var boundingBoxCircle = circleLayerVis.getClientRect({relativeTo: circleLayerGroup});
-var boundingBoxTriangle = triangleLayerVis.getClientRect({relativeTo: triangleLayerGroup});
-var boxRec = new Konva.Rect({
-    x: boundingBoxRec.x,
-    y: boundingBoxRec.y,
-    width: boundingBoxRec.width,
-    height: boundingBoxRec.height,
-    stroke: 'red',
-    strokeWidth: 1,
-})
-var boxLine = new Konva.Rect({
-    x: boundingBoxLine.x,
-    y: boundingBoxLine.y,
-    width: boundingBoxLine.width,
-    height: boundingBoxLine.height,
-    stroke: 'red',
-    strokeWidth: 1,
-})
-var boxCircle = new Konva.Rect({
-    x: boundingBoxCircle.x,
-    y: boundingBoxCircle.y,
-    width: boundingBoxCircle.width,
-    height: boundingBoxCircle.height,
-    stroke: 'red',
-    strokeWidth: 1,
-})
-var boxTriangle = new Konva.Rect({
-    x: boundingBoxTriangle.x,
-    y: boundingBoxTriangle.y,
-    width: boundingBoxTriangle.width,
-    height: boundingBoxTriangle.height,
-    stroke: 'red',
-    strokeWidth: 1,
-})
-rectangleLayerGroup.add(boxRec);
-lineLayerGroup.add(boxLine);
-circleLayerGroup.add(boxCircle);
-triangleLayerGroup.add(boxTriangle);
+// var boundingBoxRec = recLayerVis.getClientRect({relativeTo: rectangleLayerGroup});
+// var boundingBoxLine = lineLayerVis.getClientRect({relativeTo: lineLayerGroup});
+// var boundingBoxCircle = circleLayerVis.getClientRect({relativeTo: circleLayerGroup});
+// var boundingBoxTriangle = triangleLayerVis.getClientRect({relativeTo: triangleLayerGroup});
+// var boxRec = new Konva.Rect({
+//     x: boundingBoxRec.x,
+//     y: boundingBoxRec.y,
+//     width: boundingBoxRec.width,
+//     height: boundingBoxRec.height,
+//     stroke: 'red',
+//     strokeWidth: 1,
+// })
+// var boxLine = new Konva.Rect({
+//     x: boundingBoxLine.x,
+//     y: boundingBoxLine.y,
+//     width: boundingBoxLine.width,
+//     height: boundingBoxLine.height,
+//     stroke: 'red',
+//     strokeWidth: 1,
+// })
+// var boxCircle = new Konva.Rect({
+//     x: boundingBoxCircle.x,
+//     y: boundingBoxCircle.y,
+//     width: boundingBoxCircle.width,
+//     height: boundingBoxCircle.height,
+//     stroke: 'red',
+//     strokeWidth: 1,
+// })
+// var boxTriangle = new Konva.Rect({
+//     x: boundingBoxTriangle.x,
+//     y: boundingBoxTriangle.y,
+//     width: boundingBoxTriangle.width,
+//     height: boundingBoxTriangle.height,
+//     stroke: 'red',
+//     strokeWidth: 1,
+// })
+// rectangleLayerGroup.add(boxRec);
+// lineLayerGroup.add(boxLine);
+// circleLayerGroup.add(boxCircle);
+// triangleLayerGroup.add(boxTriangle);
 
 
 
@@ -225,7 +220,7 @@ var zIndex1Pos = 1150;
 var zIndex0Pos = 1300;
 // Rectangle
 parentLayersGroup.on('dragmove', function(e){
-    console.log(rect1.zIndex());
+    console.log(triangleLayerGroup.getY(),rectangleLayerGroup.getY());
     var target = e.target;
     var targetRect = e.target.getClientRect();
     parentLayersGroup.children.forEach(function(parentLayersGroup){
@@ -236,16 +231,16 @@ parentLayersGroup.on('dragmove', function(e){
             
             rectangleLayerGroup.on('dragmove',function(){
                 rectangleLayerGroup.zIndex(3);
-                if (rectangleLayerGroup.getY() <= zIndex3Pos) {
+                if (rectangleLayerGroup.getY() < lineLayerGroup.getY() && rectangleLayerGroup.getY() < circleLayerGroup.getY() && rectangleLayerGroup.getY() < triangleLayerGroup.getY()) {
                     rect1.zIndex(3);
                 }
-                else if(rectangleLayerGroup.getY() > zIndex3Pos && rectangleLayerGroup.getY() < zIndex2Pos){
+                else if(rectangleLayerGroup.getY() > lineLayerGroup.getY() && rectangleLayerGroup.getY() < circleLayerGroup.getY() && rectangleLayerGroup.getY() < triangleLayerGroup.getY()){
                     rect1.zIndex(2);
                 }
-                else if(rectangleLayerGroup.getY() > zIndex2Pos && rectangleLayerGroup.getY() < zIndex1Pos){
+                else if(rectangleLayerGroup.getY() > lineLayerGroup.getY() && rectangleLayerGroup.getY() >= circleLayerGroup.getY() && rectangleLayerGroup.getY() <= triangleLayerGroup.getY()){
                     rect1.zIndex(1);
                 }
-                else if(rectangleLayerGroup.getY() > zIndex1Pos && rectangleLayerGroup.getY() < zIndex0Pos){
+                else if(rectangleLayerGroup.getY() > lineLayerGroup.getY() && rectangleLayerGroup.getY() > circleLayerGroup.getY() && rectangleLayerGroup.getY() > triangleLayerGroup.getY()){
                     rect1.zIndex(0);
                 }
             });
@@ -256,17 +251,17 @@ parentLayersGroup.on('dragmove', function(e){
 
 
             lineLayerGroup.on('dragmove',function(){
-                lineLayerGroup.zIndex(3);
-                if (lineLayerGroup.getY() <= zIndex3Pos) {
+                lineLayerGroup.zIndex(2);
+                if (lineLayerGroup.getY() < rectangleLayerGroup.getY() && lineLayerGroup.getY() < circleLayerGroup.getY() && lineLayerGroup.getY() < triangleLayerGroup.getY()) {
                     redLine.zIndex(3);
                 }
-                else if(lineLayerGroup.getY() >= zIndex3Pos && lineLayerGroup.getY() <= zIndex2Pos){
+                else if(lineLayerGroup.getY() > rectangleLayerGroup.getY() && lineLayerGroup.getY() < circleLayerGroup.getY() && lineLayerGroup.getY() < triangleLayerGroup.getY()){
                     redLine.zIndex(2);
                 }
-                else if(lineLayerGroup.getY() >= zIndex2Pos && lineLayerGroup.getY() <= zIndex1Pos){
+                else if(lineLayerGroup.getY() > rectangleLayerGroup.getY() && lineLayerGroup.getY() > circleLayerGroup.getY() && lineLayerGroup.getY() < triangleLayerGroup.getY()){
                     redLine.zIndex(1);
                 }
-                else if(lineLayerGroup.getY() >= zIndex1Pos && lineLayerGroup.getY() <= zIndex0Pos){
+                else if(lineLayerGroup.getY() > lineLayerGroup.getY() && lineLayerGroup.getY() > circleLayerGroup.getY() && lineLayerGroup.getY() > triangleLayerGroup.getY()){
                     redLine.zIndex(0);
                 }
             });
@@ -276,17 +271,17 @@ parentLayersGroup.on('dragmove', function(e){
             })
            // Circle
             circleLayerGroup.on('dragmove',function(){
-            circleLayerGroup.zIndex(3);
-            if (circleLayerGroup.getY() <= zIndex3Pos) {
+            circleLayerGroup.zIndex(1);
+            if (circleLayerGroup.getY() < rectangleLayerGroup.getY() && circleLayerGroup.getY() < lineLayerGroup.getY() && circleLayerGroup.getY() < triangleLayerGroup.getY()) {
             circle.zIndex(3);
             }
-            else if(circleLayerGroup.getY() >= zIndex3Pos && circleLayerGroup.getY() <= zIndex2Pos){
+            else if(circleLayerGroup.getY() > rectangleLayerGroup.getY() && circleLayerGroup.getY() < lineLayerGroup.getY() && circleLayerGroup.getY() < triangleLayerGroup.getY()){
             circle.zIndex(2);
             }
-            else if(circleLayerGroup.getY() >= zIndex2Pos && circleLayerGroup.getY() <= zIndex1Pos){
+            else if(circleLayerGroup.getY() > rectangleLayerGroup.getY() && circleLayerGroup.getY() > lineLayerGroup.getY() && circleLayerGroup.getY() < triangleLayerGroup.getY()){
             circle.zIndex(1);
             }
-            else if(circleLayerGroup.getY() >= zIndex1Pos && circleLayerGroup.getY() <= zIndex0Pos){
+            else if(circleLayerGroup.getY() > lineLayerGroup.getY() && circleLayerGroup.getY() > rectangleLayerGroup.getY() && circleLayerGroup.getY() > triangleLayerGroup.getY()){
             circle.zIndex(0);
             }
             });
@@ -295,7 +290,7 @@ parentLayersGroup.on('dragmove', function(e){
             })
             // Triangle
             triangleLayerGroup.on('dragmove',function(){
-            triangleLayerGroup.zIndex(3);
+            triangleLayerGroup.zIndex(0);
             if (triangleLayerGroup.getY() <= zIndex3Pos) {
             triangle.zIndex(3);
             }
@@ -332,12 +327,15 @@ function haveIntersection(r1, r2) {
 rectangleLayerGroup.add(recLayerVis);
 rectangleLayerGroup.add(recLayerText);
 //Group for the line layer
+lineLayerGroup.offsetY(+200)
 lineLayerGroup.add(lineLayerVis);
 lineLayerGroup.add(lineLayerText);
 // Group for the circle layer
+circleLayerGroup.offsetY(+400)
 circleLayerGroup.add(circleLayerVis);
 circleLayerGroup.add(circleLayerText);
 // Group for the triangle layer
+triangleLayerGroup.offsetY(+600)
 triangleLayerGroup.add(triangleLayerVis);
 triangleLayerGroup.add(triangleLayerText);
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -375,9 +373,11 @@ layerStage.add(panelLayer);
 
 // Restrict layers movement to the y-axis only//////////////////////////////////////////////////////
 rectangleLayerGroup.on('dragmove',()=>{
+
     rectangleLayerGroup.x(0);
 })
 lineLayerGroup.on('dragmove',()=>{
+
     lineLayerGroup.x(0);
 })
 circleLayerGroup.on('dragmove',()=>{
