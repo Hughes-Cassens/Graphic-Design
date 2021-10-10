@@ -44,9 +44,9 @@ window.addEventListener("mousemove",function(event) {
 });
 
 //make some circles
-var c1 = new Circle(50, 50, 100, red, "black");
-var c2 = new Circle(200, 50, 100, green, "black");
-var c3 = new Circle(350, 50, 100, blue, "black");
+var c1 = new Circle(500, 500, 100, red, "black");
+var c2 = new Circle(500, 700, 100, green, "black");
+var c3 = new Circle(600, 800, 100, blue, "black");
 //make a collection of circles
 var circles = [c1, c2, c3];
 
