@@ -17,7 +17,7 @@ button.mousePressed(saveSketch);
 //add something to this canvas? Image?
 
 function draw() {
-  background(255, 40, 105);
+  background(0, 32, 255);
 }
 
 
