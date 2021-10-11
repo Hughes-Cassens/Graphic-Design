@@ -12,7 +12,10 @@
             - As of now the slider only changes once the mouse is released
     - ### Color Modes
         - [x] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
-        - [ ] The top circle and left circle move apart when they overlap but the right one won’t until all three are overlapping
+        - [x] The top circle and left circle move apart when they overlap but the right one won’t until all three are overlapping
+        - [ ] Make the text color reflect the value
+        - [ ] Add Ricks text instructions
+        - [ ] Make mobile friendly
     - ### Eyedropper
         - [x] Looks good
         - [x] Change HSL to RGB (refer to helper.js)
