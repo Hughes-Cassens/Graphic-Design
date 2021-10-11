@@ -1,4 +1,3 @@
-
 var mousePosition;
 //track state of mousedown and up
 var isMouseDown;
@@ -11,7 +10,9 @@ function rgb(){
     let b = pixels[2];
     
    
-    $("#container").text("Red: " + r + " Green: " + g + " Blue: " + b).val();
+    $("#redValue").text(r).val();
+    $("#greenValue").text(g).val();
+    $("#blueValue").text(b).val();
     
 }
 //reference to the canvas element
@@ -44,9 +45,9 @@ window.addEventListener("mousemove",function(event) {
 });
 
 //make some circles
-var c1 = new Circle(50, 50, 100, red, "black");
-var c2 = new Circle(200, 50, 100, green, "black");
-var c3 = new Circle(350, 50, 100, blue, "black");
+var c1 = new Circle((c.width/2 - 150), (c.height/2), 100, red, "black");
+var c2 = new Circle((c.width/2), (c.height/2 - 150), 100, green, "black");
+var c3 = new Circle((c.width/2 + 150), (c.height/2), 100, blue, "black");
 //make a collection of circles
 var circles = [c1, c2, c3];
 

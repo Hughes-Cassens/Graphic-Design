@@ -2,7 +2,7 @@
 let c1, c2;
 
 function setup() {
-  createCanvas(1080, 720);
+  createCanvas(window.innerWidth-20, 500);
 
 }
 

@@ -1,4 +1,3 @@
-
 var mousePosition;
 //track state of mousedown and up
 var isMouseDown;
@@ -11,16 +10,11 @@ function rgb(){
     let b = pixels[2];
     
    
-    $("#container").text("Red: " + r + " Green: " + g + " Blue: " + b).val();
+    $("#redValue").text(r).val();
+    $("#greenValue").text(g).val();
+    $("#blueValue").text(b).val();
     
 }
-function windowResize() {
-    c.width  = window.innerWidth;
-    c.height = window.innerHeight;
-  };
-  
-  window.addEventListener('resize', windowResize);
-  
 //reference to the canvas element
 var c = document.getElementById("myCanvas");
 //reference to 2d context
@@ -46,12 +40,14 @@ window.addEventListener("mousemove",function(event) {
     mouse.x = event.clientX;
     mouse.y = event.clientY;
     rgb();
+   
+    
 });
 
 //make some circles
-var c1 = new Circle(500, 500, 100, red, "black");
-var c2 = new Circle(500, 700, 100, green, "black");
-var c3 = new Circle(600, 800, 100, blue, "black");
+var c1 = new Circle((c.width/2 - 150), (c.height/2), 100, red, "black");
+var c2 = new Circle((c.width/2), (c.height/2 - 150), 100, green, "black");
+var c3 = new Circle((c.width/2 + 150), (c.height/2), 100, blue, "black");
 //make a collection of circles
 var circles = [c1, c2, c3];
 
@@ -95,49 +91,8 @@ function Circle(x, y, r, fill, stroke) {
         ctx.fillStyle = this.fill;
         ctx.lineWidth = 3;
         ctx.fill();
-       
         
     }
-      // Drag circle touch
-      if (touchDown == true) {
-        console.log("drag a circle");
-        if(touch.x >= this.x - this.r && touch.x <= this.x + this.r && touch.y >= this.y - this.r && touch.y <= this.y + this.r)
-        {
-            this.x = touch.x;
-            this.y = touch.y;
-        }
-    }
-}
-var touchDown = false;
-// Touch Events
-var touch = {
-    x:0,
-    y:0
-}
-window.addEventListener('touchstart',f);
-window.addEventListener('touchmove',m);
-window.addEventListener('touchend',d);
-
-function d(){
-   
-
-
-};
-function m(event){
-  
-  
-   
-    
-    
-}
-
-
-
-function f(event){
-    
-    
-
-    
 }
 
 function move(e) {
@@ -145,15 +100,12 @@ function move(e) {
         return;
     }
     getMousePosition(e);
-
     //if any circle is focused
     if (focused.state) {
-       
         circles[focused.key].x = mousePosition.x;
         circles[focused.key].y = mousePosition.y;
         draw();
         return;
-       
     }
     //no circle currently focused check if circle is hovered
     for (var i = 0; i < circles.length; i++) {
@@ -188,13 +140,12 @@ function getMousePosition(e) {
         y: Math.round(e.y - rect.top)
     }
 }
-// Touch event
+// calc RGB
 
 //detects whether the mouse cursor is between x and y relative to the radius specified
 function intersects(circle) {
     // subtract the x, y coordinates from the mouse position to get coordinates 
     // for the hotspot location and check against the area of the radius
-    console.log("in circle");
     var areaX = mousePosition.x - circle.x;
     var areaY = mousePosition.y - circle.y;
     //return true if x^2 + y^2 <= radius squared.
@@ -202,7 +153,6 @@ function intersects(circle) {
 }
 
 Array.prototype.move = function (old_index, new_index) {
-    console.log('Move');
     if (new_index >= this.length) {
         var k = new_index - this.length;
         while ((k--) + 1) {
@@ -211,6 +161,4 @@ Array.prototype.move = function (old_index, new_index) {
     }
     this.splice(new_index, 0, this.splice(old_index, 1)[0]);
 };
-
 draw();
-window.addEventListener('resize',windowResize);

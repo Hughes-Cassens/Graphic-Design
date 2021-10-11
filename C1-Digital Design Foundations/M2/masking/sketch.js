@@ -9,7 +9,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, window.innerHeight-5);
   noStroke();
 }
 

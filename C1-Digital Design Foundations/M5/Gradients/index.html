@@ -7,18 +7,32 @@
   <title>Gradients</title>
   <!-- <link rel="stylesheet" href="style.css"> -->
   <!-- <script src="../p5.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
+    integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- <script src="../addons/p5.sound.js"></script> -->
   <script src="sketch.js"></script>
+  <style>
+    #controls{
+      font-family: Arial, Helvetica, sans-serif;
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 200px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Gradients</h1>
-  <p>Change the colors:</p>
-  <input type='color' id="color1" value="#515CFC">
-  <input type='color' id="color2" value="#DFD811">
-  <br/>
-  <br/>
+  <div id="controls">
+    <h1>Gradients</h1>
+    <p>Change the colors:</p>
+    <input type='color' id="color1" value="#515CFC">
+    <input type='color' id="color2" value="#DFD811">
+  </div>
+  <br />
+  <br />
   <main>
   </main>
 </body>

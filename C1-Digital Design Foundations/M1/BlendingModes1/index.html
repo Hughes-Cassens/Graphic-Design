@@ -1,110 +1,121 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="./touchPunch.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Blending Modes Part 1</title>
 </head>
+
 <body>
 
   <div class="container">
     <div class="imageContainer">
-        <!-- <img id="background" class="bkgImg" src="./images/white-background.jpg" alt="White Background"> -->
-        <img id="image1" class="image1" src="./images/Triangle.png" alt="Triangle">
-        <img id="image2" class="image2"src="./images/Circle.png" alt="Circle">
-        <img id="image3" class="image3"src="./images/Square.png" alt="Square">
+      <!-- <img id="background" class="bkgImg" src="./images/white-background.jpg" alt="White Background"> -->
+      <img id="image3" class="image3" src="./images/Square.png" alt="Square">
+      <img id="image2" class="image2" src="./images/Circle.png" alt="Circle">
+      <img id="image1" class="image1" src="./images/Triangle.png" alt="Triangle">
     </div>
-    
-    <div class="modeControls"> 
+
+    <div class="modeControls">
       <h1>Blending Modes</h1>
       <p>Use the controls below to change the blending modes of the images.</p>
-        <div class="parent">
-          <div class="div1 center"><h2>Layers</h2></div>
-          <div class="div2 center">
-            <div class="tooltip">
-              <i class="fas fa-info-circle"></i>
-                <span class="tooltiptext">Notice that the background is white. 
-                  Some blend modes will make all or parts of an image seemingly disappear.</span>
-            </div>
-            <h3>Triangle</h3></div>
-          <div class="div3 center"><h3>Circle</h3></div>
-          <div class="div4 center"><h3>Square</h3></div>
-            
-            
-          <div class="div5 center">
+      <div class="parent">
+        <div class="div1 center">
+          <h2>Layers</h2>
+        </div>
+        <div class="div2 center">
+          <div class="tooltip">
+            <i class="fas fa-info-circle"></i>
+            <span class="tooltiptext">Notice that the background is white.
+              Some blend modes will make all or parts of an image seemingly disappear.</span>
+          </div>
+          <h3>Triangle</h3>
+        </div>
+        <div class="div3 center">
+          <h3>Circle</h3>
+        </div>
+        <div class="div4 center">
+          <h3>Square</h3>
+        </div>
+
+
+        <div class="div5 center">
           <h2>Blend Modes</h2>
-          </div>
-            <!-- <label for="blends1"></label> -->
-            <!-- Probably could create some neat json thing here but I'm lazy -->
-            <div class="div6 center">
-            <select name="blendFirst" id="blendFirst">
-              <option value="normal">Normal</option>
-              <option value="darken">Darken</option>
-              <option value="multiply">Multiply</option>
-              <option value="screen">Screen</option>
-              <option value="color">Color</option>
-              <option value="color-burn">Color Burn</option>
-              <option value="color-dodge">Color Dodge</option>
-              <option value="overlay">Overlay</option>
-              <option value="soft-light">Soft Light</option>
-              <option value="hard-light">Hard Light</option>
-              <option value="difference">Difference</option>
-              <option value="exclusion">Exclusion</option>
-              <option value="hue">Hue</option>
-              <option value="saturation">Saturation</option>
-              <option value="lighten">Lighten</option>
-              <option value="luminosity">Luminosity</option>
-            </select>
-          </div>
-          <div class="div7 center">
-            <select name="blendSecond" id="blendSecond">
-              <option value="normal">Normal</option>
-              <option value="darken">Darken</option>
-              <option value="multiply">Multiply</option>
-              <option value="screen">Screen</option>
-              <option value="color">Color</option>
-              <option value="color-burn">Color Burn</option>
-              <option value="color-dodge">Color Dodge</option>
-              <option value="overlay">Overlay</option>
-              <option value="soft-light">Soft Light</option>
-              <option value="hard-light">Hard Light</option>
-              <option value="difference">Difference</option>
-              <option value="exclusion">Exclusion</option>
-              <option value="hue">Hue</option>
-              <option value="saturation">Saturation</option>
-              <option value="lighten">Lighten</option>
-              <option value="luminosity">Luminosity</option>
-            </select>
-          </div>
-          <div class="div8 center">
-            <select name="blendThird" id="blendThird">
-              <option value="normal">Normal</option>
-              <option value="darken">Darken</option>
-              <option value="multiply">Multiply</option>
-              <option value="screen">Screen</option>
-              <option value="color">Color</option>
-              <option value="color-burn">Color Burn</option>
-              <option value="color-dodge">Color Dodge</option>
-              <option value="overlay">Overlay</option>
-              <option value="soft-light">Soft Light</option>
-              <option value="hard-light">Hard Light</option>
-              <option value="difference">Difference</option>
-              <option value="exclusion">Exclusion</option>
-              <option value="hue">Hue</option>
-              <option value="saturation">Saturation</option>
-              <option value="lighten">Lighten</option>
-              <option value="luminosity">Luminosity</option>
-            </select>
-          </div>
-          <div class="div9 center"><h2>Opacity</h2></div>
-          <!-- <div class="div10">
+        </div>
+        <!-- <label for="blends1"></label> -->
+        <!-- Probably could create some neat json thing here but I'm lazy -->
+        <div class="div6 center">
+          <select name="blendFirst" id="blendFirst">
+            <option value="normal">Normal</option>
+            <option value="darken">Darken</option>
+            <option value="multiply">Multiply</option>
+            <option value="screen">Screen</option>
+            <option value="color">Color</option>
+            <option value="color-burn">Color Burn</option>
+            <option value="color-dodge">Color Dodge</option>
+            <option value="overlay">Overlay</option>
+            <option value="soft-light">Soft Light</option>
+            <option value="hard-light">Hard Light</option>
+            <option value="difference">Difference</option>
+            <option value="exclusion">Exclusion</option>
+            <option value="hue">Hue</option>
+            <option value="saturation">Saturation</option>
+            <option value="lighten">Lighten</option>
+            <option value="luminosity">Luminosity</option>
+          </select>
+        </div>
+        <div class="div7 center">
+          <select name="blendSecond" id="blendSecond">
+            <option value="normal">Normal</option>
+            <option value="darken">Darken</option>
+            <option value="multiply">Multiply</option>
+            <option value="screen">Screen</option>
+            <option value="color">Color</option>
+            <option value="color-burn">Color Burn</option>
+            <option value="color-dodge">Color Dodge</option>
+            <option value="overlay">Overlay</option>
+            <option value="soft-light">Soft Light</option>
+            <option value="hard-light">Hard Light</option>
+            <option value="difference">Difference</option>
+            <option value="exclusion">Exclusion</option>
+            <option value="hue">Hue</option>
+            <option value="saturation">Saturation</option>
+            <option value="lighten">Lighten</option>
+            <option value="luminosity">Luminosity</option>
+          </select>
+        </div>
+        <div class="div8 center">
+          <select name="blendThird" id="blendThird">
+            <option value="normal">Normal</option>
+            <option value="darken">Darken</option>
+            <option value="multiply">Multiply</option>
+            <option value="screen">Screen</option>
+            <option value="color">Color</option>
+            <option value="color-burn">Color Burn</option>
+            <option value="color-dodge">Color Dodge</option>
+            <option value="overlay">Overlay</option>
+            <option value="soft-light">Soft Light</option>
+            <option value="hard-light">Hard Light</option>
+            <option value="difference">Difference</option>
+            <option value="exclusion">Exclusion</option>
+            <option value="hue">Hue</option>
+            <option value="saturation">Saturation</option>
+            <option value="lighten">Lighten</option>
+            <option value="luminosity">Luminosity</option>
+          </select>
+        </div>
+        <div class="div9 center">
+          <h2>Opacity</h2>
+        </div>
+        <!-- <div class="div10">
             <span class="inline">0<input type="range" min="1" max="100" value="50" class="slider" id="opacityFirst">100</span>
           </div>
           <div class="div11">
@@ -113,17 +124,17 @@
           <div class="div12">
             <span class="inline">0<input type="range" min="1" max="100" value="50" class="slider" id="opacityThird">100</span>
           </div> -->
-          <div id="slider1" class="div10 slider"></div>
-          <div id="slider2" class="div11 slider"></div>
-          <div id="slider3" class="div12 slider"></div>
-          
-          
-            
-        </div>
-        </div>
+        <div id="slider1" class="div10 slider"></div>
+        <div id="slider2" class="div11 slider"></div>
+        <div id="slider3" class="div12 slider"></div>
 
-        
-        <!-- <br/>
+
+
+      </div>
+    </div>
+
+
+    <!-- <br/>
         <div class="input-field field">
           <form>
             <select id="color" class="blends">
@@ -152,7 +163,8 @@
         <div class="slider"id="sliderCircle"></div>
         <h2>Triangle Opacity</h2>
         <div class="slider"id="sliderTriangle"></div> -->
-    </div>
-<script  src="script.js"></script>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>

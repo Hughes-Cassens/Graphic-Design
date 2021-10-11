@@ -3,7 +3,7 @@ body {
     margin: 0;
     background: whitesmoke;
     font-family: sans-serif;
-    padding: 2em;
+    padding-top: 2em;
 
 }
 
@@ -41,16 +41,16 @@ body {
     
 }
 .blur-range::-webkit-slider-thumb {
-    height: 3em;
-    width: 3em;
-    border-radius: 2em;
+    height: 2em;
+    width: 2em;
+    border-radius: 1em;
     appearance: none;
     background: white;
     cursor: pointer;
     cursor: move;
     cursor: grab;
     cursor: -webkit-grab;
-    border: 0.4em solid currentColor;
+    border: 0.2em solid currentColor;
     transition: border 0.1s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
     box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.15);
 }

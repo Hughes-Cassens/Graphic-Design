@@ -12,7 +12,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1080, 720);
+  createCanvas(window.innerWidth, window.innerHeight-100);
   
   image(img, 0, 0, 1080, 720);
   filterInput = document.getElementById("filters").value;
