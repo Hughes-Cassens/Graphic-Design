@@ -10,7 +10,7 @@
     - [x] Eyedropper
     - [x] Color Input/html
 - M2: Photoshop Foundations
-    - [ ] Layers
+    - [x] Layers
     - [x] Masking
     - [x] Blending Modes #2
     - [x] Brush/pencil/color
