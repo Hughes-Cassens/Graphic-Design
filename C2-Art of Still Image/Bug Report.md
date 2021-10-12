@@ -49,9 +49,9 @@
 ###     - Color Modes
  - [x] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
  - [x] The top circle and left circle move apart when they overlap but the right one won’t until all three are overlapping
- - [ ] Make the text color reflect the value
+ - [x] Make the text color reflect the value
  - [ ] Add Ricks text
- - [ ] Make mobile friendly
+ - [x] Make mobile friendly
 ###     - Color Input
  - [x] Looks good.
  - [ ] add Ricks text.
@@ -60,7 +60,7 @@
  - [x] Every time we click a new palette is generated no matter where we are clicking, this should be restricted to a button.
 ## - M4
 ###     - Text Editor
- - [ ] Not done
+ - [x] Not done
  - [ ] Rich text changes to code editor
 ###     - Text Scaler
  - [x] Not done

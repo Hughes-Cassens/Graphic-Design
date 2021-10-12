@@ -1,4 +1,7 @@
 var mousePosition;
+var touchPosition;
+
+var touchDown = false;
 //track state of mousedown and up
 var isMouseDown;
 function rgb(){
@@ -15,6 +18,10 @@ function rgb(){
     $("#blueValue").text(b).val();
     
 }
+
+
+
+
 //reference to the canvas element
 var c = document.getElementById("myCanvas");
 //reference to 2d context
@@ -28,6 +35,31 @@ c.style.background = 'black';
 document.addEventListener('mousemove', move, false);
 document.addEventListener('mousedown', setDraggable, false);
 document.addEventListener('mouseup', setDraggable, false);
+
+window.addEventListener('touchstart',setDraggable,false);
+window.addEventListener('touchmove',move);
+window.addEventListener('touchend',setDraggable,false);
+
+function d(){
+   console.log("touchend");
+   touchDown = false;
+   console.log(touchDown);
+};
+function m(event){
+  
+  console.log(touchDown);
+   
+}
+
+
+
+function f(event){
+    
+    console.log(touchDown);
+    touchDown = true;
+    
+}
+
 var red = "rgba(255,0,0,1)";
 var green = "rgba(0,255,0,1";
 var blue = "rgba(0,0,255,1";
@@ -36,13 +68,15 @@ var mouse = {
     x: 0,
     y: 0
 }
+
 window.addEventListener("mousemove",function(event) {
     mouse.x = event.clientX;
     mouse.y = event.clientY;
     rgb();
-   
-    
 });
+
+
+
 
 //make some circles
 var c1 = new Circle((c.width/2 - 150), (c.height/2), 100, red, "black");
@@ -96,35 +130,72 @@ function Circle(x, y, r, fill, stroke) {
 }
 
 function move(e) {
-    if (!isMouseDown) {
+    if (!isMouseDown && !touchDown) {
         return;
     }
-    getMousePosition(e);
-    //if any circle is focused
-    if (focused.state) {
-        circles[focused.key].x = mousePosition.x;
-        circles[focused.key].y = mousePosition.y;
-        draw();
-        return;
+    console.log(touchDown);
+    if (isMouseDown == true) {
+        getMousePosition(e);
+        //if any circle is focused
+        if (focused.state) {
+            // Mouse
+            circles[focused.key].x = mousePosition.x;
+            circles[focused.key].y = mousePosition.y;
+            console.log("mvo");
+            draw();
+            return;
+            
+        } 
     }
+    else if (touchDown == true){
+        // console.log(e);
+        getTouchPosition(e);
+        console.log(e.changedTouches[0].clientX);
+        // console.log("mvo");
+        //if any circle is focused
+        if (focused.state) {
+                circles[focused.key].x = e.changedTouches[0].clientX;
+                circles[focused.key].y = e.changedTouches[0].clientY;
+                console.log(touchPosition.x);
+            draw();
+            return;
+            
+        } 
+    }
+    
     //no circle currently focused check if circle is hovered
     for (var i = 0; i < circles.length; i++) {
         if (intersects(circles[i])) {
             circles.move(i, 0);
             focused.state = true;
             break;
+            
         }
     }
     draw();
 }
 
+
+
 //set mousedown state
 function setDraggable(e) {
     var t = e.type;
+
     if (t === "mousedown") {
         isMouseDown = true;
-    } else if (t === "mouseup") {
+    }
+    else if(t === "touchstart" || t === "touchmove") {
+        touchDown = true;
+        console.log("fired");
+    }
+    else if (t === "mouseup") {
         isMouseDown = false;
+        
+        releaseFocus();
+    }
+    else if(t === "touchend"){
+        touchDown = false;
+        console.log("endTouch");
         releaseFocus();
     }
 }
@@ -139,6 +210,19 @@ function getMousePosition(e) {
         x: Math.round(e.x - rect.left),
         y: Math.round(e.y - rect.top)
     }
+    
+}
+
+function getTouchPosition(e) {
+    console.log(e.clientX);
+    var rect = c.getBoundingClientRect();
+    touchPosition = { 
+        x: Math.round(e.changedTouches[0].clientX - rect.left),
+        y: Math.round(e.changedTouches[0].clientY - rect.top)
+    }
+    // console.log(touchPosition.x);
+    // console.log(e.x);
+    // console.log(rect.left);
 }
 // calc RGB
 
@@ -146,8 +230,20 @@ function getMousePosition(e) {
 function intersects(circle) {
     // subtract the x, y coordinates from the mouse position to get coordinates 
     // for the hotspot location and check against the area of the radius
-    var areaX = mousePosition.x - circle.x;
-    var areaY = mousePosition.y - circle.y;
+    var areaX
+    var areaY
+    if (touchDown == true) {
+        console.log(touchPosition.x);
+        areaX = touchPosition.x - circle.x;
+        areaY = touchPosition.y - circle.y;
+        // console.log(touchPosition.x);
+    }
+    else{
+         areaX = mousePosition.x - circle.x;
+         areaY = mousePosition.y - circle.y;
+        // console.log(mousePosition.x);
+    }
+    
     //return true if x^2 + y^2 <= radius squared.
     return areaX * areaX + areaY * areaY <= circle.r * circle.r;
 }
