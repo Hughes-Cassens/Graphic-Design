@@ -14,7 +14,7 @@
         - [x] Styling is using the Materialize framework, this should be removed and have the themed style applied(this really only relates to the button but I thought it was worth mentioning)
         - [x] The top circle and left circle move apart when they overlap but the right one won’t until all three are overlapping
         - [x] Make the text color reflect the value
-        - [ ] Add Ricks text instructions
+        - [x] Add Ricks text instructions
         - [x] Make mobile friendly
     - ### Eyedropper
         - [x] Looks good
@@ -23,7 +23,7 @@
         - [x] Looks good
 - ## M2
     - ### Layers
-        - [ ] Not completed
+        - [x] Not completed
     - ### Masking
         - [x] Not sure if this is intentional but when the cursor moves far enough to the edges of the screen the image that is being masked out is revealed 
         - [x] Make masking shape resizable.
