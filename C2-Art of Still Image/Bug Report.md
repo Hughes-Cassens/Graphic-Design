@@ -73,8 +73,12 @@
  - [ ] Add save functionality
 ###     - Shape/Line/Pen
  - [x] Not done
+ - [ ] Add anchors point editable points(Add points);
+ - [x] Resize canvas(Needs testing in canvas frame to be certain)
 ## - M6
 ###     - Collage Editor
  - [x] Not done
+ - [ ] Add Ricks text instructions
 ###     - Abstraction: Overlay/Filters/Blending Modes/Opacity
  - [x] Not done
+ - [ ] Add Ricks text instructions
