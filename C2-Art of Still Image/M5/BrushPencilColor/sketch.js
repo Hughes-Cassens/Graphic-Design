@@ -1,6 +1,7 @@
-let w = 1080;
-let h = 720;
+let w = window.innerWidth;
+let h = window.innerHeight;
 let softbrush;
+
 
 
 function preload() {
@@ -14,26 +15,36 @@ function setup() {
   pencil = select("#pencilTool");
   eraser = select("#eraserTool");
   background(255);
+  var saveButton = createButton("Save");
+  saveButton.mousePressed(saveToLocal);
 }
+
+function saveToLocal() {
+  saveCanvas(canvas,'myCanvas','png')
+}
+
+
 
 function draw() {
   size = select("#weight").elt.value;
   color = select("#color").elt.value;
   // put drawing code here
   
+ 
+  
   //mouseDragged();
- // mousePressed();
+  // mousePressed();
 }
 
 
 function mouseDragged(){
   let scale = (size * softbrush.width/200);
   stroke(color);
-  if(brush.elt.checked===true && mouseX>0 && mouseX<w && mouseY>0 && mouseY<h){
+  if(brush.elt.checked === true && mouseX > 0 && mouseX< w && mouseY > 0 && mouseY < h){
     image(softbrush, mouseX - (scale/2), mouseY - (scale/2), scale, scale);
-    console.log(color)
+    console.log(color);
     tint(color);
-  }else if(pencil.elt.checked==true  && mouseX>0 && mouseX<w && mouseY>0 && mouseY<h){ 
+  }else if(pencil.elt.checked==true  && mouseX >0 && mouseX < w && mouseY > 0 && mouseY < h){ 
       strokeWeight(size);
       line(pmouseX, pmouseY, mouseX, mouseY);
   }else if(eraser.elt.checked==true && mouseX<w && mouseY>0 && mouseY<h){
@@ -54,8 +65,5 @@ function mousePressed(e){
     mouseDragged();
     return "done";
   }
-
   return;
-  console.log("start ");
-
 }

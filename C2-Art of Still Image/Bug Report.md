@@ -66,9 +66,10 @@
  - [x] Not done
 ## - M5
 ###     - 3D Canvas
- - [ ] Ideally Controls could use refinement
+ - [x] works for mobile, you have to initially double tap for it to start working.
  - [ ] Apply Texture
 ###     - Brush/Pencil/ColorModes
+ - [ ] Paint tool is lags when used
  - [x] Looks good
  - [ ] Add save functionality
 ###     - Shape/Line/Pen

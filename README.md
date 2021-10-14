@@ -48,14 +48,14 @@
     - [x] Text Editor? A few different typefaces. Size, color, position.
     - [x] Text Scaler?
         - [ ] Add Ricks text instructions
-        - [ ] Make canvas size smaller
+        - [x] Make canvas size smaller
 - M5: Graphic Elements (Digital Art, Shapes, 3D)
     - [x] 3D Canvas
-        - [ ] Test for mobile
+        - [x] Test for mobile(Works, but user must doubletap to initiate the touch moments)
         - [ ] Add Ricks text instructions
     - [x] Brush/pencil/color
-        - [ ] Fix canvas rendering Bug
-        - [ ] Center canvas
+        - [x] Fix canvas rendering Bug
+        - [x] Center canvas
         - [ ] Add Ricks text instructions
         - [ ] Add Reset/Clear canvas functionality 
     - [x] Shape, line, pen tool

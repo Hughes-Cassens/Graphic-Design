@@ -1,5 +1,5 @@
-var sceneWidth = 1000;
-var sceneHeight = 1000;
+var sceneWidth = window.innerWidth;
+var sceneHeight = window.innerHeight;
 var mouseOver = false;
 // first we need to create a stage
 var stage = new Konva.Stage({
@@ -95,7 +95,7 @@ layer.add(textAnchorGroup);
   }
  
  
-  console.log(textAnchorGroup.width());
+  console.log(stage.width());
   fitStageIntoParentContainer();
   // adapt the stage on any window resize
   window.addEventListener('resize', fitStageIntoParentContainer);
