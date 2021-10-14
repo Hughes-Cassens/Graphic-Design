@@ -34,6 +34,9 @@ canvas {
     font-size: 25px;
     cursor: pointer;
 }
+p{
+    color: #fff;
+}
 
 .toolbar input[type="radio"]:checked+label i {
     color: #222;

@@ -11,7 +11,7 @@ function buildAnchor(x, y) {
   var anchor = new Konva.Circle({
     x: x,
     y: y,
-    radius: 5,
+    radius: 6,
     stroke: '#666',
     fill: '#ddd',
     strokeWidth: 2,
@@ -22,11 +22,13 @@ function buildAnchor(x, y) {
   // add hover styling
   anchor.on('mouseover', function () {
     document.body.style.cursor = 'pointer';
+    this.radius(10)
     this.strokeWidth(4);
   });
   anchor.on('mouseout', function () {
     document.body.style.cursor = 'default';
     this.strokeWidth(2);
+    this.radius(6);
   });
 
   anchor.on('dragmove', function () {
@@ -52,12 +54,12 @@ stage.add(layer);
 
 // function to update line points from anchors
 function updateDottedLines() {
-  var q = quad;
+  var q = linePath1;
 
 
-  var quadLinePath = layer.findOne('#quadLinePath');
+  var linePath = layer.findOne('#linePath');
 
-  quadLinePath.points([
+  linePath.points([
     q.start.x(),
     q.start.y(),
     q.control.x(),
@@ -65,47 +67,56 @@ function updateDottedLines() {
     q.end.x(),
     q.end.y(),
   ]);
+}
 
-  
+
+function addAnchorPoints(){
+  console.log(line);
+}
+
+function decreaseAnchorPoints(){
+  console.log("decrease");
 }
 
 // we will use custom shape for curve
 
 
-var quadLinePath = new Konva.Line({
+var linePath = new Konva.Line({
   dash: [10, 10, 0, 10],
   strokeWidth: 3,
   stroke: 'black',
   lineCap: 'round',
-  id: 'quadLinePath',
+  id: 'linePath',
   opacity: 0.3,
   points: [0, 0],
 });
-layer.add(quadLinePath);
+layer.add(linePath);
 
 
 
 // special objects to save references to anchors
-var quad = {
+var linePath1 = {
   start: buildAnchor(275, 30),
   control: buildAnchor(176, 249),
   end: buildAnchor(60, 500),
 };
 
-// Drag and draw line functionality
 
+
+
+// Drag and draw line functionality
 stage.on('mousedown',function(){
   var quadraticLine = new Konva.Shape({
     stroke: 'black',
     strokeWidth: 2,
     sceneFunc: (ctx, shape) => {
       ctx.beginPath();
-      ctx.moveTo(quad.start.x(), quad.start.y());
+      ctx.moveTo(linePath1.start.x(), linePath1.start.y());
       ctx.quadraticCurveTo(
-        quad.control.x(),
-        quad.control.y(),
-        quad.end.x(),
-        quad.end.y()
+        linePath1.control.x(),
+        linePath1.control.y(),
+        linePath1.end.x(),
+        linePath1.end.y()
       );
       ctx.fillStrokeShape(shape);
     },
@@ -113,5 +124,16 @@ stage.on('mousedown',function(){
   layer.add(quadraticLine);
   
 })
+
+// Listen for Buttons
+
+
+
+
+
+// $("#increase").on('click',addAnchorPoints);
+// $("#decrease").on('click',decreaseAnchorPoints);
+
+
 
 updateDottedLines();

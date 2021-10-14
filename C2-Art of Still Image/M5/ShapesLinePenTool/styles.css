@@ -1,4 +1,18 @@
+body{
+    overflow: hidden;
+}
 canvas{
     width:700px;
     height: 300px;
+}
+#container{
+    z-index: 1;
+}
+.textContainer{
+    z-index: 2;
+    top: 5%;
+    
+}
+.textContainer p{
+    text-align: center;
 }
