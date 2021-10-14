@@ -7,33 +7,36 @@
   <title>Text Editor</title>
 
 
-<script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
-<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+  <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
-<!-- Not really changing it to code, more like a codeblock -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <!-- Not really changing it to code, more like a codeblock -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
-<!-- Theme included stylesheets -->
-<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-<link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+  <!-- Theme included stylesheets -->
+  <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
 
-<!-- I don't know why but external stylesheet isn't working -->
-<style>
-  html {
-  height: 100%;
-  }
-  body {
-    margin: 0;
-    height: 100%;
+  <!-- I don't know why but external stylesheet isn't working -->
+  <style>
+    html {
+      height: 100%;
     }
-  /* Tell Quill not to scroll */
+
+    body {
+      margin: 0;
+      height: 100%;
+    }
+
+    /* Tell Quill not to scroll */
     #editor-container {
       height: 80%;
       padding: 50px;
     }
+
     #editor-container .ql-editor {
       font-size: 18px;
-      overflow-y: visible; 
+      overflow-y: visible;
     }
 
     /* Specify our own scrolling container */
@@ -42,8 +45,7 @@
       min-height: 100%;
       overflow-y: auto;
     }
-
-</style>
+  </style>
 
 </head>
 
@@ -53,55 +55,85 @@
       <p>This <strong>rich-tech editor</strong> has many of the text editing tools found in design software. </p>
       <p><br></p>
     </div>
-</div>
+  </div>
 
-<!-- Include the Quill library -->
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <!-- Include the Quill library -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
-<!-- Initialize Quill editor -->
-<script>
-  hljs.configure({   // optionally configure hljs
-  languages: ['javascript', 'ruby', 'python']
-  });
+  <!-- Initialize Quill editor -->
+  <script>
+    hljs.configure({ // optionally configure hljs
+      languages: ['javascript', 'ruby', 'python']
+    });
 
-var toolbarOptions = [
-  [{ 'font': [] }],
-  ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-  ['blockquote'],
+    var toolbarOptions = [
+      [{
+        'font': []
+      }],
+      ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+      ['blockquote'],
 
-  [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-  [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-  [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-  [{ 'direction': 'rtl' }],                         // text direction
+      [{
+        'header': 1
+      }, {
+        'header': 2
+      }], // custom button values
+      [{
+        'list': 'ordered'
+      }, {
+        'list': 'bullet'
+      }],
+      [{
+        'script': 'sub'
+      }, {
+        'script': 'super'
+      }], // superscript/subscript
+      [{
+        'indent': '-1'
+      }, {
+        'indent': '+1'
+      }], // outdent/indent
+      [{
+        'direction': 'rtl'
+      }], // text direction
 
-  [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+      [{
+        'size': ['small', false, 'large', 'huge']
+      }], // custom dropdown
+      [{
+        'header': [1, 2, 3, 4, 5, 6, false]
+      }],
 
-  [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-  [{ 'align': [] }],
-  ['image', 'video'],
+      [{
+        'color': []
+      }, {
+        'background': []
+      }], // dropdown with defaults from theme
+      [{
+        'align': []
+      }],
+      ['video'],
 
-  ['clean'],                                         // remove formatting button
+      ['clean'], // remove formatting button
 
-];
+    ];
 
 
-  var quill = new Quill('#editor-container', {
-    modules: {
-      syntax: true,
-      toolbar: toolbarOptions, 
-      history: {
-      delay: 2000,
-      maxStack: 500,
-      userOnly: true,
-    },
-    },
-    
-    scrollingContainer: '#scrolling-container', 
-    theme: 'snow'
-  });
-</script>
+    var quill = new Quill('#editor-container', {
+      modules: {
+        syntax: true,
+        toolbar: toolbarOptions,
+        history: {
+          delay: 2000,
+          maxStack: 500,
+          userOnly: true,
+        },
+      },
+
+      scrollingContainer: '#scrolling-container',
+      theme: 'snow'
+    });
+  </script>
 </body>
 
 

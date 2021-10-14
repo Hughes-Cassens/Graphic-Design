@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,7 @@
   <div class="container">
     <div class="col-1">
       <h3> Principles of Design</h3>
-      <hr/>
+      <hr />
       <p>You can move, duplicate, arrange, resize, and change the color of the objects in the canvas.</p>
       <hr>
       <h3>Suggestion:</h3>
@@ -33,27 +34,28 @@
           Create contrast through color or size
         </li>
       </ul>
-      
+
 
       <!-- Set this when all checkboxes are checked -->
       <div id="dvGreatJob" style="display: none">
         <h3>Great Job! Move on to the next tab.</h3>
       </div>
     </div>
-  
+
     <div class="col-2">
       <!-- <div id="duplicater"> -->
-      
-          <div id="mydiv" class="draggable hue saturation brightness alpha loadedDiv" onclick="setIdFunction(this.id)">
-              <input type="checkbox" id="btnContrl"/><lable for="btnContrl">
-              <!-- <div class="drag-rotate"> -->
-                <img class=" resize-drag loadedDiv" src="./preload/apple.png">
-              <!-- <div class="rotation-handle">&circlearrowright;</div> -->
-              <!-- </div> -->
-            </lable>
+
+      <div id="mydiv" class="draggable hue saturation brightness alpha loadedDiv" onclick="setIdFunction(this.id)">
+        <input type="checkbox" id="btnContrl" />
+        <lable for="btnContrl">
+          <!-- <div class="drag-rotate"> -->
+          <img class=" resize-drag loadedDiv" src="./preload/apple.png">
+          <!-- <div class="rotation-handle">&circlearrowright;</div> -->
+          <!-- </div> -->
+        </lable>
       </div>
 
-   
+
       <!-- <div class="box">
         
       </div> -->
@@ -67,55 +69,57 @@
         Hello
       </div> -->
 
-    
+
       <!-- <p>Click to make me resizable</p> -->
-        <!-- <div id="duplicater"> 
+      <!-- <div id="duplicater"> 
             duplicate EVERYTHING INSIDE THIS DIV
         </div> -->
     </div>
     <div class="col-3">
       <h3>Formatting</h3>
-        <button id="remove" onclick="removeThis()">Remove</button>
-        <br/> 
-        <br/> 
-        <button id="button" onclick="duplicate()">Duplicate</button>
-        <br/>
-        <br/>
-        <span>
+      <button id="remove" onclick="removeThis()">Remove</button>
+      <br />
+      <br />
+      <button id="button" onclick="duplicate()">Duplicate</button>
+      <br />
+      <br />
+      <span>
         <select id="arrange">
+          <option value="">Arrange...</option>
           <option value="Back">Send to Back</option>
           <option value="Backwards">Send Backwards</option>
           <option value="Forward">Bring Forward</option>
           <option value="Front">Bring to Front</option>
         </select><button onclick="arrange()">Arrange</button></span>
-        <br/>
-        <br/>
-        <div>
-          <h4>Color</h4>
-          <span>Hue:
+      <br />
+      <br />
+      <div>
+        <h4>Color</h4>
+        <span>Hue:
           <div class="sliderContainer center">
             <input class="div2 hue-range center" id="hue" type="range" value="180" max="360">
           </div></span>
-          <br/>
-          <span>Saturation:
-            <div class="sliderContainer center">
-              <input class="div2 saturation-range center" id="saturation" type="range" value="100" max="300">
-            </div></span>
-            <br/>
-          <span>Brightness:
-            <div class="sliderContainer center">
-              <input class="div2 brightness-range center" id="brightness" type="range" value="100" max="500">
-            </div></span>
-            <br/>
-          <span>Opacity:
-            <div class="sliderContainer center">
-              <input class="div2 alpha-range center" id="alpha" type="range" value="100" max="100">
-            </div></span>
-        </div>
+        <br />
+        <span>Saturation:
+          <div class="sliderContainer center">
+            <input class="div2 saturation-range center" id="saturation" type="range" value="100" max="300">
+          </div></span>
+        <br />
+        <span>Brightness:
+          <div class="sliderContainer center">
+            <input class="div2 brightness-range center" id="brightness" type="range" value="100" max="500">
+          </div></span>
+        <br />
+        <span>Opacity:
+          <div class="sliderContainer center">
+            <input class="div2 alpha-range center" id="alpha" type="range" value="100" max="100">
+          </div></span>
+      </div>
 
-    </div>   
+    </div>
   </div>
   <!-- <button>Save Canvas</button> -->
 </body>
 <script src="script.js"></script>
+
 </html>
