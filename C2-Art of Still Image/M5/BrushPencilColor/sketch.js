@@ -17,10 +17,16 @@ function setup() {
   background(255);
   var saveButton = createButton("Save");
   saveButton.mousePressed(saveToLocal);
+  var resetButton = createButton("Reset");
+  resetButton.mousePressed(clearCanvas);
 }
 
 function saveToLocal() {
   saveCanvas(canvas,'myCanvas','png')
+}
+function clearCanvas() {
+  canvas = createCanvas(windowWidth-100, windowHeight-200);
+  background(255);
 }
 
 

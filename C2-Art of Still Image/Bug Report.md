@@ -71,7 +71,7 @@
 ###     - Brush/Pencil/ColorModes
  - [ ] Paint tool is lags when used
  - [x] Looks good
- - [ ] Add save functionality
+ - [x] Add save functionality
 ###     - Shape/Line/Pen
  - [x] Not done
  - [ ] Add anchors point editable points(Add points);

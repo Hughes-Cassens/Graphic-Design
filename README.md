@@ -57,11 +57,11 @@
         - [x] Fix canvas rendering Bug
         - [x] Center canvas
         - [ ] Add Ricks text instructions
-        - [ ] Add Reset/Clear canvas functionality 
+        - [x] Add Reset/Clear canvas functionality 
     - [x] Shape, line, pen tool
         - [x] Add shape line functionality
         - [ ] Add anchors point editable points(Add points);
-        - [ ] Resize canvas
+        - [x] Resize canvas
 - M6: Manipulation (Retouching, Abstraction, Collage)
     - [x] Collage editor?
         - [ ] Add Ricks text instructions
