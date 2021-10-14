@@ -47,20 +47,19 @@
 - M4: Text
     - [x] Text Editor? A few different typefaces. Size, color, position.
     - [x] Text Scaler?
-        - [ ] Add Ricks text instructions
+        - [x] Add Ricks text instructions
         - [x] Make canvas size smaller
 - M5: Graphic Elements (Digital Art, Shapes, 3D)
     - [x] 3D Canvas
-        - [x] Test for mobile(Works, but user must doubletap to initiate the touch moments)
+        - [x] Test for mobile(Works, but user must double-tap to initiate the touch moments)
         - [ ] Add Ricks text instructions
     - [x] Brush/pencil/color
         - [x] Fix canvas rendering Bug
         - [x] Center canvas
-        - [ ] Add Ricks text instructions
+        - [x] Add Ricks text instructions
         - [x] Add Reset/Clear canvas functionality 
     - [x] Shape, line, pen tool
         - [x] Add shape line functionality
-        - [ ] Add anchors point editable points(Add points);
         - [x] Resize canvas
 - M6: Manipulation (Retouching, Abstraction, Collage)
     - [x] Collage editor?

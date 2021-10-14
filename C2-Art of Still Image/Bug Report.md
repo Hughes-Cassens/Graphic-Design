@@ -61,7 +61,7 @@
 ## - M4
 ###     - Text Editor
  - [x] Not done
- - [ ] Rich text changes to code editor
+ - [x] Rich text changes to code editor
 ###     - Text Scaler
  - [x] Not done
 ## - M5
@@ -69,17 +69,15 @@
  - [x] works for mobile, you have to initially double tap for it to start working.
  - [ ] Apply Texture
 ###     - Brush/Pencil/ColorModes
- - [ ] Paint tool is lags when used
  - [x] Looks good
  - [x] Add save functionality
 ###     - Shape/Line/Pen
  - [x] Not done
- - [ ] Add anchors point editable points(Add points);
  - [x] Resize canvas(Needs testing in canvas frame to be certain)
 ## - M6
 ###     - Collage Editor
  - [x] Not done
- - [ ] Add Ricks text instructions
+ - [x] Add Ricks text instructions
 ###     - Abstraction: Overlay/Filters/Blending Modes/Opacity
  - [x] Not done
- - [ ] Add Ricks text instructions
+ - [x] Add Ricks text instructions
