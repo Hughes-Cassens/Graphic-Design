@@ -56,7 +56,6 @@
 - ## M5
     - ### Shapes, line, pen tool
         - [x] Not Finished
-        - [ ] Add anchors point editable points(Add points);
         - [x] Resize canvas
     - ### Gradients
         - [x] Looks good

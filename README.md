@@ -63,8 +63,8 @@
         - [x] Resize canvas
 - M6: Manipulation (Retouching, Abstraction, Collage)
     - [x] Collage editor?
-        - [ ] Add Ricks text instructions
+        - [x] Add Ricks text instructions
     - [x] Abstraction: Overlay/filters, blending modes, opacity
-        - [ ] Add Ricks text instructions
+        - [x] Add Ricks text instructions
 
 
