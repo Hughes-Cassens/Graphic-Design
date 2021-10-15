@@ -2,25 +2,25 @@
 
 ## - M1
 ###     - Sandbox 1
-- [ ] Layers should not overlap with UI(Should be restricted to the workspace).
+- [x] Layers should not overlap with UI(Should be restricted to the workspace).
 - [x] Sliders need to dynamically change when value is changed, not on mouse up.
 - [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
 - [x] Change Checkboxes to bullets.
 - [x] Add Ricks text instructions
 ###     - Sandbox 2
- - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
+ - [x] Layers should not overlap with UI(Should be restricted to the workspace).
  - [x] Sliders need to dynamically change when value is changed, not on mouse up.
  - [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
  - [x] Change Checkboxes to bullets.
  - [x] Add Ricks text instructions
 ###     - Sandbox 3
- - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
+ - [x] Layers should not overlap with UI(Should be restricted to the workspace).
  - [x] Sliders need to dynamically change when value is changed, not on mouse up.
  - [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
  - [x] Change Checkboxes to bullets.
  - [x] Add Ricks text instructions
 ###     - Sandbox 4
- - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
+ - [x] Layers should not overlap with UI(Should be restricted to the workspace).
  - [x] Hexagon shape dosnt respond to sliders
  - [x] Sliders need to dynamically change when value is changed, not on mouse up.
  - [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
@@ -28,19 +28,19 @@
  - [x] Add Ricks text instructions
 ## - M2
 ###     - Sandbox 5
- - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
+ - [x] Layers should not overlap with UI(Should be restricted to the workspace).
  - [x] Sliders need to dynamically change when value is changed, not on mouse up.
  - [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
  - [x] Change Checkboxes to bullets.
  - [x] Add Ricks text instructions 
 ###     - Sandbox 6
- - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
+ - [x] Layers should not overlap with UI(Should be restricted to the workspace).
  - [x] Sliders need to dynamically change when value is changed, not on mouse up.
  - [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
  - [x] Change Checkboxes to bullets.
  - [x] Add Ricks text instructions  
 ###     - Sandbox 7
- - [ ] Layers should not overlap with UI(Should be restricted to the workspace).
+ - [x] Layers should not overlap with UI(Should be restricted to the workspace).
  - [x] Sliders need to dynamically change when value is changed, not on mouse up.
  - [x] Add "Suggestion" and *<hr/>* under directions and above checkboxes. 
  - [x] Change Checkboxes to bullets.
