@@ -6,6 +6,18 @@ var original = "";
 var original;
 var selectPosition;
 
+
+
+var centerContainer = document.getElementsByClassName("col-2");
+console.log(centerContainer);
+
+var imageContainer = document.getElementById("draggedImage");
+console.log(imageContainer.clientWidth);
+
+let updatedX;
+let updatedY;
+
+
 var hueValue = "hue-rotate(360deg)";
 var saturationValue = "saturate(100%)";
 var brightnessValue = "brightness(100%)";
@@ -132,11 +144,36 @@ function dragMoveListener (event) {
   var target = event.target
   var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
   var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
-
+  
+  
   target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
-
-  target.setAttribute('data-x', x)
-  target.setAttribute('data-y', y)
+  // console.log(x);
+    
+  if (x + imageContainer.clientWidth >= centerContainer[0].clientWidth) {
+      x = imageContainer.clientWidth + 40;
+      updatedX = x;
+      
+}
+  else if (x <= 0)
+    {
+    x = 0;
+    updatedX = x;
+    }
+    else if (y + imageContainer.clientHeight >= centerContainer[0].clientHeight){
+      y = imageContainer.clientHeight + 40;
+      updatedY = y;
+}
+  else if (y <= 0) {
+    y = 0;
+    updatedY = y;
+  }
+  
+  else{
+    updatedX = x;
+    target.setAttribute('data-x', x)
+    updatedY = y;
+    target.setAttribute('data-y', y)
+  }
 }
 
 
@@ -197,18 +234,29 @@ interact('.resize-drag')
     invert: 'reposition',
     listeners: {
       move: function (event) {
-        let { x, y } = event.target.dataset
-
-        x = (parseFloat(x) || 0) + event.deltaRect.left
-        y = (parseFloat(y) || 0) + event.deltaRect.top
+        
+        let { updatedX, updatedY } = event.target.dataset;
+        
+        if (updatedX >= 0) {
+          updatedX = (parseFloat(updatedX)) + event.deltaRect.left;
+        }
+        if (updatedY >= 0) {
+          updatedY = (parseFloat(updatedY) || 0) + event.deltaRect.top;
+        }
+        else if (updatedY < 0){
+          updatedY = (parseFloat(updatedY) || 0) + event.deltaRect.top;
+        }
+        
+        
+       
 
         Object.assign(event.target.style, {
           width: `${event.rect.width}px`,
           height: `${event.rect.height}px`,
-          transform: `translate(${x}px, ${y}px)`
+          transform: `translate(${updatedX}px, ${updatedY}px)`
         })
-
-        Object.assign(event.target.dataset, { x, y })
+          console.log(parseFloat(updatedX));
+        Object.assign(event.target.dataset, { updatedX, updatedY })
       }
     }
   })
