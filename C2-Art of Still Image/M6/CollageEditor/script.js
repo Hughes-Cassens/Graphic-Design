@@ -6,7 +6,7 @@ var original = "";
 var original;
 var selectPosition;
 var transform;
-var i = 4;
+var i = 5;
 
 var hueValue = "hue-rotate(360deg)";
 var saturationValue = "saturate(100%)";
