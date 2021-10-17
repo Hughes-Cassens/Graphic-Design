@@ -6,6 +6,7 @@ var original = "";
 var original;
 var selectPosition;
 var transform;
+var i = 4;
 
 var hueValue = "hue-rotate(360deg)";
 var saturationValue = "saturate(100%)";
@@ -21,8 +22,25 @@ function setIdFunction(id) {
   
   original = (document.getElementById(id)); 
   // console.log(original.getAttribute('data-xy'))
-
-  // original.classList.add("highlight");
+ 
+  if(original.classList.contains("highlightFunction") == false) {
+    original.addEventListener("click", function(){
+      original = (document.getElementById(id)); 
+      original.classList.toggle("highlight")
+      for(var j=1;j<=i;j++){
+          temp = document.getElementById('mydiv'+j);
+            if(temp != null){
+              if(temp != original){
+                if(temp.classList.contains("highlight") == true){
+                  temp.classList.remove("highlight");
+                }
+              }
+            }
+      }
+      })
+    original.classList.add("highlightFunction");
+  }
+  
 
 
   if(original.style.filter != ""){
@@ -141,26 +159,46 @@ function removeThis(){
 
 //Duplicate
 
-var i = 0;
+
 
 function duplicate() {
   if(original==undefined){
     original = document.getElementById('mydiv');
   }
-    i++;
-    var clone = original.cloneNode(true); // "deep" clone
-    divstr = "mydiv" + i;
-    console.log(divstr)
-    clone.id = divstr;
-    original.parentNode.appendChild(clone);
+  i++;
+  var clone = original.cloneNode(true); // "deep" clone
+  clone.classList.remove("highlightFunction");
+
+  divstr = "mydiv" + i;
+  console.log(divstr)
+  clone.id = divstr;
+  original.parentNode.appendChild(clone);
+
+  for(var j=0;j<i;j++){
+    if(j==0){
+      temp = document.getElementById('mydiv');
+      if(temp.classList.contains("highlight") == true){
+        temp.classList.remove("highlight");
+      }
+    }
+    else{
+      temp = document.getElementById('mydiv'+j);
+        if(temp != null){
+          if(temp.classList.contains("highlight") == true){
+            temp.classList.remove("highlight");
+          }
+        }
+    }
+  }
  
 
 }
 
 //Arrange
+arrangeSelecter=document.getElementById("arrange");
 
-function arrange(e) {
-  arrangeSelecter=document.getElementById("arrange");
+arrange.addEventListener("input", function() {
+
   currentZIndex= original.style.zIndex;
 
   //Select by id and then do:
@@ -185,8 +223,9 @@ function arrange(e) {
     original.style.zIndex = currentZIndex  + 1;
   }
   
-}
+  
 
+})
 
   //Apply Blending Modes to individual divs
   //Grab Id of whichever one is selected
@@ -205,7 +244,7 @@ function arrange(e) {
   //Creates new div
   
   //Replaces the innerHTML img source?
-  var i = 0;
+  var i = 4;
   var original = document.getElementById('mydiv');
   function createNew() {
     var imgsrc = ""
@@ -277,4 +316,3 @@ function arrange(e) {
    flipThis.classList.add("horizontallyInverted");
  }
 })
-

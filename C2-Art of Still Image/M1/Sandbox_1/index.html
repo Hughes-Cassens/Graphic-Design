@@ -35,23 +35,13 @@
         </li>
       </ul>
 
-
-      <!-- Set this when all checkboxes are checked -->
-      <div id="dvGreatJob" style="display: none">
-        <h3>Great Job! Move on to the next tab.</h3>
-      </div>
     </div>
 
     <div id="centerContainer" class="col-2">
- 
+
 
       <div id="mydiv" class="draggable hue saturation brightness alpha loadedDiv" onclick="setIdFunction(this.id)">
-        <input type="checkbox" id="btnContrl" />
-        <lable for="btnContrl">
-      
-          <img id="draggedImage"class=" resize-drag loadedDiv" src="./preload/apple.png">
-      
-        </lable>
+        <img id="draggedImage" class=" resize-drag loadedDiv" src="./preload/apple.png">
       </div>
     </div>
     <div class="col-3">
@@ -69,35 +59,35 @@
           <option value="Backwards">Send Backwards</option>
           <option value="Forward">Bring Forward</option>
           <option value="Front">Bring to Front</option>
-        </select><button onclick="arrange()">Arrange</button></span>
-      <br />
-      <br />
-      <div>
-        <h4>Color</h4>
-        <span>Hue:
-          <div class="sliderContainer center">
-            <input class="div2 hue-range center" id="hue" type="range" value="180" max="360">
-          </div></span>
+        </select>
         <br />
-        <span>Saturation:
-          <div class="sliderContainer center">
-            <input class="div2 saturation-range center" id="saturation" type="range" value="100" max="300">
-          </div></span>
         <br />
-        <span>Brightness:
-          <div class="sliderContainer center">
-            <input class="div2 brightness-range center" id="brightness" type="range" value="100" max="500">
-          </div></span>
-        <br />
-        <span>Opacity:
-          <div class="sliderContainer center">
-            <input class="div2 alpha-range center" id="alpha" type="range" value="100" max="100">
-          </div></span>
-      </div>
+        <div>
+          <h4>Color</h4>
+          <span>Hue:
+            <div class="sliderContainer center">
+              <input class="div2 hue-range center" id="hue" type="range" value="180" max="360">
+            </div></span>
+          <br />
+          <span>Saturation:
+            <div class="sliderContainer center">
+              <input class="div2 saturation-range center" id="saturation" type="range" value="100" max="300">
+            </div></span>
+          <br />
+          <span>Brightness:
+            <div class="sliderContainer center">
+              <input class="div2 brightness-range center" id="brightness" type="range" value="100" max="500">
+            </div></span>
+          <br />
+          <span>Opacity:
+            <div class="sliderContainer center">
+              <input class="div2 alpha-range center" id="alpha" type="range" value="100" max="100">
+            </div></span>
+        </div>
 
     </div>
     <div class="col-4">
-      
+
     </div>
   </div>
   <!-- <button>Save Canvas</button> -->

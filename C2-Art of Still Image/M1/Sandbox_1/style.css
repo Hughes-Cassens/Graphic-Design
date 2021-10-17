@@ -44,8 +44,8 @@ body {
 .loadedDiv {
     position: absolute;
     z-index: 0;
-    /* width: 150px;
-    height: auto; */
+    width: 200px;
+    height: auto;
 
 }
 
@@ -262,4 +262,10 @@ body {
     transform-origin: center center;
     user-select: none;
     touch-action: none;
+}
+
+.highlight {
+    border-style: solid;
+    border-width: 5px;
+    border-color: red;
 }
