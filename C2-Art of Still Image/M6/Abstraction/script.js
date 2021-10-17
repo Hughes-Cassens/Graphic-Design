@@ -5,8 +5,19 @@
 var original = "";
 var original;
 var selectPosition;
-var transform;
 var i = 0;
+
+
+
+var centerContainer = document.getElementsByClassName("col-2");
+console.log(centerContainer);
+
+var imageContainer = document.getElementById("draggedImage");
+console.log(imageContainer.clientWidth);
+
+let updatedX;
+let updatedY;
+
 
 var hueValue = "hue-rotate(360deg)";
 var saturationValue = "saturate(100%)";
@@ -22,12 +33,21 @@ function setIdFunction(id) {
   
   original = (document.getElementById(id)); 
   // console.log(original.getAttribute('data-xy'))
-  
   if(original.classList.contains("highlightFunction") == false) {
     original.addEventListener("click", function(){
       original = (document.getElementById(id)); 
       original.classList.toggle("highlight")
-      for(var j=1;j<=i;j++){
+      for(var j=0;j<=i;j++){
+        if(j==0){
+          temp = document.getElementById('mydiv');
+          if(temp != original){
+            if(temp.classList.contains("highlight") == true){
+              temp.classList.remove("highlight");
+            }
+          }
+          
+        }
+        else{
           temp = document.getElementById('mydiv'+j);
             if(temp != null){
               if(temp != original){
@@ -36,10 +56,12 @@ function setIdFunction(id) {
                 }
               }
             }
+        }
       }
       })
     original.classList.add("highlightFunction");
   }
+ 
   
 
 
@@ -93,9 +115,7 @@ function setIdFunction(id) {
   }
 }
 
-function resetColors() {
-  original.style.removeProperty("filter");
-}
+
 
 const position = { x: 0, y: 0 }
 
@@ -103,6 +123,7 @@ interact('.draggable').draggable({
   inertia: true,
   modifiers: [
     interact.modifiers.restrictRect({
+      restriction: 'parent',
       endOnly: true
     })
   ],
@@ -116,11 +137,36 @@ function dragMoveListener (event) {
   var target = event.target
   var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
   var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
-
+  
+  
   target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
-
-  target.setAttribute('data-x', x)
-  target.setAttribute('data-y', y)
+  // console.log(x);
+    
+  if (x + imageContainer.clientWidth >= centerContainer[0].clientWidth) {
+      x = imageContainer.clientWidth + 40;
+      updatedX = x;
+      
+}
+  else if (x <= 0)
+    {
+    x = 0;
+    updatedX = x;
+    }
+    else if (y + imageContainer.clientHeight >= centerContainer[0].clientHeight){
+      y = imageContainer.clientHeight + 40;
+      updatedY = y;
+}
+  else if (y <= 0) {
+    y = 0;
+    updatedY = y;
+  }
+  
+  else{
+    updatedX = x;
+    target.setAttribute('data-x', x)
+    updatedY = y;
+    target.setAttribute('data-y', y)
+  }
 }
 
 
@@ -134,18 +180,29 @@ interact('.resize-drag')
     invert: 'reposition',
     listeners: {
       move: function (event) {
-        let { x, y } = event.target.dataset
-
-        x = (parseFloat(x) || 0) + event.deltaRect.left
-        y = (parseFloat(y) || 0) + event.deltaRect.top
+        
+        let { updatedX, updatedY } = event.target.dataset;
+        
+        if (updatedX >= 0) {
+          updatedX = (parseFloat(updatedX)) + event.deltaRect.left;
+        }
+        if (updatedY >= 0) {
+          updatedY = (parseFloat(updatedY) || 0) + event.deltaRect.top;
+        }
+        else if (updatedY < 0){
+          updatedY = (parseFloat(updatedY) || 0) + event.deltaRect.top;
+        }
+        
+        
+       
 
         Object.assign(event.target.style, {
           width: `${event.rect.width}px`,
           height: `${event.rect.height}px`,
-          transform: `translate(${x}px, ${y}px)`
+          transform: `translate(${updatedX}px, ${updatedY}px)`
         })
-
-        Object.assign(event.target.dataset, { x, y })
+          console.log(parseFloat(updatedX));
+        Object.assign(event.target.dataset, { updatedX, updatedY })
       }
     }
   })
@@ -158,6 +215,8 @@ function removeThis(){
 
 
 //Duplicate
+
+
 
 function duplicate() {
   if(original==undefined){
@@ -193,6 +252,7 @@ function duplicate() {
 }
 
 //Arrange
+
 arrangeSelecter=document.getElementById("arrange");
 
 arrange.addEventListener("input", function() {
@@ -224,94 +284,3 @@ arrange.addEventListener("input", function() {
   
 
 })
-
-  //Apply Blending Modes to individual divs
-  //Grab Id of whichever one is selected
-  //Grad value from blending modes
-  //Add css classlist to selected div
-  var blendingModes = document.getElementById('blend');
-  blendingModes.addEventListener("change", function() {
-    const selection = blendingModes.value;
-    // console.log(selection);
-    original.style.mixBlendMode = selection;
-  })
-
- 
-
-//TODO: Users should be able to upload their own files as divs?
-  //Creates new div
-  
-  //Replaces the innerHTML img source?
-  var i = 0;
-  var original = document.getElementById('mydiv');
-  function createNew() {
-    var imgsrc = ""
-    // var clone = original.cloneNode(true); // "deep" clone
-
-    inputer = document.getElementById("inputer");
-    if(inputer.classList.contains("inputActive")==false){
-      
-      inputer.addEventListener('change', function() {
-       
-        imgsrc = URL.createObjectURL(this.files[0]);
-        i++;
-
-        var newDiv = document.createElement('div');
-        newDiv.id = "mydiv" + i;
-        newDiv.classList.add("draggable","hue","saturation","brightness","alpha","loadedDiv");
-        newDiv.setAttribute("onclick","setIdFunction(this.id)");
-  
-        var newContent = document.createElement('img');
-        newContent.classList.add("loadedImage","resize-drag","loadedDiv");
-        // resize-drag loadedDiv
-        newContent.id = "mydivImage"+i;
-        newContent.src = imgsrc;
-        newDiv.appendChild(newContent);
-        myCanvas = document.getElementById("myCanvas");
-        myCanvas.appendChild(newDiv);
-            
-      });  
-      inputer.classList.add("inputActive"); 
-    }
-    
-     
-}
-
-
-//TODO: Flip Vertical
-  //Grab Id of whichever one is selected
-  //var thisImg = document.getElementsByClassName("loadedImage");
-  flipV.addEventListener("click", function(){
-    var flipThis = original.getElementsByClassName("loadedImage")[0];
-    if(flipThis.classList.contains("horizontallyInverted")) {
-      flipThis.classList.remove("horizontallyInverted");
-      flipThis.classList.add("allInverted");
-   }else if(flipThis.classList.contains("verticallyInverted")) {
-      flipThis.classList.remove("verticallyInverted");
-   }else if(flipThis.classList.contains("allInverted")) {
-      flipThis.classList.remove("allInverted");
-      flipThis.classList.add("horizontallyInverted");
-   }else{
-      flipThis.classList.add("verticallyInverted");
-   }
-  })
- 
-//TODO: Flip Horizontal
-//Grab Id of whichever one is selected
-  //Add css transform: scaleX(-1)
-
-  flipH.addEventListener("click", function(){
-     var flipThis = original.getElementsByClassName("loadedImage")[0];
-  if(flipThis.classList.contains("verticallyInverted")) {
-    flipThis.classList.remove("verticallyInverted");
-    flipThis.classList.add("allInverted");
- }else if(flipThis.classList.contains("horizontallyInverted")){
-    flipThis.classList.remove("horizontallyInverted");
- }else if(flipThis.classList.contains("allInverted")){
-    flipThis.classList.remove("allInverted");
-    flipThis.classList.add("verticallyInverted");
- }else{
-   flipThis.classList.add("horizontallyInverted");
- }
-})
-
