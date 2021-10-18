@@ -9,14 +9,14 @@ var i = 0;
 
 
 
-var centerContainer = document.getElementsByClassName("col-2");
-console.log(centerContainer);
+// var centerContainer = document.getElementsByClassName("col-2");
+// console.log(centerContainer);
 
-var imageContainer = document.getElementById("draggedImage");
-console.log(imageContainer.clientWidth);
+// var imageContainer = document.getElementById("draggedImage");
+// console.log(imageContainer.clientWidth);
 
-let updatedX;
-let updatedY;
+// let updatedX;
+// let updatedY;
 
 
 var hueValue = "hue-rotate(360deg)";
@@ -33,34 +33,43 @@ function setIdFunction(id) {
   
   original = (document.getElementById(id)); 
   // console.log(original.getAttribute('data-xy'))
-  if(original.classList.contains("highlightFunction") == false) {
-    original.addEventListener("click", function(){
-      original = (document.getElementById(id)); 
-      original.classList.toggle("highlight")
-      for(var j=0;j<=i;j++){
-        if(j==0){
-          temp = document.getElementById('mydiv');
-          if(temp != original){
-            if(temp.classList.contains("highlight") == true){
-              temp.classList.remove("highlight");
-            }
-          }
-          
-        }
-        else{
-          temp = document.getElementById('mydiv'+j);
-            if(temp != null){
-              if(temp != original){
-                if(temp.classList.contains("highlight") == true){
-                  temp.classList.remove("highlight");
-                }
-              }
-            }
-        }
-      }
-      })
-    original.classList.add("highlightFunction");
+  console.log(original.childNodes)
+  if(original.childNodes[0].nextSibling != null){
+    original.style.height = original.childNodes[0].nextSibling.offsetHeight + "px";
   }
+  else{
+    original.style.height = original.childNodes[0].offsetHeight + "px";
+  }
+  
+  //Highlight function
+  // if(original.classList.contains("highlightFunction") == false) {
+  //   original.addEventListener("click", function(){
+  //     original = (document.getElementById(id)); 
+  //     original.classList.toggle("highlight")
+  //     for(var j=0;j<=i;j++){
+  //       if(j==0){
+  //         temp = document.getElementById('mydiv');
+  //         if(temp != original){
+  //           if(temp.classList.contains("highlight") == true){
+  //             temp.classList.remove("highlight");
+  //           }
+  //         }
+          
+  //       }
+  //       else{
+  //         temp = document.getElementById('mydiv'+j);
+  //           if(temp != null){
+  //             if(temp != original){
+  //               if(temp.classList.contains("highlight") == true){
+  //                 temp.classList.remove("highlight");
+  //               }
+  //             }
+  //           }
+  //       }
+  //     }
+  //     })
+  //   original.classList.add("highlightFunction");
+  // }
  
   
 
@@ -117,96 +126,150 @@ function setIdFunction(id) {
 
 
 
-const position = { x: 0, y: 0 }
+//const position = { x: 0, y: 0 }
 
-interact('.draggable').draggable({
-  inertia: true,
+
+
+interact('.resize-drag')
+  .resizable({
+  //   edges: { top: true, left: true, bottom: true, right: true },
+  //   invert: 'reposition',
+  //   listeners: {
+  //     move: function (event) {
+        
+  //       let { updatedX, updatedY } = event.target.dataset;
+        
+  //       if (updatedX >= 0) {
+  //         updatedX = (parseFloat(updatedX)) + event.deltaRect.left;
+  //       }
+  //       if (updatedY >= 0) {
+  //         updatedY = (parseFloat(updatedY) || 0) + event.deltaRect.top;
+  //       }
+  //       else if (updatedY < 0){
+  //         updatedY = (parseFloat(updatedY) || 0) + event.deltaRect.top;
+  //       }
+        
+        
+       
+
+  //       Object.assign(event.target.style, {
+  //         width: `${event.rect.width}px`,
+  //         height: `${event.rect.height}px`,
+  //         transform: `translate(${updatedX}px, ${updatedY}px)`
+  //       })
+  //         console.log(parseFloat(updatedX));
+  //       Object.assign(event.target.dataset, { updatedX, updatedY })
+  //     }
+  //   }
+  // })
+  edges: { left: true, right: true, bottom: true, top: true },
+
+  listeners: {
+    move (event) {
+      console.log("I happened")
+      var target = event.target
+      var x = (parseFloat(target.getAttribute('data-x')) || 0)
+      var y = (parseFloat(target.getAttribute('data-y')) || 0)
+ 
+      // update the element's style
+      target.style.width = event.rect.width + 'px'
+      target.style.height = event.rect.height + 'px'
+ 
+      // translate when resizing from top or left edges
+      x += event.deltaRect.left
+      y += event.deltaRect.top
+ 
+      target.style.transform = 'translate(' + x + 'px,' + y + 'px)'
+ 
+      target.setAttribute('data-x', x)
+      target.setAttribute('data-y', y)
+      //target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
+    }
+  },
+  modifiers: [
+    // keep the edges inside the parent
+   //  interact.modifiers.restrictEdges({
+   //    outer: 'parent'
+   //  }),
+ 
+   //  //minimum size
+   //  interact.modifiers.restrictSize({
+   //    min: { width: 100, height: 50 }
+   //  })
+  ],
+ 
+ //  inertia: true
+ })
+ interact('.draggable').draggable({
+  // inertia: true,.
+  listeners: {move: window.dragMoveListener},
   modifiers: [
     interact.modifiers.restrictRect({
       restriction: 'parent',
       endOnly: true
     })
   ],
-  autoScroll: true,
+  autoScroll: false,
   listeners: {
     move: dragMoveListener,
   }
 })
 
+// function dragMoveListener (event) {
+//   var target = event.target
+//   var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+//   var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+  
+  
+//   target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
+//   // console.log(x);
+    
+//   if (x + imageContainer.clientWidth >= centerContainer[0].clientWidth) {
+//       x = imageContainer.clientWidth + 40;
+//       updatedX = x;
+      
+// }
+//   else if (x <= 0)
+//     {
+//     x = 0;
+//     updatedX = x;
+//     }
+//     else if (y + imageContainer.clientHeight >= centerContainer[0].clientHeight){
+//       y = imageContainer.clientHeight + 40;
+//       updatedY = y;
+// }
+//   else if (y <= 0) {
+//     y = 0;
+//     updatedY = y;
+//   }
+  
+//   else{
+//     updatedX = x;
+//     target.setAttribute('data-x', x)
+//     updatedY = y;
+//     target.setAttribute('data-y', y)
+//   }
+// }
+
+
+// window.dragMoveListener = dragMoveListener
+// window.getDragAngle = getDragAngle
 function dragMoveListener (event) {
   var target = event.target
+  // keep the dragged position in the data-x/data-y attributes
   var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
   var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
-  
-  
+
+  // translate the element
   target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
-  // console.log(x);
-    
-  if (x + imageContainer.clientWidth >= centerContainer[0].clientWidth) {
-      x = imageContainer.clientWidth + 40;
-      updatedX = x;
-      
-}
-  else if (x <= 0)
-    {
-    x = 0;
-    updatedX = x;
-    }
-    else if (y + imageContainer.clientHeight >= centerContainer[0].clientHeight){
-      y = imageContainer.clientHeight + 40;
-      updatedY = y;
-}
-  else if (y <= 0) {
-    y = 0;
-    updatedY = y;
-  }
-  
-  else{
-    updatedX = x;
-    target.setAttribute('data-x', x)
-    updatedY = y;
-    target.setAttribute('data-y', y)
-  }
+
+  // update the posiion attributes
+  target.setAttribute('data-x', x)
+  target.setAttribute('data-y', y)
 }
 
 
 window.dragMoveListener = dragMoveListener
-// window.getDragAngle = getDragAngle
-
-
-interact('.resize-drag')
-  .resizable({
-    edges: { top: true, left: true, bottom: true, right: true },
-    invert: 'reposition',
-    listeners: {
-      move: function (event) {
-        
-        let { updatedX, updatedY } = event.target.dataset;
-        
-        if (updatedX >= 0) {
-          updatedX = (parseFloat(updatedX)) + event.deltaRect.left;
-        }
-        if (updatedY >= 0) {
-          updatedY = (parseFloat(updatedY) || 0) + event.deltaRect.top;
-        }
-        else if (updatedY < 0){
-          updatedY = (parseFloat(updatedY) || 0) + event.deltaRect.top;
-        }
-        
-        
-       
-
-        Object.assign(event.target.style, {
-          width: `${event.rect.width}px`,
-          height: `${event.rect.height}px`,
-          transform: `translate(${updatedX}px, ${updatedY}px)`
-        })
-          console.log(parseFloat(updatedX));
-        Object.assign(event.target.dataset, { updatedX, updatedY })
-      }
-    }
-  })
-
 
 //Remove element
 function removeThis(){
@@ -231,22 +294,23 @@ function duplicate() {
   clone.id = divstr;
   original.parentNode.appendChild(clone);
 
-  for(var j=0;j<i;j++){
-    if(j==0){
-      temp = document.getElementById('mydiv');
-      if(temp.classList.contains("highlight") == true){
-        temp.classList.remove("highlight");
-      }
-    }
-    else{
-      temp = document.getElementById('mydiv'+j);
-        if(temp != null){
-          if(temp.classList.contains("highlight") == true){
-            temp.classList.remove("highlight");
-          }
-        }
-    }
-  }
+  //Highlight function for duplicates
+  // for(var j=0;j<i;j++){
+  //   if(j==0){
+  //     temp = document.getElementById('mydiv');
+  //     if(temp.classList.contains("highlight") == true){
+  //       temp.classList.remove("highlight");
+  //     }
+  //   }
+  //   else{
+  //     temp = document.getElementById('mydiv'+j);
+  //       if(temp != null){
+  //         if(temp.classList.contains("highlight") == true){
+  //           temp.classList.remove("highlight");
+  //         }
+  //       }
+  //   }
+  // }
  
 
 }

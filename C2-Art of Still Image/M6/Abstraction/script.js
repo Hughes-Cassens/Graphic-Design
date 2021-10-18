@@ -33,34 +33,43 @@ function setIdFunction(id) {
   
   original = (document.getElementById(id)); 
   // console.log(original.getAttribute('data-xy'))
-  if(original.classList.contains("highlightFunction") == false) {
-    original.addEventListener("click", function(){
-      original = (document.getElementById(id)); 
-      original.classList.toggle("highlight")
-      for(var j=0;j<=i;j++){
-        if(j==0){
-          temp = document.getElementById('mydiv');
-          if(temp != original){
-            if(temp.classList.contains("highlight") == true){
-              temp.classList.remove("highlight");
-            }
-          }
-          
-        }
-        else{
-          temp = document.getElementById('mydiv'+j);
-            if(temp != null){
-              if(temp != original){
-                if(temp.classList.contains("highlight") == true){
-                  temp.classList.remove("highlight");
-                }
-              }
-            }
-        }
-      }
-      })
-    original.classList.add("highlightFunction");
+  console.log(original.childNodes)
+  if(original.childNodes[0].nextSibling != null){
+    original.style.height = original.childNodes[0].nextSibling.offsetHeight + "px";
   }
+  else{
+    original.style.height = original.childNodes[0].offsetHeight + "px";
+  }
+
+  //highlight function
+  // if(original.classList.contains("highlightFunction") == false) {
+  //   original.addEventListener("click", function(){
+  //     original = (document.getElementById(id)); 
+  //     original.classList.toggle("highlight")
+  //     for(var j=0;j<=i;j++){
+  //       if(j==0){
+  //         temp = document.getElementById('mydiv');
+  //         if(temp != original){
+  //           if(temp.classList.contains("highlight") == true){
+  //             temp.classList.remove("highlight");
+  //           }
+  //         }
+          
+  //       }
+  //       else{
+  //         temp = document.getElementById('mydiv'+j);
+  //           if(temp != null){
+  //             if(temp != original){
+  //               if(temp.classList.contains("highlight") == true){
+  //                 temp.classList.remove("highlight");
+  //               }
+  //             }
+  //           }
+  //       }
+  //     }
+  //     })
+  //   original.classList.add("highlightFunction");
+  // }
  
   
 
@@ -117,96 +126,187 @@ function setIdFunction(id) {
 
 
 
-const position = { x: 0, y: 0 }
+// const position = { x: 0, y: 0 }
 
-interact('.draggable').draggable({
-  inertia: true,
+// interact('.draggable').draggable({
+//   modifiers: [
+//     interact.modifiers.restrictRect({
+//       restriction: 'parent',
+//       endOnly: true
+//     })
+//   ],
+//   autoScroll: false,
+//   listeners: {
+//     move: dragMoveListener,
+//   }
+// })
+
+// function dragMoveListener (event) {
+//   var target = event.target
+//   var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+//   var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+  
+  
+//   target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
+//   // console.log(x);
+    
+//   if (x + imageContainer.clientWidth >= centerContainer[0].clientWidth) {
+//       x = imageContainer.clientWidth + 40;
+//       updatedX = x;
+      
+// }
+//   else if (x <= 0)
+//     {
+//     x = 0;
+//     updatedX = x;
+//     }
+//     else if (y + imageContainer.clientHeight >= centerContainer[0].clientHeight){
+//       y = imageContainer.clientHeight + 40;
+//       updatedY = y;
+// }
+//   else if (y <= 0) {
+//     y = 0;
+//     updatedY = y;
+//   }
+  
+//   else{
+//     updatedX = x;
+//     target.setAttribute('data-x', x)
+//     updatedY = y;
+//     target.setAttribute('data-y', y)
+//   }
+// }
+
+
+// window.dragMoveListener = dragMoveListener
+// window.getDragAngle = getDragAngle
+
+
+interact('.resize-drag')
+  .resizable({
+  //   edges: { top: true, left: true, bottom: true, right: true },
+  //   invert: 'reposition',
+  //   listeners: {
+  //     move: function (event) {
+        
+  //       let { updatedX, updatedY } = event.target.dataset;
+        
+  //       if (updatedX >= 0) {
+  //         updatedX = (parseFloat(updatedX)) + event.deltaRect.left;
+  //       }
+  //       if (updatedY >= 0) {
+  //         updatedY = (parseFloat(updatedY) || 0) + event.deltaRect.top;
+  //       }
+  //       else if (updatedY < 0){
+  //         updatedY = (parseFloat(updatedY) || 0) + event.deltaRect.top;
+  //       }
+        
+        
+       
+
+  //       Object.assign(event.target.style, {
+  //         width: `${event.rect.width}px`,
+  //         height: `${event.rect.height}px`,
+  //         transform: `translate(${updatedX}px, ${updatedY}px)`
+  //       })
+  //         console.log(parseFloat(updatedX));
+  //       Object.assign(event.target.dataset, { updatedX, updatedY })
+  //     }
+  //   }
+  // })
+  edges: { left: true, right: true, bottom: true, top: true },
+
+  listeners: {
+    move (event) {
+      console.log("I happened")
+      var target = event.target
+      var x = (parseFloat(target.getAttribute('data-x')) || 0)
+      var y = (parseFloat(target.getAttribute('data-y')) || 0)
+ 
+      // update the element's style
+      target.style.width = event.rect.width + 'px'
+      target.style.height = event.rect.height + 'px'
+ 
+      // translate when resizing from top or left edges
+      x += event.deltaRect.left
+      y += event.deltaRect.top
+ 
+      target.style.transform = 'translate(' + x + 'px,' + y + 'px)'
+ 
+      target.setAttribute('data-x', x)
+      target.setAttribute('data-y', y)
+    }
+  },
+ 
+ //  inertia: true
+ })
+
+ interact('.draggable').draggable({
+  // inertia: true,.
+  listeners: {move: window.dragMoveListener},
   modifiers: [
     interact.modifiers.restrictRect({
       restriction: 'parent',
       endOnly: true
     })
   ],
-  autoScroll: true,
+  autoScroll: false,
   listeners: {
     move: dragMoveListener,
   }
 })
 
-function dragMoveListener (event) {
-  var target = event.target
-  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
-  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+// function dragMoveListener (event) {
+//   var target = event.target
+//   var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+//   var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
   
   
-  target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
+//   target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
   // console.log(x);
     
-  if (x + imageContainer.clientWidth >= centerContainer[0].clientWidth) {
-      x = imageContainer.clientWidth + 40;
-      updatedX = x;
+//   if (x + imageContainer.clientWidth >= centerContainer[0].clientWidth) {
+//       x = imageContainer.clientWidth + 40;
+//       updatedX = x;
       
-}
-  else if (x <= 0)
-    {
-    x = 0;
-    updatedX = x;
-    }
-    else if (y + imageContainer.clientHeight >= centerContainer[0].clientHeight){
-      y = imageContainer.clientHeight + 40;
-      updatedY = y;
-}
-  else if (y <= 0) {
-    y = 0;
-    updatedY = y;
-  }
+// }
+//   else if (x <= 0)
+//     {
+//     x = 0;
+//     updatedX = x;
+//     }
+//     else if (y + imageContainer.clientHeight >= centerContainer[0].clientHeight){
+//       y = imageContainer.clientHeight + 40;
+//       updatedY = y;
+// }
+//   else if (y <= 0) {
+//     y = 0;
+//     updatedY = y;
+//   }
   
-  else{
-    updatedX = x;
-    target.setAttribute('data-x', x)
-    updatedY = y;
-    target.setAttribute('data-y', y)
-  }
+//   else{
+//     updatedX = x;
+//     target.setAttribute('data-x', x)
+//     updatedY = y;
+//     target.setAttribute('data-y', y)
+//   }
+//}
+function dragMoveListener (event) {
+  var target = event.target
+  // keep the dragged position in the data-x/data-y attributes
+  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+
+  // translate the element
+  target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
+
+  // update the posiion attributes
+  target.setAttribute('data-x', x)
+  target.setAttribute('data-y', y)
 }
 
 
 window.dragMoveListener = dragMoveListener
-// window.getDragAngle = getDragAngle
-
-
-interact('.resize-drag')
-  .resizable({
-    edges: { top: true, left: true, bottom: true, right: true },
-    invert: 'reposition',
-    listeners: {
-      move: function (event) {
-        
-        let { updatedX, updatedY } = event.target.dataset;
-        
-        if (updatedX >= 0) {
-          updatedX = (parseFloat(updatedX)) + event.deltaRect.left;
-        }
-        if (updatedY >= 0) {
-          updatedY = (parseFloat(updatedY) || 0) + event.deltaRect.top;
-        }
-        else if (updatedY < 0){
-          updatedY = (parseFloat(updatedY) || 0) + event.deltaRect.top;
-        }
-        
-        
-       
-
-        Object.assign(event.target.style, {
-          width: `${event.rect.width}px`,
-          height: `${event.rect.height}px`,
-          transform: `translate(${updatedX}px, ${updatedY}px)`
-        })
-          console.log(parseFloat(updatedX));
-        Object.assign(event.target.dataset, { updatedX, updatedY })
-      }
-    }
-  })
-
 
 //Remove element
 function removeThis(){
@@ -250,6 +350,17 @@ function duplicate() {
  
 
 }
+//Blending Modes
+
+
+var blendingModes = document.getElementById('blend');
+blendingModes.addEventListener("change", function() {
+  const selection = blendingModes.value;
+  // console.log(selection);
+  original.style.mixBlendMode = selection;
+})
+
+
 
 //Arrange
 
@@ -283,4 +394,78 @@ arrange.addEventListener("input", function() {
   
   
 
+})
+
+//Replaces the innerHTML img source?
+var i = 4;
+var original = document.getElementById('mydiv');
+function createNew() {
+  var imgsrc = ""
+  // var clone = original.cloneNode(true); // "deep" clone
+
+  inputer = document.getElementById("inputer");
+  if(inputer.classList.contains("inputActive")==false){
+
+    inputer.addEventListener('change', function() {
+
+      imgsrc = URL.createObjectURL(this.files[0]);
+      i++;
+
+      var newDiv = document.createElement('div');
+      newDiv.id = "mydiv" + i;
+      newDiv.classList.add("draggable","hue","saturation","brightness","alpha","loadedDiv");
+      newDiv.setAttribute("onclick","setIdFunction(this.id)");
+
+      var newContent = document.createElement('img');
+      newContent.classList.add("loadedImage","resize-drag","loadedDiv");
+      // resize-drag loadedDiv
+      newContent.id = "mydivImage"+i;
+      newContent.src = imgsrc;
+      newDiv.appendChild(newContent);
+      myCanvas = document.getElementById("myCanvas");
+      myCanvas.appendChild(newDiv);
+
+    });  
+    inputer.classList.add("inputActive"); 
+  }
+
+
+}
+
+
+//TODO: Flip Vertical
+//Grab Id of whichever one is selected
+//var thisImg = document.getElementsByClassName("loadedImage");
+flipV.addEventListener("click", function(){
+  var flipThis = original.getElementsByClassName("loadedImage")[0];
+  if(flipThis.classList.contains("horizontallyInverted")) {
+    flipThis.classList.remove("horizontallyInverted");
+    flipThis.classList.add("allInverted");
+ }else if(flipThis.classList.contains("verticallyInverted")) {
+    flipThis.classList.remove("verticallyInverted");
+ }else if(flipThis.classList.contains("allInverted")) {
+    flipThis.classList.remove("allInverted");
+    flipThis.classList.add("horizontallyInverted");
+ }else{
+    flipThis.classList.add("verticallyInverted");
+ }
+})
+
+//TODO: Flip Horizontal
+//Grab Id of whichever one is selected
+//Add css transform: scaleX(-1)
+
+flipH.addEventListener("click", function(){
+   var flipThis = original.getElementsByClassName("loadedImage")[0];
+if(flipThis.classList.contains("verticallyInverted")) {
+  flipThis.classList.remove("verticallyInverted");
+  flipThis.classList.add("allInverted");
+}else if(flipThis.classList.contains("horizontallyInverted")){
+  flipThis.classList.remove("horizontallyInverted");
+}else if(flipThis.classList.contains("allInverted")){
+  flipThis.classList.remove("allInverted");
+  flipThis.classList.add("verticallyInverted");
+}else{
+ flipThis.classList.add("horizontallyInverted");
+}
 })
