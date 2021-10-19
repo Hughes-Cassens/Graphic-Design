@@ -42,3 +42,23 @@ canvas {
 .toolbar label {
     color: white;
 }
+
+.btn-trash {
+    margin-left: 2em;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.btn-save {
+    background: #3D94F6;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 18px;
+    padding: 5px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}

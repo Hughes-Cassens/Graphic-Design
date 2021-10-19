@@ -22,6 +22,7 @@ function setup() {
 }
 
 function saveToLocal() {
+  alert("Are you sure you want to save this to your computer?")
   saveCanvas(canvas,'myCanvas','png')
 }
 function clearCanvas() {

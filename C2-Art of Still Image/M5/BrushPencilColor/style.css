@@ -34,7 +34,8 @@ canvas {
     font-size: 25px;
     cursor: pointer;
 }
-p{
+
+p {
     color: #fff;
 }
 
@@ -44,4 +45,11 @@ p{
 
 .toolbar label {
     color: white;
+}
+
+.btn-trash {
+    margin-left: 2em;
+    border: none;
+    background-color: transparent;
+    outline: none;
 }

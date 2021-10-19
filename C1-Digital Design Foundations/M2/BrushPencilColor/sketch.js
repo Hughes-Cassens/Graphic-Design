@@ -59,3 +59,15 @@ function mousePressed(e){
   console.log("start ");
 
 }
+
+function clearCanvas() {
+   clear();
+   background(255);
+}
+
+function saveSketch() {
+  alert("Are you sure you want to save this to your computer?")
+  saveCanvas('myDrawing');
+}
+
+

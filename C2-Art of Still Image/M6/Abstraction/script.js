@@ -36,9 +36,11 @@ function setIdFunction(id) {
   console.log(original.childNodes)
   if(original.childNodes[0].nextSibling != null){
     original.style.height = original.childNodes[0].nextSibling.offsetHeight + "px";
+    original.style.width = original.childNodes[0].nextSibling.offsetWidth + "px";
   }
   else{
     original.style.height = original.childNodes[0].offsetHeight + "px";
+    original.style.width = original.childNodes[0].nextSibling.offsetWidth + "px";
   }
 
   //highlight function

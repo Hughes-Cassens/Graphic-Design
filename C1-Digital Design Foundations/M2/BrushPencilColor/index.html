@@ -6,44 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brush</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet"
-  href=
-"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" 
-  integrity=
-"sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" 
-  crossorigin="anonymous" />
-  <!-- <script src="../p5.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- <script src="../addons/p5.sound.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+    crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
+    integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="sketch.js"></script>
 </head>
 
 <body>
   <div class="center">
-    <div class ="toolbar">
-  <input type="radio" value="brushTool" name="tool-type" id="brushTool">
-    <label for="brushTool">
-      <i class="fas fa-paint-brush"></i>
-    </label>
-  <input type="radio" name="tool-type" id="pencilTool">
-    <label for="pencilTool">
-      <i class="fas fa-pencil-alt"></i>
-    </label>
-  <input type="radio" name="tool-type" id="eraserTool">
-    <label for="eraserTool">
-      <i class="fas fa-eraser"></i>
-    </label>
-  <label for="fill">Fill:
-    <input type="color" id="color" />
-  </label>
-  <label for="weight">Stroke:</label>
-  <input type="number" id="weight" min="1" max="200" value="3" />
+    <div class="toolbar">
+      <input type="radio" value="brushTool" name="tool-type" id="brushTool">
+      <label for="brushTool">
+        <i class="fas fa-paint-brush"></i>
+      </label>
+      <input type="radio" name="tool-type" id="pencilTool">
+      <label for="pencilTool">
+        <i class="fas fa-pencil-alt"></i>
+      </label>
+      <input type="radio" name="tool-type" id="eraserTool">
+      <label for="eraserTool">
+        <i class="fas fa-eraser"></i>
+      </label>
+      <label for="fill">Fill:
+        <input type="color" id="color" />
+      </label>
+      <label for="weight">Stroke:
+        <input type="number" id="weight" min="1" max="200" value="3" />
+      </label>
+      <button class="btn-trash" onclick="clearCanvas()" id="trash">
+        <label for="trash">
+          <i class="fas fa-trash"></i>
+        </label>
+      </button>
+      <button class="btn-save" onclick="saveSketch()">Save As</button>
+    </div>
+    <br />
+    <br />
+    <main>
+    </main>
   </div>
-  <br/>
-  <br/>
-  <main>
-  </main>
-</div>
 </body>
 
 </html>

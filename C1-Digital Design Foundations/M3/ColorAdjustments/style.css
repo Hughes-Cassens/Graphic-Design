@@ -3,7 +3,7 @@ body {
     margin: 0;
     background: white;
     font-family: sans-serif;
-    padding: 2em;
+    /* padding: 2em; */
 
 }
 
@@ -14,18 +14,25 @@ body {
 
 .col-1 {
     flex: 1;
-    padding-top: 3em;
+    /* padding-top: 3em; */
 
 }
 
 .col-2 {
-    flex: 1;
+    flex: 2;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
+/* 
 .center {
     margin: auto;
     width: 50%;
     text-align: center;
+} */
+
+h2:not(:first-child) {
+    padding-top: 1.5em;
 }
 
 .parent {
@@ -34,7 +41,7 @@ body {
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    padding-right: 2em;
+    padding-right: 1em;
 }
 
 .div1 {
@@ -193,7 +200,6 @@ body {
 
 .imgSlide-container {
     position: relative;
-    top: 1em;
 }
 
 .imgSlide-container .top {
