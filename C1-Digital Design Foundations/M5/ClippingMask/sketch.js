@@ -10,7 +10,7 @@ function setup() {
   textSize(20);
 
   btnBlur =
-    createButton("Add a mask to the image");
+    createButton("Add the mask to the image");
   btnBlur.position(600, 320);
   btnBlur.mousePressed(applyMask);
 }
@@ -19,7 +19,7 @@ function draw() {
   clear();
 
   text("Click on the button to add " +
-       "a mask to the image", 20, 20);
+       "the mask to the image", 20, 20);
   text('Image:', 20, 60);
   image(img_orig, 20, 80, 360, 240);
 
