@@ -48,7 +48,7 @@
             - As of now the slider only changes once the mouse is released
 - ## M4
     - ### Shapes
-        - [ ] Shapes need to be restricted to the canvas and not overlap the controls
+        - [x] Shapes need to be restricted to the canvas and not overlap the controls
     - ### Curves
         - [x] Looks good
     - ### Vector Shapes
