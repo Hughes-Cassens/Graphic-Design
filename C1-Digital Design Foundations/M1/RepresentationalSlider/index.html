@@ -15,20 +15,57 @@
       margin: 0;
     }
 
-    canvas {
+    .center {
       margin: auto;
-      width: 100%;
+      width: 50%;
+      /* padding: 10px; */
+    }
+
+    .parent-container {
+      /* position: relative; */
+      top: 0;
+      left: 0;
+    }
+
+    img {
+      width: 640px;
+      height: 360px;
+      z-index: 1;
+    }
+
+    .btn-container {
+      position: absolute;
+      top: 160px;
+    }
+
+    .display-left {
+      position: relative;
+      left: 0;
+    }
+
+    .display-right {
+      position: relative;
+      right: -590px;
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
-    integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script src="sketch.js" defer></script>
 </head>
 
 <body>
-  <main>
-  </main>
+
+  <div class="parent-container">
+    <img class="mySlides" src="preload/cat01.png">
+    <img class="mySlides" src="preload/cat02.png">
+    <img class="mySlides" src="preload/cat03.png">
+    <img class="mySlides" src="preload/cat04.png">
+    <img class="mySlides" src="preload/cat05.png">
+
+    <div class="btn-container">
+      <button class="display-left" onclick="plusDivs(-1)">&#10094;</button>
+      <button class="display-right" onclick="plusDivs(+1)">&#10095;</button>
+    </div>
+
+  </div>
 </body>
 
 </html>
