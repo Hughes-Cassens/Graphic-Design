@@ -9,7 +9,7 @@ body {
 
 .center {
     margin: auto;
-    width: 50%;
+    width: 70%;
     text-align: center;
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 .blur-range {
-    
+
     position: relative;
     z-index: none;
     appearance: none;
@@ -32,14 +32,16 @@ body {
     transition: color 0.05s linear;
     background: green;
 }
+
 .ui-slider .ui-slider-handle {
-    
-    
+
+
     top: -.6em;
     background: white;
     border-radius: 50%;
-    
+
 }
+
 .blur-range::-webkit-slider-thumb {
     height: 2em;
     width: 2em;
